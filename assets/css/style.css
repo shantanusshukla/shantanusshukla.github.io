@@ -1,8 +1,8 @@
 /* Top-left logo (circle) */
 .navbar-logo,
 .navbar-brand-logo img {
-  width: 4.0rem !important;          /* adjust to taste */
-  height: 4.0rem !important;         /* keep square for a perfect circle */
+  width: 5.0rem !important;          /* adjust to taste */
+  height: 5.0rem !important;         /* keep square for a perfect circle */
   border-radius: 50%;   /* makes it circular */
   object-fit: cover;    /* crops to a neat circle even if the image isn't square */
   display: inline-block;

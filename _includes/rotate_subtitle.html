@@ -1,0 +1,47 @@
+<style>
+    /* The little “box” that holds the rotating word */
+    .page-heading .page-subheading .rotator-box {
+      display: inline-block;
+      padding: .15em .55em;
+      margin-left: .25rem;
+      border: 1px solid rgba(0,0,0,.18);
+      background: rgba(0,0,0,.035);
+      border-radius: .6rem;
+      font-weight: 600;
+      transition: opacity .25s ease;
+    }
+    .page-heading .page-subheading .rotator-box.fade { opacity: 0; }
+</style>
+  
+<script>
+  (function () {
+    // Customize the words & speed here:
+    const words = ["Robotics", "Math", "Control Systems"]; // change to "Maths" if you prefer
+    const intervalMs = 2200; // time each word stays visible
+  
+    const sub = document.querySelector('.page-heading .page-subheading');
+    if (!sub) return;
+  
+    // Build: "I love" + <span class="rotator-box">Robotics</span>
+    const staticText = (sub.textContent || "I love").trim() + " ";
+    const box = document.createElement('span');
+    box.className = 'rotator-box';
+    box.setAttribute('aria-live', 'polite');
+    box.textContent = words[0];
+  
+    sub.textContent = staticText;
+    sub.appendChild(box);
+  
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % words.length;
+      // Fade out, swap text, fade back in
+      box.classList.add('fade');
+      setTimeout(() => {
+        box.textContent = words[i];
+        box.classList.remove('fade');
+      }, 250);
+    }, intervalMs);
+  })();
+</script>
+  

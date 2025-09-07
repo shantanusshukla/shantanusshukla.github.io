@@ -1,14 +1,28 @@
+/* Top-left logo (circle) */
+.navbar-logo,
+.navbar-brand-logo img {
+  width: 44px;          /* adjust to taste */
+  height: 44px;         /* keep square for a perfect circle */
+  border-radius: 50%;   /* makes it circular */
+  object-fit: cover;    /* crops to a neat circle even if the image isn't square */
+  display: inline-block;
+  vertical-align: middle;
+  /* optional: add a subtle border or shadow
+  border: 2px solid rgba(0,0,0,.08);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.9);
+  */
+}
 
-/* ...existing code... */
-.avatar-container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
+/* Keep your name aligned nicely next to it */
+.navbar-brand + .navbar-brand {
+  margin-left: .5rem;
 }
-.avatar-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+
+/* Optional: tweak sizes on mobile */
+@media (max-width: 576px) {
+  .navbar-logo,
+  .navbar-brand-logo img {
+    width: 36px;
+    height: 36px;
+  }
 }
-/* ...existing code... */

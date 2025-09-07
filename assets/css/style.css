@@ -1,8 +1,8 @@
 /* Top-left logo (circle) */
 .navbar-logo,
 .navbar-brand-logo img {
-  width: 80px;          /* adjust to taste */
-  height: 80px;         /* keep square for a perfect circle */
+  width: 4.0rem !important;          /* adjust to taste */
+  height: 4.0rem !important;         /* keep square for a perfect circle */
   border-radius: 50%;   /* makes it circular */
   object-fit: cover;    /* crops to a neat circle even if the image isn't square */
   display: inline-block;
@@ -22,7 +22,7 @@
 @media (max-width: 576px) {
   .navbar-logo,
   .navbar-brand-logo img {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
   }
 }

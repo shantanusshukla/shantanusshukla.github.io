@@ -23,7 +23,7 @@
       border: 1px solid rgba(0,0,0,.18);
       background: rgba(0,0,0,.035);
       border-radius: .6rem;
-      font-weight: 600;
+      font-weight: 650;
       text-align: center;
       transition: opacity .25s ease;
     }
@@ -38,16 +38,16 @@
     /* Left part: “I love” */
     .page-heading .page-subheading .rotator-left {
     /* font-style: italic; */       /* make it italics */
-    font-weight: 600;         /* bolder look */
-    font-size: 1.05em;        /* slightly larger than default */
+    font-weight: 500;         /* bolder look */
+    font-size: 1.55em;        /* slightly larger than default */
     letter-spacing: .2px;
     }
 
     /* Right part: “— and enjoy … life.”  */
     .page-heading .page-subheading .rotator-right {
-    font-size: 1.05em;        /* tweak size */
-    font-weight: 400;         /* lighter than the H1 */
-    color: #6c757d;           /* tasteful muted tone */
+    font-size: 1.55em;        /* tweak size */
+    font-weight: 500;         /* lighter than the H1 */
+    color: #000000;           /* tasteful muted tone */
     }
 
     /* (Optional) how inline code should look in the subtitle */
@@ -65,7 +65,7 @@
   (function () {
     // Customize these:
     const words = ["Robotics", "Math", "Control Systems"];
-    const tailText = "— and enjoy building the code that brings it to life.";
+    const tailHTML = "— and enjoy building the <code>code</code> that brings it to life.";
     const holdMs = 2200;
   
     const sub = document.querySelector('.page-heading .page-subheading');
@@ -89,7 +89,7 @@
   
     const rightNode = document.createElement('span');
     rightNode.className = 'rotator-right';
-    rightNode.textContent = tailText;
+    rightNode.textContent = tailHTML;
   
     wrap.append(leftNode, box, rightNode);
     sub.appendChild(wrap);

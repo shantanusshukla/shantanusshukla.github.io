@@ -1,9 +1,19 @@
 <style>
-    /* Layout: keep the static left/right text anchored */
+    /* Keep the static left/right text anchored; allow the right side to wrap if needed */
     .page-heading .page-subheading .rotator-wrap {
       display: inline-flex;
+      flex-wrap: wrap;           /* right side can move to a new line on small screens */
       align-items: baseline;
-      gap: .25rem;              /* space around the box */
+      justify-content: center;   /* center under the H1 */
+      column-gap: .35rem;
+      row-gap: .25rem;
+    }
+  
+    /* Don't let "I love" or the box split across lines or shrink */
+    .page-heading .page-subheading .rotator-left,
+    .page-heading .page-subheading .rotator-box {
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
   
     /* The rotating word “box” */
@@ -15,31 +25,37 @@
       border-radius: .6rem;
       font-weight: 600;
       text-align: center;
-      white-space: nowrap;      /* keep words on one line */
       transition: opacity .25s ease;
     }
     .page-heading .page-subheading .rotator-box.fade { opacity: 0; }
+  
+    /* The trailing sentence; may wrap but won't push the left or the box around */
+    .page-heading .page-subheading .rotator-right {
+      flex: 1 1 auto;
+      min-width: 10ch; /* prevents jittery reflow on narrow screens */
+    }
   </style>
   
   <script>
   (function () {
     // Customize these:
-    const words = ["Robotics", "Math", "Control Systems"]; // or "Maths" if you prefer
-    const tailText = " — and enjoy building the code that brings it to life.";
-    const holdMs = 2200; // time each word stays visible
+    const words = ["Robotics", "Math", "Control Systems"];
+    const tailText = "— and enjoy building the code that brings it to life.";
+    const holdMs = 2200;
   
     const sub = document.querySelector('.page-heading .page-subheading');
     if (!sub) return;
   
     // Left static text comes from your subtitle ("I love")
-    const leftText = (sub.textContent || "I love").trim() + " ";
-    sub.textContent = ""; // clear it so we can rebuild
+    const leftText = (sub.textContent || "I love").trim();
+    sub.textContent = ""; // rebuild the content
   
-    // Build: [I love] [BOX] [tail]
+    // Build: [I love] [BOX] [— and enjoy ...]
     const wrap = document.createElement('span');
     wrap.className = 'rotator-wrap';
   
     const leftNode = document.createElement('span');
+    leftNode.className = 'rotator-left';
     leftNode.textContent = leftText;
   
     const box = document.createElement('span');
@@ -47,22 +63,21 @@
     box.setAttribute('aria-live', 'polite');
   
     const rightNode = document.createElement('span');
+    rightNode.className = 'rotator-right';
     rightNode.textContent = tailText;
   
     wrap.append(leftNode, box, rightNode);
     sub.appendChild(wrap);
   
-    // Measure the longest word so the box width is fixed (prevents layout shift)
+    // Fix the box width to the longest word so nothing else shifts
     const measurer = document.createElement('span');
     measurer.style.position = 'absolute';
     measurer.style.visibility = 'hidden';
     measurer.style.whiteSpace = 'nowrap';
-  
-    // Match the subtitle font for accurate measurement
     const cs = getComputedStyle(sub);
     measurer.style.fontFamily = cs.fontFamily;
     measurer.style.fontSize = cs.fontSize;
-    measurer.style.fontWeight = '600'; // same as .rotator-box
+    measurer.style.fontWeight = '600';
     document.body.appendChild(measurer);
   
     let max = 0;
@@ -71,13 +86,11 @@
       max = Math.max(max, measurer.getBoundingClientRect().width);
     }
     document.body.removeChild(measurer);
-  
     box.style.width = Math.ceil(max) + 'px';
   
     // Start rotation
     let i = 0;
     box.textContent = words[i];
-  
     setInterval(() => {
       i = (i + 1) % words.length;
       box.classList.add('fade');
@@ -88,4 +101,4 @@
     }, holdMs);
   })();
   </script>
-    
+  

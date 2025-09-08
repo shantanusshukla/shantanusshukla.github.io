@@ -42,3 +42,39 @@
     }
   }
   
+/* Container */
+.about-intro {
+    max-width: 60ch;           /* nice readable width */
+    margin: 0 auto 2rem;       /* centered, with spacing below */
+    text-align: left;          /* or center if you prefer */
+    color: #555;               /* body text tone */
+    font-size: 1.1rem;         /* bump size a bit */
+    line-height: 1.6;
+}
+
+/* Heading inside the section */
+    .about-intro h2 {
+    font-size: 1.75rem;        /* adjust to taste */
+    font-weight: 700;          /* 400=normal, 600=semi, 700=bold */
+    margin: .25rem 0 .5rem;
+    }
+
+/* Paragraph spacing */
+    .about-intro p {
+    margin: .75rem 0;
+}
+
+/* Optional: emphasize words */
+.about-intro strong { font-weight: 700; }
+.about-intro em { font-style: italic; }
+
+/* Optional: inline code look */
+.about-intro code {
+    padding: 0 .3em;
+    background: #f9f2f4;
+    color: #c7254e;
+    border-radius: .25rem;
+    font-weight: 600;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+  

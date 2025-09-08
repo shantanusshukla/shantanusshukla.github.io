@@ -65,7 +65,7 @@
 }
  
 .intro-header {
-    margin-top: 3rem !important;   /* reduce top gap */
+    margin-top: 5rem !important;   /* reduce top gap */
     margin-bottom: 1rem !important; /* tighten bottom gap */
     padding-top: 1rem !important;  /* optional, fine-tune internal spacing */
     padding-bottom: 1rem !important;
@@ -82,7 +82,7 @@
 
 .intro-header .page-heading .page-subheading {
     margin-top: 0.25rem !important;
-    margin-bottom: 0.5rem !important;  /* reduce space before hr */
+    margin-bottom: 0.2rem !important;  /* reduce space before hr */
 }
   
 /* Optional: scale on very large screens */

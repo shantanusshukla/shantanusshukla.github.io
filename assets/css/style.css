@@ -18,6 +18,22 @@
   margin-left: .5rem;
 }
 
+/* a) Reduce vertical padding on the bar and links */
+.navbar-custom { padding-top: .25rem; padding-bottom: .25rem; }
+.navbar-custom .nav-link { padding-top: .25rem; padding-bottom: .25rem; }
+.navbar-custom .navbar-brand { padding-top: 0; padding-bottom: 0; }
+
+/* b) (Optional) Keep the left logo from forcing extra height */
+/* If you want a slimmer bar, keep the logo ~2.5–3.0rem high */
+.navbar-custom .navbar-brand-logo img {
+  height: 3.0rem;   /* adjust if you want it bigger/smaller */
+  width: 3.0rem;    /* match for circle */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
 /* Optional: tweak sizes on mobile */
 @media (max-width: 576px) {
   .navbar-logo,

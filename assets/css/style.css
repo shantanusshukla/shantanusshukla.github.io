@@ -63,7 +63,13 @@
     margin-top: .5rem !important;
     margin-bottom: 1rem !important;    /* adjust to taste */
 }
-  
+ 
+.intro-header {
+    margin-top: 2rem !important;   /* reduce top gap */
+    margin-bottom: 1rem !important; /* tighten bottom gap */
+    padding-top: 1rem !important;  /* optional, fine-tune internal spacing */
+    padding-bottom: 1rem !important;
+}
 
 /* Main hero title under the big banner */
 .intro-header .page-heading h1 {
@@ -71,14 +77,20 @@
     font-weight: 700;    /* lighter than the default heavy weight */
     line-height: 1.2;
     letter-spacing: -0.5px; /* tighten spacing if you want */
-  }
+    margin-bottom: 0.25rem !important;
+}
+
+.intro-header .page-heading .page-subheading {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;  /* reduce space before hr */
+}
   
-  /* Optional: scale on very large screens */
-  @media (min-width: 1200px) {
+/* Optional: scale on very large screens */
+@media (min-width: 1200px) {
     .intro-header .page-heading h1 {
       font-size: 3.5rem; /* instead of 5rem */
     }
-  }
+}
   
 /* Container */
 .about-intro {
@@ -96,7 +108,7 @@
     font-size: 1.75rem;        /* adjust to taste */
     font-weight: 700;          /* 400=normal, 600=semi, 700=bold */
     margin: .25rem 0 .5rem;
-    }
+}
 
 /* Paragraph spacing */
     .about-intro p {

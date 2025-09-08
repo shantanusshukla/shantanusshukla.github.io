@@ -26,3 +26,19 @@
     height: 40px !important;
   }
 }
+
+/* Main hero title under the big banner */
+.intro-header .page-heading h1 {
+    font-size: 2.6rem;   /* smaller than theme default */
+    font-weight: 700;    /* lighter than the default heavy weight */
+    line-height: 1.2;
+    letter-spacing: -0.5px; /* tighten spacing if you want */
+  }
+  
+  /* Optional: scale on very large screens */
+  @media (min-width: 1200px) {
+    .intro-header .page-heading h1 {
+      font-size: 3.5rem; /* instead of 5rem */
+    }
+  }
+  

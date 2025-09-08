@@ -65,7 +65,7 @@
 }
  
 .intro-header {
-    margin-top: 2rem !important;   /* reduce top gap */
+    margin-top: 3rem !important;   /* reduce top gap */
     margin-bottom: 1rem !important; /* tighten bottom gap */
     padding-top: 1rem !important;  /* optional, fine-tune internal spacing */
     padding-bottom: 1rem !important;

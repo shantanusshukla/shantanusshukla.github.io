@@ -44,12 +44,13 @@
   
 /* Container */
 .about-intro {
-    max-width: 60ch;           /* nice readable width */
-    margin: 0 auto 2rem;       /* centered, with spacing below */
+    max-width: 42rem;           /* nice readable width */
+    margin: 2rem auto;       /* centered, with spacing below */
     text-align: left;          /* or center if you prefer */
-    color: #555;               /* body text tone */
-    font-size: 1.1rem;         /* bump size a bit */
+    color: #041f3d;               /* body text tone */
+    font-size: 1.4rem;         /* bump size a bit */
     line-height: 1.6;
+    text-align: justify;  /* optional: justify text */
 }
 
 /* Heading inside the section */

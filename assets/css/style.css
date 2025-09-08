@@ -98,7 +98,7 @@
     margin: 2rem auto;       /* centered, with spacing below */
     text-align: left;          /* or center if you prefer */
     color: #041f3d;               /* body text tone */
-    font-size: 1.02rem;         /* bump size a bit */
+    font-size: 1.1rem;         /* bump size a bit */
     line-height: 1.4;     /* comfortable spacing between 2 lines */ 
     text-align: justify;  /* optional: justify text */
 }

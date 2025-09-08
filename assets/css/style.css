@@ -33,7 +33,6 @@
 }
 
 
-
 /* Optional: tweak sizes on mobile */
 @media (max-width: 576px) {
   .navbar-logo,
@@ -42,6 +41,28 @@
     height: 40px !important;
   }
 }
+
+/* Reduce top padding of the hero header */
+.header-section .intro-header {
+    padding-top: 0.75rem;   /* was larger in the theme */
+}
+  
+/* Keep spacing reasonable on big screens */
+@media (min-width: 1200px) {
+    .header-section .intro-header { padding-top: 1rem; }
+}  
+
+/* Make the About section sit closer to the subtitle */
+.about-intro {
+    margin-top: 0.75rem;    /* down from whatever you had (e.g., 2rem) */
+}
+
+/* Make the divider snug */
+.about-intro hr.small {
+    margin-top: .5rem;
+    margin-bottom: 1rem;    /* adjust to taste */
+}
+  
 
 /* Main hero title under the big banner */
 .intro-header .page-heading h1 {

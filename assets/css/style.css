@@ -130,10 +130,42 @@
 }
 
 /* Optional: style homepage Experience portion */
+
 .experience-section { margin-top: 2rem; }
 .exp-item { align-items: flex-start; }
 .exp-logo img {
-  width: 72px; height: 72px; object-fit: contain; border-radius: 10px;
+  width: 72px; height: 72px; object-fit: contain; border-radius: 0;
 }
 .exp-meta { opacity: .8; }
-.skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }  
+.skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }
+
+.experience-section .exp-item { align-items: flex-start; } /* belt + suspenders */
+.experience-section .exp-logo { margin-top: .15rem; }      /* tweak up/down to taste */
+
+.experience-section > h2 {
+  font-family: var(--header-font);
+  font-weight: 800;      /* 600–800 depending on taste */
+  font-size: 2.0rem;     /* adjust */
+  letter-spacing: .2px;
+  color: var(--text-col); /* or var(--hover-col) for accent */
+  margin-bottom: 1.25rem;
+  text-align: center;     /* keep centered like now */
+}
+
+/* Body text (bullets/paragraphs) */
+.experience-section .exp-desc,
+.experience-section .exp-desc li {
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-col);
+}
+
+/* Optional: accent the bullet markers */
+.experience-section .exp-desc li::marker { color: var(--hover-col); }
+
+/* Badges spacing (optional polish) */
+.experience-section .skill-badge {
+  margin: .125rem .375rem .125rem 0;
+  border: 1px solid #ddd;
+}

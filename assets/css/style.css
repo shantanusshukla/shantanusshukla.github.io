@@ -145,9 +145,9 @@
 
 .experience-section .exp-item { align-items: flex-start; } /* belt + suspenders */
 .experience-section .exp-logo {
-  flex: 0 0 72px;   /* no shrink, fixed basis */
-  width: 72px;
-  height: 72px;
+  flex: 0 0 90px;   /* no shrink, fixed basis */
+  width: 90px;
+  height: 90px;
   align-self: flex-start; /* keeps it aligned to top of text */
 }
 .experience-section .exp-logo { margin-top: 0.95rem !important; }      /* tweak up/down to taste */

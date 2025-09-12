@@ -1,23 +1,45 @@
-- company: Example Robotics
+- company: Lucid Motors
   link: https://example.com
-  title: Robotics Engineer
-  location: San Diego, CA
-  start: Jul 2024
-  end: Mar 2025
+  title: Software Engineer - Simulation, System Test Design, Digital Twins
+  location: Newark, CA
+  start: Apr 2025
+  end: present
   logo: /assets/img/avatar-icon.png
   desc: |
-    - Built motion planning stack (sampling + MPC).
-    - Deployed Lidar SLAM with loop closure on field robots.
-    - Owned CI for ROS packages and scenario tests.
-  skills: [ROS, C++, Python, SLAM, MPC, Git, Docker]
+    Building a vehicle ECU virtualization environment and digital twin infrastructure for all vehicle controllers enabling co-simulation capabilities for system and application-level simulations
 
-- company: Ocean Labs
-  title: Research Intern
-  location: Mumbai, IN
+- company: Lucid Motors
+  title: Controls Software Intern
+  location: Newark, CA
+  start: Jun 2024
+  end: Sep 2024
+  logo: /assets/img/avatar-icon.png
+  desc: |
+    I primarily worked on automating a major portion of software unit-testing for production software on all Lucid ECUs. I developed an extensive understanding
+    of automotive production software standards and vehicle network protocols (CAN, LIN, Ethernet)
+    -  Covered > 30% software components across all vehicles ECUs
+    -  Saved > 16 man hours of unit-testing per software component
+
+- company: Renault-Nissan-Mitsubishi
+  title: ADAS Intern
+  location: Chennai, India
   start: May 2023
   end: Aug 2023
   logo: /assets/img/avatar-icon.png
   desc: |
-    - Navigation & EKF-based state estimation for an AUV.
-    - Bathymetry-aligned path planning; tank tests.
-  skills: [AUV, EKF, Control, PX4, C++, Matlab]
+    In this internship I focussed on developing a scalable and robust MPC-based controller for executing specific on-road behaviors in AV simulation. The work culminated into a 
+    highly robust and low-latency MPC architecture with significant performance improvement over the traditional PID controllers. I learned about optimization solvers, vehicle dynamical
+    models and trajectory generation techniques.
+    -  Model-Predictive Control-based Trajectory Tracking for on-road maneuvers (navigating roundabouts, highway entry/exit, turning) in Autonomous Vehicles
+    -  Robust MPC with on-the-go trajectory generation, obstacle avoidance and low latency
+
+- company: Dorle Controls Pvt. Ltd
+  title: Vehicle Controls Intern
+  location: Pune, India
+  start: May 2022
+  end: Aug 2022
+  logo: /assets/img/avatar-icon.png
+  desc: |
+    As a Vehicle Controls intern I worked on a Motor-sizing model which could help choose the right motor based on lap-performance requirements for the Podium (Canada) EV racing team.
+    Alongside, I also curated comprehensive project-based learning modules for Motion Planning, SLAM, Perception. I learned ROS, Docker and Gazebo and implemented an A-star motion planner
+    based on data from Google maps

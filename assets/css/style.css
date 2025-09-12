@@ -150,7 +150,7 @@
   height: 72px;
   align-self: flex-start; /* keeps it aligned to top of text */
 }
-.experience-section .exp-logo { margin-top: 0.85rem !important; }      /* tweak up/down to taste */
+.experience-section .exp-logo { margin-top: 0.95rem !important; }      /* tweak up/down to taste */
 
 .experience-section > h2 {
   font-family: var(--header-font);

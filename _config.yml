@@ -21,10 +21,11 @@ author: Shantanu Shukla
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Projects:
+    - Robotics Projects: "projects/robotics-projects"
+    - Beyond Robotics:
+        - Non-Linear Dynamics: "projects/beyond/nld"
+        - Programming and More: "projects/beyond/programming-and-more"
 
 ################
 # --- Logo --- #

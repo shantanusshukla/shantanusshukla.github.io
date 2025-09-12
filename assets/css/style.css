@@ -200,10 +200,10 @@
 }
 
 .experience-section .exp-desc {
-  margin-top: .15rem !important;    /* shrink gap before description */
+  margin-top: .05rem !important;    /* shrink gap before description */
 }
 
 .experience-section .exp-desc ul {
-  margin-top: .15rem !important;
-  margin-bottom: .25rem !important;
+  margin-top: .10rem !important;
+  margin-bottom: .35rem !important;
 }

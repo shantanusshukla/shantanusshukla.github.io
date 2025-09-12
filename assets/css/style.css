@@ -140,7 +140,7 @@
 .skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }
 
 .experience-section .exp-item { align-items: flex-start; } /* belt + suspenders */
-.experience-section .exp-logo { margin-top: .55rem; }      /* tweak up/down to taste */
+.experience-section .exp-logo { margin-top: .55rem !important; }      /* tweak up/down to taste */
 
 .experience-section > h2 {
   font-family: var(--header-font);

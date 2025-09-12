@@ -11,17 +11,18 @@
             {% endif %}
 
             <div class="exp-body">
-            <div class="exp-header">
-                <h3 class="h5 mb-1">{{ item.title }}</h3>
+            <div class="exp-companyline mb-2">
                 <strong class="exp-company">
-                    {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.company }}</a>
-                    {% else %}{{ item.company }}{% endif %}
+                    {% if item.link %}
+                        <a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.company }}</a>
+                    {% else %}
+                        {{ item.company }}
+                    {% endif %}
                 </strong>
-            </div>
-
-            <div class="exp-meta small text-muted mb-2">
-                {% if item.location %}{{ item.location }} · {% endif %}
-                {{ item.start }}{% if item.end %}–{{ item.end }}{% else %}–Present{% endif %}
+                <span class="exp-meta small text-muted">
+                    | {% if item.location %}{{ item.location }} · {% endif %}
+                    {{ item.start }}{% if item.end %}–{{ item.end }}{% else %}–Present{% endif %}
+                </span>
             </div>
 
             {% if item.bullets %}

@@ -167,7 +167,7 @@
 .experience-section .exp-desc li {
   font-family: var(--body-font);
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.3;
   color: var(--text-col);
 }
 
@@ -183,4 +183,27 @@
 .experience-section .exp-header .exp-company {
   display: block;
   margin-top: .125rem;
+}
+
+.experience-section .exp-companyline {
+  margin-top: .15rem;    /* tighter spacing after job title */
+}
+
+.experience-section .exp-companyline .exp-meta {
+  margin-left: .25rem;
+  font-size: 0.9rem;
+  color: #666;  /* muted look */
+}
+
+.experience-section .exp-body h3 {
+  margin-bottom: .25rem !important; /* shrink title bottom spacing */
+}
+
+.experience-section .exp-desc {
+  margin-top: .25rem !important;    /* shrink gap before description */
+}
+
+.experience-section .exp-desc ul {
+  margin-top: .25rem !important;
+  margin-bottom: .25rem !important;
 }

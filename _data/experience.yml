@@ -1,0 +1,23 @@
+- company: Example Robotics
+  link: https://example.com
+  title: Robotics Engineer
+  location: San Diego, CA
+  start: Jul 2024
+  end: Mar 2025
+  logo: /assets/img/avatar-icon.png
+  desc: |
+    - Built motion planning stack (sampling + MPC).
+    - Deployed Lidar SLAM with loop closure on field robots.
+    - Owned CI for ROS packages and scenario tests.
+  skills: [ROS, C++, Python, SLAM, MPC, Git, Docker]
+
+- company: Ocean Labs
+  title: Research Intern
+  location: Mumbai, IN
+  start: May 2023
+  end: Aug 2023
+  logo: /assets/img/avatar-icon.png
+  desc: |
+    - Navigation & EKF-based state estimation for an AUV.
+    - Bathymetry-aligned path planning; tank tests.
+  skills: [AUV, EKF, Control, PX4, C++, Matlab]

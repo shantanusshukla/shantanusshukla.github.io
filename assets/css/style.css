@@ -128,4 +128,12 @@
     font-weight: 600;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-  
+
+/* Optional: style homepage Experience portion */
+.experience-section { margin-top: 2rem; }
+.exp-item { align-items: flex-start; }
+.exp-logo img {
+  width: 72px; height: 72px; object-fit: contain; border-radius: 10px;
+}
+.exp-meta { opacity: .8; }
+.skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }  

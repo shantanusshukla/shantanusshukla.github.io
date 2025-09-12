@@ -1,0 +1,46 @@
+{% raw %}<section id="experience" class="experience-section">
+    <h2 class="text-center mb-3">Professional Experience</h2>
+
+    <div class="mt-4">
+        {% for item in site.data.experience %}
+        <article class="exp-item d-flex mb-4">
+            {% if item.logo %}
+            <div class="exp-logo mr-3">
+                <img src="{{ item.logo | relative_url }}" alt="{{ item.company }} logo">
+            </div>
+            {% endif %}
+
+            <div class="exp-body">
+            <div class="d-flex flex-wrap align-items-baseline">
+                <h3 class="h5 mb-1 mr-2">{{ item.title }}</h3>
+                <span class="text-muted">·</span>
+                <strong class="ml-2">
+                {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.company }}</a>
+                {% else %}{{ item.company }}{% endif %}
+                </strong>
+            </div>
+
+            <div class="exp-meta small text-muted mb-2">
+                {% if item.location %}{{ item.location }} · {% endif %}
+                {{ item.start }}{% if item.end %}–{{ item.end }}{% else %}–Present{% endif %}
+            </div>
+
+            <div class="exp-desc">
+                {{ item.desc | markdownify }}
+            </div>
+
+            {% if item.skills %}
+                <div class="exp-skills mt-2">
+                {% for s in item.skills %}
+                    <span class="badge badge-pill badge-light skill-badge">{{ s }}</span>
+                {% endfor %}
+                </div>
+            {% endif %}
+            </div>
+        </article>
+
+        {% unless forloop.last %}<hr class="small">{% endunless %}
+        {% endfor %}
+    </div>
+</section>{% endraw %}
+  

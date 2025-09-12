@@ -133,14 +133,24 @@
 
 .experience-section { margin-top: 2rem; }
 .exp-item { align-items: flex-start; }
-.exp-logo img {
-  width: 72px; height: 72px; object-fit: contain; border-radius: 0;
+.experience-section .exp-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* show entire logo without cropping */
+  border-radius: 0;      /* sharp corners */
 }
 .exp-meta { opacity: .8; }
 .skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }
 
 .experience-section .exp-item { align-items: flex-start; } /* belt + suspenders */
-.experience-section .exp-logo { margin-top: 1.15rem !important; }      /* tweak up/down to taste */
+.experience-section .exp-logo {
+  flex: 0 0 72px;   /* no shrink, fixed basis */
+  width: 72px;
+  height: 72px;
+  align-self: flex-start; /* keeps it aligned to top of text */
+}
+.experience-section .exp-logo { margin-top: 0.85rem !important; }      /* tweak up/down to taste */
 
 .experience-section > h2 {
   font-family: var(--header-font);
@@ -168,4 +178,9 @@
 .experience-section .skill-badge {
   margin: .125rem .375rem .125rem 0;
   border: 1px solid #ddd;
+}
+
+.experience-section .exp-header .exp-company {
+  display: block;
+  margin-top: .125rem;
 }

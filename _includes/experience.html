@@ -11,12 +11,11 @@
             {% endif %}
 
             <div class="exp-body">
-            <div class="d-flex flex-wrap align-items-baseline">
-                <h3 class="h5 mb-1 mr-2">{{ item.title }}</h3>
-                <span class="text-muted">·</span>
-                <strong class="ml-2">
-                {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.company }}</a>
-                {% else %}{{ item.company }}{% endif %}
+            <div class="exp-header">
+                <h3 class="h5 mb-1">{{ item.title }}</h3>
+                <strong class="exp-company">
+                    {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.company }}</a>
+                    {% else %}{{ item.company }}{% endif %}
                 </strong>
             </div>
 

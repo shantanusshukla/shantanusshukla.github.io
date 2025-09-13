@@ -1,0 +1,40 @@
+<div class="proj-row">
+  <div class="proj-media">
+    {% if item.media.type == "mp4" %}
+      <video class="proj-video" controls preload="none"
+             poster="{{ item.media.poster | relative_url }}" playsinline>
+        <source src="{{ item.media.src | relative_url }}" type="video/mp4">
+      </video>
+    {% else %}
+      <img src="{{ item.media.src | relative_url }}" alt="{{ item.title }} media" loading="lazy">
+    {% endif %}
+  </div>
+
+  <div class="proj-body">
+    <h3 class="proj-title">{{ item.title }}</h3>
+
+    {% if item.summary %}
+      <p class="proj-summary">{{ item.summary }}</p>
+    {% endif %}
+
+    {% if item.tags %}
+      <div class="proj-tags">
+        {% for t in item.tags %}
+          <span class="tag-chip">{{ t }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="proj-links">
+      {% if item.links.report %}<a class="btn btn-sm btn-outline-primary" href="{{ item.links.report }}" target="_blank">Report</a>{% endif %}
+      {% if item.links.code %}<a class="btn btn-sm btn-outline-secondary" href="{{ item.links.code }}" target="_blank">Code</a>{% endif %}
+      {% if item.links.demo %}<a class="btn btn-sm btn-outline-success" href="{{ item.links.demo }}" target="_blank">Demo</a>{% endif %}
+      {% if item.links.readmore %}
+        <a class="btn btn-sm btn-dark proj-readmore"
+           href="{{ item.links.readmore | relative_url }}"
+           data-ajax="true"
+           data-id="{{ item.id }}">Read more</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

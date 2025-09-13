@@ -1,0 +1,23 @@
+<div id="projects-shell">
+  <div class="projects-rail" id="projects-rail">
+    {% assign list = site.data.robotics %}
+    {% for item in list %}
+      <div class="rail-item" data-id="{{ item.id }}">
+        <img src="{{ item.media.poster | default:item.media.src | relative_url }}" alt="{{ item.title }}" loading="lazy">
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="projects-list" id="projects-list">
+    {% for item in site.data.robotics %}
+      {% include project_row.html item=item %}
+    {% endfor %}
+  </div>
+
+  <aside class="project-detail" id="project-detail" aria-live="polite">
+    <button class="detail-back btn btn-sm btn-outline-secondary" id="detail-back">← Back</button>
+    <div class="detail-scroll" id="detail-scroll">
+      <!-- loaded detail article goes here -->
+    </div>
+  </aside>
+</div>

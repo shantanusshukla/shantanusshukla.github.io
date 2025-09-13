@@ -22,7 +22,7 @@ author: Shantanu Shukla
 navbar-links:
   About Me: "aboutme"
   Projects:
-    - Robotics Projects: "projects/robotics-projects"
+    - Robotics Projects: "robotics-projects"
     - Beyond Robotics:
         - Non-Linear Dynamics: "projects/beyond/nld"
         - Programming and More: "projects/beyond/programming-and-more"

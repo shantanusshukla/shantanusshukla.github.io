@@ -1,0 +1,50 @@
+<section id="experience" class="experience-section">
+    <h2 class="text-center mb-3">Education</h2>
+
+    <div class="mt-4">
+        {% for item in site.data.education %}
+        <article class="exp-item d-flex mb-4">
+            {% if item.logo %}
+            <div class="exp-logo mr-3">
+                <img src="{{ item.logo | relative_url }}" alt="{{ item.institute }} logo">
+            </div>
+            {% endif %}
+
+            <div class="exp-body">
+            <h3 class="h5 mb-1">{{ item.title }}</h3>
+            <div class="exp-companyline mb-2">
+                <strong class="exp-company">
+                    {% if item.link %}
+                        <a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.institute }}</a>
+                    {% else %}
+                        {{ item.institute }}
+                    {% endif %}
+                </strong>
+                <span class="exp-meta small text-muted">
+                    | {% if item.location %}{{ item.location }} · {% endif %}
+                    {{ item.start }}{% if item.end %}–{{ item.end }}{% else %}–Present{% endif %}
+                </span>
+            </div>
+
+            {% if item.bullets %}
+                <ul class="mb-2">
+                    {% for b in item.bullets %}<li>{{ b }}</li>{% endfor %}
+                </ul>
+            {% elsif item.desc %}
+                <div class="exp-desc">{{ item.desc | markdownify }}</div>
+            {% endif %}
+
+            {% if item.skills %}
+                <div class="exp-skills mt-2">
+                {% for s in item.skills %}
+                    <span class="badge badge-pill badge-light skill-badge">{{ s }}</span>
+                {% endfor %}
+                </div>
+            {% endif %}
+            </div>
+        </article>
+
+        <!--{% unless forloop.last %}<hr class="small">{% endunless %}-->
+        {% endfor %}
+    </div>
+</section>

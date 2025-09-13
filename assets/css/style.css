@@ -154,7 +154,7 @@
 
 .experience-section > h2 {
   font-family: var(--header-font);
-  font-weight: 800;      /* 600–800 depending on taste */
+  font-weight: 700;      /* 600–800 depending on taste */
   font-size: 2.0rem;     /* adjust */
   letter-spacing: .2px;
   color: var(--text-col); /* or var(--hover-col) for accent */

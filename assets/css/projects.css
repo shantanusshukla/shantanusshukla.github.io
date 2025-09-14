@@ -73,7 +73,7 @@
 
 .detail-back{
   position: sticky; top: .75rem; z-index: 2;
-  margin: .5rem .75rem;
+  margin: .5rem 14.75rem;
 }
 
 /* content area scrolls independently */

@@ -9,6 +9,8 @@
   --proj-detail-bg: #ffffff;
 }
 
+:root { --nav-h: 64px; } /* will be set precisely by JS */
+
 /* ================ Base layout ================ */
 #projects-shell {
   position: relative;
@@ -62,8 +64,22 @@
 
 /* ================ Focus mode (interactive “read more”) ================ */
 .projects-rail {
-  display: none; /* becomes visible in focus mode */
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  width: 240px;
+  height: calc(100vh - var(--nav-h));
+  overflow: auto;
+  padding: .5rem;
+  background: var(--proj-rail-bg, #fafbff);
+  border-right: 1px solid #eee;
+  z-index: 960;
 }
+.rail-item { padding: .25rem; cursor: pointer; border-radius: .5rem; }
+.rail-item img { width: 100%; height: 72px; object-fit: cover; border-radius: .35rem; }
+.rail-item:hover { background: #eef2ff; }
+.rail-item.active { background: #e3e9ff; }
 
 .project-detail {
   position: fixed;
@@ -120,3 +136,21 @@
 /* Typography knobs you can tweak anytime */
 .proj-title { font-size: 1.1rem; }
 .proj-summary { font-size: 1rem; line-height: 1.55; }
+
+.projects-mask {
+  position: fixed;
+  left: 0; right: 0;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  background: rgba(0,0,0,.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 950; /* below rail/detail */
+}
+
+.projects-focused .projects-mask {
+  opacity: 1;
+  pointer-events: auto;
+}
+

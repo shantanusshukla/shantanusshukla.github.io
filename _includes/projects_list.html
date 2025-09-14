@@ -1,4 +1,8 @@
-<div id="projects-shell">
+<div id="projects-shell" data-base="{{ page.url | relative_url }}">
+  <!-- semi-transparent mask (click to close) -->
+  <div class="projects-mask" id="projects-mask"></div>
+
+  <!-- left thumbnails rail -->
   <div class="projects-rail" id="projects-rail">
     {% assign list = site.data.robotics %}
     {% for item in list %}
@@ -8,16 +12,16 @@
     {% endfor %}
   </div>
 
+  <!-- listing -->
   <div class="projects-list" id="projects-list">
     {% for item in site.data.robotics %}
       {% include project_row.html item=item %}
     {% endfor %}
   </div>
 
+  <!-- slide-in detail -->
   <aside class="project-detail" id="project-detail" aria-live="polite">
     <button class="detail-back btn btn-sm btn-outline-secondary" id="detail-back">← Back</button>
-    <div class="detail-scroll" id="detail-scroll">
-      <!-- loaded detail article goes here -->
-    </div>
+    <div class="detail-scroll" id="detail-scroll"></div>
   </aside>
 </div>

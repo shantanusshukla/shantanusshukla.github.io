@@ -13,6 +13,8 @@
   /* Show ONLY thumbnails + detail while focused */
   const FULL_MODE = true;
 
+  let LIST_SCROLL_Y = 0;   // put this near the top file (global)
+
   /* --- measure the navbar and set CSS var so nothing overlaps it --- */
   function setNavOffset(){
     const nav = document.querySelector('nav.navbar-custom') || document.querySelector('nav.navbar');
@@ -38,6 +40,7 @@
 
   /* --- open detail panel and load detail page content --- */
   async function openDetail(url, id){
+    LIST_SCROLL_Y = window.scrollY || window.pageYOffset || 0;   // <- remember where we were
     document.documentElement.classList.add('projects-focused');
     if(FULL_MODE) document.documentElement.classList.add('projects-focused-full');
 
@@ -70,6 +73,11 @@
     detailScroll.innerHTML = '';
     const base = shell.getAttribute('data-base') || '/robotics-projects/';
     history.pushState({}, '', base);
+
+    // Restore scroll to where user clicked Read more
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: LIST_SCROLL_Y, left: 0, behavior: 'auto' });
+    });
   }
 
   /* Read more buttons (ajax mode) */

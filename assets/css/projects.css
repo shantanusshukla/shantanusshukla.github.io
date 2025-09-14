@@ -17,6 +17,7 @@
   --proj-detail-bg: #ffffff;
 
   --thumb-h: 110px;          /* thumbnail height; raise/lower to taste */
+  --media-max-h: 320px;      /* cap the media height on desktop; tweak to taste */
 }
 
 #projects-shell{ position: relative; }
@@ -151,7 +152,7 @@
 .proj-media{ 
   flex: 0 0 42%;                 /* left column width */
   background:#f6f6f8;
-  min-height: 100%;              /* fill tile height */
+  height: auto;                  /* desktop height is assigned via JS */
 }
 .proj-media img, .proj-media video{
   width:100%; height:100%; object-fit:cover; display:block;
@@ -182,7 +183,10 @@
 /* ---------- responsive ---------- */
 @media (max-width: 991px){
   .proj-row{ flex-direction: column; }
-  .proj-media{ flex: 0 0 auto; height: auto; }  /* image sits above text */
+  .proj-media{ 
+    /* 160–240px depending on screen; override any inline height */
+    height: clamp(160px, 45vw, 240px) !important;
+  }
   .projects-focused .projects-rail,
   .projects-focused-full .projects-rail{ display:none; }
   .project-detail{ width:100vw; right:-100vw; }

@@ -32,6 +32,10 @@
     else document.addEventListener('DOMContentLoaded', fn);
   }
 
+  onReady(syncMediaHeights);
+  window.addEventListener('load', syncMediaHeights);
+  window.addEventListener('resize', () => { syncMediaHeights(); }); 
+  
   onReady(setNavOffset);
   window.addEventListener('load', setNavOffset);
   window.addEventListener('resize', setNavOffset);
@@ -77,6 +81,30 @@
     // Restore scroll to where user clicked Read more
     requestAnimationFrame(() => {
       window.scrollTo({ top: LIST_SCROLL_Y, left: 0, behavior: 'auto' });
+    });
+
+    // re-sync heights in case layout changed
+    requestAnimationFrame(syncMediaHeights);
+  }
+
+  function syncMediaHeights(){
+    // Only do this on desktop; mobile uses CSS clamp above
+    const desktop = window.matchMedia('(min-width: 992px)').matches;
+    const maxH = parseInt(getComputedStyle(document.documentElement)
+                .getPropertyValue('--media-max-h')) || 320;
+
+    document.querySelectorAll('.proj-row').forEach(row => {
+      const media = row.querySelector('.proj-media');
+      const body  = row.querySelector('.proj-body');
+      if(!media || !body) return;
+
+      if(!desktop){
+        media.style.height = '';     // let the CSS clamp take over
+        return;
+      }
+      // Match the text height, but never exceed --media-max-h
+      const target = Math.min(body.offsetHeight, maxH);
+      media.style.height = target + 'px';
     });
   }
 

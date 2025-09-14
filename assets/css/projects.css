@@ -17,7 +17,7 @@
   --proj-detail-bg: #ffffff;
 
   --thumb-h: 110px;          /* thumbnail height; raise/lower to taste */
-  --media-max-h: 320px;      /* cap the media height on desktop; tweak to taste */
+  --media-max-h: 250px;      /* cap the media height on desktop; tweak to taste */
 }
 
 #projects-shell{ position: relative; }

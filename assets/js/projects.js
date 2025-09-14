@@ -1,6 +1,7 @@
-(function () {
-  const shell    = document.getElementById('projects-shell');
-  if (!shell) return;
+/* ===== Robotics Projects — v2 behavior ===== */
+(function(){
+  const shell = document.getElementById('projects-shell');
+  if(!shell) return;
 
   const listEl   = document.getElementById('projects-list');
   const railEl   = document.getElementById('projects-rail');
@@ -9,94 +10,99 @@
   const backBtn  = document.getElementById('detail-back');
   const maskEl   = document.getElementById('projects-mask');
 
-  /* ---- config: set to true if you want ONLY thumbnails + detail visible ---- */
-  const FULL_MODE = false;
+  /* Show ONLY thumbnails + detail while focused */
+  const FULL_MODE = true;
 
-  /* ---- measure navbar height and set CSS var ---- */
-  function setNavHeightVar() {
-    const nav = document.querySelector('nav.navbar') || document.querySelector('.navbar-custom');
-    const h   = nav ? nav.offsetHeight : 64;
-    document.documentElement.style.setProperty('--nav-h', h + 'px');
+  /* --- measure the navbar and set CSS var so nothing overlaps it --- */
+  function setNavOffset(){
+    const nav = document.querySelector('nav.navbar-custom') || document.querySelector('nav.navbar');
+    let top = 72;
+    if(nav){
+      const rect = nav.getBoundingClientRect();
+      // Use the visible bottom (accounts for any shrink-on-scroll)
+      top = Math.max(rect.bottom, nav.offsetHeight);
+    }
+    document.documentElement.style.setProperty('--nav-offset', `${Math.ceil(top)}px`);
   }
-  setNavHeightVar();
-  window.addEventListener('resize', setNavHeightVar);
-  // nav height can change on scroll (theme shrinks it)
-  let t; window.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(setNavHeightVar, 120); });
 
-  /* ---- open detail (ajax) ---- */
-  async function openDetail(url, id) {
+  function onReady(fn){
+    if(document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  onReady(setNavOffset);
+  window.addEventListener('load', setNavOffset);
+  window.addEventListener('resize', setNavOffset);
+  // navbar height can change on scroll (theme shrinks), so debounce updates
+  let t; window.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(setNavOffset, 120); });
+
+  /* --- open detail panel and load detail page content --- */
+  async function openDetail(url, id){
     document.documentElement.classList.add('projects-focused');
-    if (FULL_MODE) document.documentElement.classList.add('projects-focused-full');
+    if(FULL_MODE) document.documentElement.classList.add('projects-focused-full');
 
-    try {
-      const res = await fetch(url, { credentials: 'same-origin' });
+    try{
+      const res = await fetch(url, { credentials:'same-origin' });
       const html = await res.text();
-      const tmp  = document.createElement('div'); tmp.innerHTML = html;
+      const tmp = document.createElement('div'); tmp.innerHTML = html;
       const content = tmp.querySelector('#project-content') || tmp.querySelector('main') || tmp;
       detailScroll.innerHTML = '';
       detailScroll.appendChild(content.cloneNode(true));
       detailScroll.scrollTop = 0;
 
-      // highlight in rail
-      if (railEl) {
+      // highlight active thumb
+      if(railEl){
         railEl.querySelectorAll('.rail-item').forEach(n => n.classList.remove('active'));
         const active = railEl.querySelector(`.rail-item[data-id="${id}"]`);
-        if (active) active.classList.add('active');
+        if(active) active.classList.add('active');
       }
 
-      history.pushState({ projId: id, projUrl: url }, '', url);
-    } catch (e) {
-      // fallback
+      history.pushState({ projId:id, projUrl:url }, '', url);
+    }catch(e){
+      // graceful fallback
       window.location.href = url;
     }
   }
 
-  /* ---- close detail ---- */
-  function closeDetail() {
+  /* --- close detail panel --- */
+  function closeDetail(){
     document.documentElement.classList.remove('projects-focused', 'projects-focused-full');
     detailScroll.innerHTML = '';
-    // go back to listing URL (from data-base on the shell)
     const base = shell.getAttribute('data-base') || '/robotics-projects/';
     history.pushState({}, '', base);
   }
 
-  /* read more buttons */
-  listEl.addEventListener('click', (e) => {
+  /* Read more buttons (ajax mode) */
+  listEl.addEventListener('click', e => {
     const btn = e.target.closest('.proj-readmore');
-    if (!btn) return;
-    const ajax = btn.getAttribute('data-ajax');
-    if (ajax !== 'true') return; // normal navigation
+    if(!btn) return;
+    if(btn.getAttribute('data-ajax') !== 'true') return; // normal link
     e.preventDefault();
-    const url = btn.getAttribute('href');
-    const id  = btn.getAttribute('data-id');
-    openDetail(url, id);
+    openDetail(btn.getAttribute('href'), btn.getAttribute('data-id'));
   });
 
-  /* rail: click to switch project */
-  if (railEl) {
-    railEl.addEventListener('click', (e) => {
-      const itm = e.target.closest('.rail-item');
-      if (!itm) return;
+  /* Rail click: switch project */
+  if(railEl){
+    railEl.addEventListener('click', e => {
+      const itm = e.target.closest('.rail-item'); if(!itm) return;
       const id = itm.getAttribute('data-id');
       const btn = listEl.querySelector(`.proj-readmore[data-id="${id}"]`);
-      if (btn) openDetail(btn.getAttribute('href'), id);
+      if(btn) openDetail(btn.getAttribute('href'), id);
     });
   }
 
-  /* mask: click outside closes */
+  /* Mask click closes */
   maskEl.addEventListener('click', closeDetail);
 
-  /* back button + Esc */
+  /* Back button + Esc */
   backBtn.addEventListener('click', closeDetail);
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.documentElement.classList.contains('projects-focused')) {
-      closeDetail();
-    }
+  window.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && document.documentElement.classList.contains('projects-focused')) closeDetail();
   });
 
-  /* handle browser back */
-  window.addEventListener('popstate', (e) => {
-    if (document.documentElement.classList.contains('projects-focused') && (!e.state || !e.state.projId)) {
+  /* Browser back */
+  window.addEventListener('popstate', e => {
+    if(document.documentElement.classList.contains('projects-focused') && (!e.state || !e.state.projId)){
       closeDetail();
     }
   });

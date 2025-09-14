@@ -91,6 +91,20 @@
     });
   }
 
+  /* Keyboard open: Enter/Space on a focused thumbnail */
+  if (railEl) {
+    railEl.addEventListener('keydown', (e) => {
+      const itm = e.target.closest('.rail-item');
+      if (!itm) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const id  = itm.getAttribute('data-id');
+        const btn = listEl.querySelector(`.proj-readmore[data-id="${id}"]`);
+        if (btn) openDetail(btn.getAttribute('href'), id);
+      }
+    });
+  }
+
   /* Mask click closes */
   maskEl.addEventListener('click', closeDetail);
 

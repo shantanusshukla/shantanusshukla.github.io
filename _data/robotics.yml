@@ -1,7 +1,8 @@
 - id: icp-slam
   title: Lidar-based SLAM using ICP
-  summary: "Real-time 2D mapping with loop closure and ICP refinement."
-  tags: [SLAM, ICP, Factor Graph]
+  summary: "State-estimation using ICP scan matching to estimate relative poses/odometry, 
+            followed by trajectory refinement using factor-graph optimization."
+  tags: [SLAM, ICP, Factor Graphs, Occupancy Map, Texture Map]
   media:
     type: image            # mp4 | image | gif
     src: /assets/img/avatar-icon.png
@@ -11,6 +12,33 @@
     code: https://github.com/...
     demo: https://youtu.be/...
     readmore: /projects/robotics/icp-slam/   # points to the detail .md (see step 7)
+
+
+- id: vislam
+  title: Visual-Inertial SLAM with Kalman Filters (KF, EKF)
+  summary: "We estimate the vehicle trajectory and landmark locations using an Extended Kalman Filter
+            where the motion model is given by pose dynamics in SE(3)
+            deduced using IMU readings and the landmark obsertvations are done by a stereo camera"
+  tags: [Extended Kalman Filter, SE(3) Pose dynamics, SLAM]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/vislam/
+
+- id: homing-uuv
+  title: Homing, Waypoint following in an Autonomous Underwater Vehicle
+  summary: "We autonomously guide a RexRov AUV equipped with 8 thrusters to a set home/dock position
+            on the water surface using s sliding-mode control algorithm. We also perform
+            seabed mapping using a SONAR attached on the AUV while following underwater waypoints"
+  tags: [Sliding-Mode Control, Waypoint-following, SONAR-based mapping]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/homing-uuv/
 
 - id: rrt-3d
   title: Path Planning in 3D spaces

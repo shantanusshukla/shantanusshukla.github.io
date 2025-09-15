@@ -88,3 +88,17 @@
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/semantic-segmentation/
+
+- id: state-estimation-panorama
+  title: Sensor Calibration, Orientation tracking and Panorama stitching
+  summary: "We calibrate noisy IMU measurements from an IMU mounted on a robot arm and estimate the
+            pose of the end effector. We compare these with the ground truth from Vicon and 
+            stitch a panorama from images obtained from a camera mounted on the end-effector by 
+            correcting frames"
+  tags: [Sensor calibration, Sensor Fusion, Optimization, Image-processing]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/state-estimation-panorama/

@@ -63,3 +63,16 @@
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/rrt-3d/
+
+- id: nearest-object-tracking
+  title: Nearest-Object Tracking with Model Predictive Control
+  summary: "Using MPC we center and track (maintain at image center) the nearest object among
+            multiple moving objects using a camera mounted on the end-effector of a 7-DOF robotics
+            arm"
+  tags: [MPC, Image Processing, CasADi, 7-DOF robotic arm]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/nearest-object-tracking/

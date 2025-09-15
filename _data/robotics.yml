@@ -76,3 +76,15 @@
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/nearest-object-tracking/
+
+- id: semantic-segmentation
+  title: Semantic Segmentation with FCNs
+  summary: "We use Fully Convolutional Neural Networks (VGG-16 and its variants) to perform
+            semantic segmentation of images"
+  tags: [Computer Vision, Fully Convolutional Neural Networks]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/semantic-segmentation/

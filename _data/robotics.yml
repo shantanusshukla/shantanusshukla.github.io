@@ -40,6 +40,19 @@
     report: https://drive.google.com/...
     readmore: /projects/robotics/homing-uuv/
 
+- id: trajectory-tracking
+  title: Trajectory Tracking with Finite and Infinite horizon Optimal Control
+  summary: "We track the trajectory of a marker tracing a lissjous curve in an environment with multiple obstacles.
+            This is done using a Model-Predictive Controller and by training a control policy using Generalized
+            policy iteration"
+  tags: [MPC, Generalized Policy Iteration]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/trajectory-tracking/
+
 - id: rrt-3d
   title: Path Planning in 3D spaces
   summary: "RRT* with informed sampling for cluttered 3D scenes."

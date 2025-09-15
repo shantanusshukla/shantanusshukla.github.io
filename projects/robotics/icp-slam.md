@@ -4,9 +4,6 @@ title: Lidar-based SLAM using ICP
 permalink: /projects/robotics/icp-slam/
 ---
 
-### Overview
-Short intro paragraph…
-
 ### Setup
  - We first have to set up an **Iterative Point-Cloud Matching** framework. The goal is generate an occupancy 
    map with ICP on LiDAR data obtained from a mobile robot, along with a texture map of the ground using images obtained from a camera.

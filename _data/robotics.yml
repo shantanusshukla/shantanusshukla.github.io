@@ -53,16 +53,67 @@
     report: https://drive.google.com/...
     readmore: /projects/robotics/trajectory-tracking/
 
-- id: rrt-3d
-  title: Path Planning in 3D spaces
-  summary: "RRT* with informed sampling for cluttered 3D scenes."
-  tags: [Planning, Sampling]
+- id: path-planning-2d3d
+  title: Search and sampling-based planning in 2D, 3D mazes/spaces
+  summary: "We perform path-planning in 2D mazes and complex 3D spaces with AABBs as obstacles using variants
+            of the traditional A-star and RRT* algorithms"
+  tags: [Path-Planning -2D/3D, weighted A-star, RRT-star, RRT-Connect]
   media:
     type: image
     src: /assets/img/avatar-icon.png
   links:
     report: https://drive.google.com/...
-    readmore: /projects/robotics/rrt-3d/
+<<<<<<< HEAD
+    readmore: /projects/robotics/path-planning-2d3d/
+
+- id: dynamic-programming
+  title: Navigating Door-Key-Obstacle mazes using Dynamic Programming
+  summary: "Modeled door-key navigation in a grid as an MDP; used dynamic programming to compute 
+            shortest-path policies with conditional key pickup and obstacle avoidance."
+  tags: [Motion Planning, Dynamic Programming, Markov Decision Process]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/dynamic-programming/
+
+- id: planning-slam-control-on-robot
+  title: Vision-based SLAM using April Tags, Planning, Control and Area Coverage on a wheeled robot
+  summary: "We setup the entire Perception-Localization-Mapping-Planning-Control pipeline on a Qualcomm RB5
+            robot to navigate an arena with AprilTags. Using a Kalman Filter for localization we plan to 
+            move the bot around the arena so that we achieve > 80% coverage."
+  tags: [Extended Kalman Filter, AprilTag-based SLAM, ROS implementation]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/planning-slam-control-on-robot/
+
+- id: visual-servoing
+  title: Visual servoing on the Franka-Emika Panda manipulator
+  summary: "Using a camera mounted on the end effector of a 7-DOF robot arm we track a moving object while
+            ensuring minimal camera roll"
+  tags: [7-DOF robot arm, PyBullet, Null-space control, Torque-control]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/visual-servoing/
+
+- id: surface-normal-identification
+  title: Surface Normal identification using RGB images
+  summary: "We identify the 3D canonical coordinate frames and surface normals from an RGB image using DORN
+            architecture which has a ResNet 101 backbone."
+  tags: [Computer Vision, DORN, surface normal, 2D canonical directions, Perception]
+  media:
+    type: image
+    src: /assets/img/avatar-icon.png
+  links:
+    report: https://drive.google.com/...
+    readmore: /projects/robotics/surface-normal-identification/
 
 - id: nearest-object-tracking
   title: Nearest-Object Tracking with Model Predictive Control

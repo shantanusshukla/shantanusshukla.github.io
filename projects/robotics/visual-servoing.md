@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Visual servoing on the Franka-Emika Panda manipulator
-permalink: /projects/robotics/icp-slam/
+permalink: /projects/robotics/visual-servoing/
 ---
 
 ### Setup

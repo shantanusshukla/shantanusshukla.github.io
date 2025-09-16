@@ -5,7 +5,7 @@ permalink: /projects/robotics/path-planning-2d3d/
 ---
 
 ### 3D Spaces
-  #### Setup
+  ### Setup
   - We are given several 3D spaces with formed using **Axis-aligned Bounding boxes**. A start and a goal position is given and the goal is to find a path from the start to the goal position.
 
   ### Technical Approach
@@ -14,7 +14,7 @@ permalink: /projects/robotics/path-planning-2d3d/
   - **Sampling Based** : we use **RRT-star** and **RRT-connect** algorithms. While RRTs explore spaces rapidly, they do take time in case the path to the goal goes through narrow gaps like in mazes. RRT-connect is relatively faster since it contains trees exploring from both the goal-side and the start-side. Jagged paths obtained are pruned.
 
 ### 2D Mazes
-  #### Setup
+  ### Setup
   - We are given 2D mazes, where we implement search-based algorithms going from a start to a goal location
 
   ### Technical Approach

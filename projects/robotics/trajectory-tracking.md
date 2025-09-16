@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Lidar-based SLAM using ICP
+title: Trajectory Tracking with Finite and Infinite horizon Optimal Control
 permalink: /projects/robotics/trajectory-tracking/
 ---
 

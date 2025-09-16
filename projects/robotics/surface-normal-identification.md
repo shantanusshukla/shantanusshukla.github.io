@@ -1,7 +1,7 @@
 ---
 layout: project
-title: Lidar-based SLAM using ICP
-permalink: /projects/robotics/icp-slam/
+title: Surface Normal identification using RGB images
+permalink: /projects/robotics/surface-normal-identification/
 ---
 
 ### Setup
@@ -14,7 +14,5 @@ permalink: /projects/robotics/icp-slam/
  - These 13 parameters are learnt by implementing a **DORN** architecture which has a **ResNet 101** backbone. We use the **ScanNet** dataset for training and validation and the **NYUv2** dataset for testing. With limited computational resources, we restrict to using just 10% of the dataset. 
 
 ### Results
-- 35% drift reduction on corridor dataset
-- Robust relocalization after loop
 
 ![Map]( /assets/img/projects/icp-map.jpg )

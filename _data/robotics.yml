@@ -63,7 +63,6 @@
     src: /assets/img/avatar-icon.png
   links:
     report: https://drive.google.com/...
-<<<<<<< HEAD
     readmore: /projects/robotics/path-planning-2d3d/
 
 - id: dynamic-programming

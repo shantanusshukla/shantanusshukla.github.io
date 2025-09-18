@@ -6,7 +6,7 @@
   media:
     type: gif            # mp4 | image | gif
     src: /assets/img/project_media/icp_slam.gif
-    poster: /assets/img/project_media/icp_slam.gif
+    poster: /assets/img/project_media/icp_slam_poster.png
   links:
     report: https://drive.google.com/...
     code: https://github.com/...
@@ -21,8 +21,8 @@
             deduced using IMU readings and the landmark obsertvations are done by a stereo camera"
   tags: [Extended Kalman Filter, SE(3) Pose dynamics, SLAM]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/vislam1.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/vislam/

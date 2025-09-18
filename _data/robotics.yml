@@ -4,9 +4,9 @@
             followed by trajectory refinement using factor-graph optimization."
   tags: [SLAM, ICP, Factor Graphs, Occupancy Map, Texture Map]
   media:
-    type: image            # mp4 | image | gif
-    src: /assets/img/avatar-icon.png
-    poster: /assets/img/avatar-icon.png
+    type: gif            # mp4 | image | gif
+    src: /assets/img/project_media/icp_slam.gif
+    poster: /assets/img/project_media/icp_slam.gif
   links:
     report: https://drive.google.com/...
     code: https://github.com/...

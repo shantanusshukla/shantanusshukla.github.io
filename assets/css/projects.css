@@ -16,7 +16,7 @@
   --proj-rail-bg:   #fafbff;
   --proj-detail-bg: #ffffff;
 
-  --thumb-h: 200px;          /* thumbnail height; raise/lower to taste */
+  --thumb-h: 220px;          /* thumbnail height; raise/lower to taste */
   --media-max-h: 450px;      /* cap the media height on desktop; tweak to taste */
 }
 

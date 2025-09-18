@@ -3,7 +3,7 @@
 /* Theming knobs (tweak freely) */
 :root{
   --nav-offset: 72px;             /* JS will set correct value at runtime */
-  --rail-width: 260px;
+  --rail-width: 360px;
   --detail-max: 1000px;
   --mask-bg: rgba(0,0,0,.14);
 
@@ -16,7 +16,7 @@
   --proj-rail-bg:   #fafbff;
   --proj-detail-bg: #ffffff;
 
-  --thumb-h: 110px;          /* thumbnail height; raise/lower to taste */
+  --thumb-h: 150px;          /* thumbnail height; raise/lower to taste */
   --media-max-h: 450px;      /* cap the media height on desktop; tweak to taste */
 }
 

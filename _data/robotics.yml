@@ -23,6 +23,7 @@
   media:
     type: gif
     src: /assets/img/project_media/vislam1.gif
+    poster: /assets/img/project_media/vislam_poster.png
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/vislam/

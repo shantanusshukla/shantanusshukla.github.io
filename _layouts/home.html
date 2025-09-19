@@ -6,7 +6,7 @@ layout: page
 
 <section class="about-hero">
   <div class="about-hero__text">
-    {% include about_intro.html short=true %}
+    {% include about-short.html%}
   </div>
   <div class="about-hero__photo">
     <div class="photo-frame">
@@ -19,7 +19,7 @@ layout: page
 <hr class="about-divider" />
 
 <section class="about-body">
-  {% include about_intro.html long=true %}
+  {% include about-long.html%}
 </section>
 
 {% if page.show_posts != false %}

@@ -10,8 +10,8 @@ layout: page
   </div>
   <div class="about-hero__photo">
     <div class="photo-frame">
-      <img src="{{ site.avatar | default: site.title-img | relative_url }}"
-           alt="{{ site.author | default: site.title }} portrait" />
+      <img src="{{ page.hero_photo | default: site.avatar | default: site.title-img | relative_url }}"
+     alt="{{ site.author | default: site.title }} portrait" />
     </div>
   </div>
 </section>

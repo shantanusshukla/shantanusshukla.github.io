@@ -254,6 +254,15 @@
   line-height: 1.6;
 }
 
+/* Home hero alignment fixes */
+.about-hero { align-items: start; }      /* top-align columns */
+
+/* Remove the decorative hr that pushes the first paragraph down */
+.about-hero .about-intro hr.small { display: none; }
+
+/* Tighten the first paragraph spacing in the hero */
+.about-hero .about-intro p:first-of-type { margin-top: 0; }
+
 /* Stack on small screens */
 @media (max-width: 991px){
   .about-hero{ grid-template-columns: 1fr; }

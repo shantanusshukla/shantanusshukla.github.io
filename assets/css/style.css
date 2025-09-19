@@ -207,3 +207,41 @@
   margin-top: .10rem !important;
   margin-bottom: .35rem !important;
 }
+
+/* === Home hero: text left + photo right === */
+.about-hero{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 360px; /* text | photo */
+  gap: 2rem;
+  align-items: start;
+  margin-top: .5rem;
+}
+
+.about-hero__photo{
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frame{
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;          /* nice portrait rectangle */
+  background: #f8f9fa;
+  border: 2px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+.photo-frame img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* fills the box without letterboxing */
+  display: block;
+}
+
+/* Stack on small screens */
+@media (max-width: 991px){
+  .about-hero{ grid-template-columns: 1fr; }
+  .about-hero__photo{ margin-top: .5rem; }
+}

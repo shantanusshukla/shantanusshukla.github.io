@@ -4,7 +4,19 @@ layout: page
 
 {{ content }}
 
-{% include about_intro.html %}
+<section class="about-hero">
+  <div class="about-hero__text">
+    {% include about_intro.html %}
+  </div>
+
+  <div class="about-hero__photo">
+    <div class="photo-frame">
+      <!-- Prefer site.avatar if you set it; otherwise fall back to the title image -->
+      <img src="{{ site.avatar | default: site.title-img | relative_url }}"
+           alt="{{ site.author | default: site.title }} portrait" />
+    </div>
+  </div>
+</section>
 
 {% if page.show_posts != false %}
   {% assign posts = paginator.posts | default: site.posts %}

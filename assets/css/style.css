@@ -227,10 +227,10 @@
   max-width: 360px;
   aspect-ratio: 4 / 5.5;          /* nice portrait rectangle */
   background: #f8f9fa;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #f5f3f3;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(5, 5, 5, 0.062);
 }
 
 .photo-frame img{

@@ -240,6 +240,20 @@
   display: block;
 }
 
+.about-divider {
+  margin: 2rem auto;
+  width: 60px;
+  border: 0;
+  border-top: 3px solid #ccc;
+}
+
+.about-body {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
 /* Stack on small screens */
 @media (max-width: 991px){
   .about-hero{ grid-template-columns: 1fr; }

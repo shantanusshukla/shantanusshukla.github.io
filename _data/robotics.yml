@@ -49,7 +49,7 @@
   tags: [MPC, Generalized Policy Iteration]
   media:
     type: image
-    src: /assets/img/avatar-icon.png
+    src: /assets/img/project_media/mpc-tracker.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/trajectory-tracking/

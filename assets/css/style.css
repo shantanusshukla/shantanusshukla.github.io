@@ -225,7 +225,7 @@
 .photo-frame{
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 4 / 5;          /* nice portrait rectangle */
+  aspect-ratio: 4 / 5.5;          /* nice portrait rectangle */
   background: #f8f9fa;
   border: 2px solid #e6e6e6;
   border-radius: 12px;

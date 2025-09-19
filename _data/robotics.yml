@@ -36,7 +36,7 @@
   tags: [Sliding-Mode Control, Waypoint-following, SONAR-based mapping]
   media:
     type: image
-    src: /assets/img/btp-homing.png
+    src: /assets/img/project_media/btp-homing.png
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/homing-uuv/

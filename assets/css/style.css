@@ -344,7 +344,7 @@
   overflow: hidden;
   flex: 1 1 auto;
   min-height: clamp(200px, 24vw, 280px);
-  background: #f7f7f9;
+  background: #fdfdff;
   border-bottom: 1px solid #eee;
   padding: 8px;                 /* small inner gutter for logos */
 }
@@ -399,4 +399,78 @@
 /* Mobile: keep a nice image height */
 @media (max-width: 991px){
   .exp-thumb{ min-height: clamp(180px, 48vw, 240px); }
+}
+
+
+/* ===== Education tiles ===== */
+.education-tiles { margin-top: 2.5rem; }
+.edu-heading { text-align: center; font-weight: 800; margin-bottom: 1.25rem; }
+
+.edu-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.edu-tile{
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+  cursor: pointer;
+}
+.edu-tile:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.10); }
+
+.edu-thumb{
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-height: clamp(200px, 24vw, 280px); /* big image area; same as experience */
+  background: #f7f7f9;
+  border-bottom: 1px solid #eee;
+  padding: 10px;                       /* inner gutter so logos don't touch edges */
+}
+.edu-thumb img{
+  width: 100%; height: 100%;
+  object-fit: contain;                 /* NEVER crop logos */
+  object-position: center;
+  display: block;
+}
+
+/* Lower panel: 3 centered lines */
+.edu-meta{
+  padding: .7rem .8rem .9rem;
+  text-align: center;
+  display: grid;
+  gap: .25rem;
+  background: #fff;
+}
+.edu-school{ font-weight: 800; color: #222; }
+.edu-degree{ font-weight: 700; color: #333; }
+.edu-spec  { color: #666; }
+
+/* Modal */
+.edu-modal[hidden]{ display:none; }
+.edu-modal{ position:fixed; inset:0; z-index:1200; }
+.edu-modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.45); }
+.edu-modal__dialog{
+  position:relative; max-width: 760px; margin: 8vh auto; background:#fff; border-radius:12px;
+  padding: 1.25rem 1.25rem 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+.edu-modal__close{
+  position:absolute; right:.5rem; top:.25rem; border:none; background:transparent; font-size:1.8rem; line-height:1; cursor:pointer;
+}
+.edu-modal__title{ font-weight:800; margin: .25rem 2rem .25rem .1rem; }
+.edu-modal__sub{ margin:.25rem 0 1rem; color:#666; }
+.edu-modal__body p{ margin:.5rem 0; line-height:1.55; }
+.edu-modal__body ul{ padding-left:1.1rem; margin:.35rem 0; }
+.edu-modal__body li{ margin:.25rem 0; }
+
+/* Mobile */
+@media (max-width: 991px){
+  .edu-grid{ grid-template-columns: 1fr; }
+  .edu-thumb{ min-height: clamp(180px, 48vw, 240px); }
 }

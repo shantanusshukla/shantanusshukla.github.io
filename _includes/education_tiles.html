@@ -1,0 +1,85 @@
+<section class="education-tiles" aria-labelledby="edu-heading">
+  <h2 id="edu-heading" class="edu-heading">Education</h2>
+
+  <div class="edu-grid">
+    <!-- Tile 1 -->
+    <article class="edu-tile" tabindex="0"
+             data-title="MS Mechanical Engineering"
+             data-school="University of California, San Diego"
+             data-location="San Diego, CA"
+             data-duration="Sep 2023–Mar 2025"
+             data-html="
+               <p><strong>Degree:</strong> MS in Mechanical Engineering</p>
+               <p><strong>Concentration:</strong> Controls and Robotics</p>
+             ">
+      <div class="edu-thumb">
+        <img src="/assets/img/education/ucsd_logo.png" alt="UC San Diego logo">
+      </div>
+      <!-- lower panel: 3 centered lines -->
+      <div class="edu-meta">
+        <div class="edu-school">University of California, San Diego</div>
+        <div class="edu-degree">MS Mechanical Engineering</div>
+        <div class="edu-spec">Concentration: Controls &amp; Robotics</div>
+      </div>
+    </article>
+
+    <!-- Tile 2 -->
+    <article class="edu-tile" tabindex="0"
+             data-title="B.Tech in Mechanical Engineering"
+             data-school="Indian Institute of Technology Bombay"
+             data-location="Mumbai, India"
+             data-duration="Jun 2019–May 2023"
+             data-html="
+               <p><strong>Degree:</strong> B.Tech in Mechanical Engineering</p>
+               <p><strong>Minor:</strong> Systems and Controls Engineering</p>
+             ">
+      <div class="edu-thumb">
+        <img src="/assets/img/education/iitb_logo_2.png" alt="IIT Bombay logo">
+      </div>
+      <div class="edu-meta">
+        <div class="edu-school">Indian Institute of Technology Bombay</div>
+        <div class="edu-degree">B.Tech in Mechanical Engineering</div>
+        <div class="edu-spec">Minor: Systems &amp; Controls Engineering</div>
+      </div>
+    </article>
+
+    <!-- Add more tiles using the same pattern if needed -->
+  </div>
+
+  <!-- Modal / dialog (same UX as experience) -->
+  <div class="edu-modal" id="eduModal" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle" hidden>
+    <div class="edu-modal__backdrop" data-close></div>
+    <div class="edu-modal__dialog">
+      <button class="edu-modal__close" type="button" aria-label="Close" data-close>&times;</button>
+      <h3 id="eduModalTitle" class="edu-modal__title"></h3>
+      <p class="edu-modal__sub"></p>
+      <div class="edu-modal__body"></div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const modal = document.getElementById('eduModal');
+    const title = modal.querySelector('.edu-modal__title');
+    const sub   = modal.querySelector('.edu-modal__sub');
+    const body  = modal.querySelector('.edu-modal__body');
+
+    function open(tile){
+      title.textContent = tile.dataset.title;
+      sub.textContent   = tile.dataset.school + ' • ' + tile.dataset.location + ' • ' + tile.dataset.duration;
+      body.innerHTML    = tile.dataset.html;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.edu-modal__close').focus();
+    }
+    function close(){ modal.hidden = true; document.body.style.overflow = ''; }
+
+    document.querySelectorAll('.edu-tile').forEach(t => {
+      t.addEventListener('click', () => open(t));
+      t.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(t); }});
+    });
+    modal.addEventListener('click', e => { if(e.target.hasAttribute('data-close')) close(); });
+    window.addEventListener('keydown', e => { if(!modal.hidden && e.key === 'Escape') close(); });
+  })();
+  </script>
+</section>

@@ -1,0 +1,144 @@
+<section class="experience-tiles" aria-labelledby="exp-heading">
+  <h2 id="exp-heading" class="exp-heading">Professional Experience</h2>
+
+  <div class="exp-grid">
+    <!-- Tile 1 -->
+    <article class="exp-tile" tabindex="0"
+             data-title="Software Engineer — Simulation, System Test Design, Digital Twins"
+             data-company="Lucid Motors"
+             data-location="Newark, CA"
+             data-duration="Apr 2025–present"
+             data-html="
+               <p>Building a vehicle ECU virtualization environment and digital twin infrastructure for all vehicle controllers enabling co-simulation capabilities for system and application-level simulations.</p>
+             ">
+      <div class="exp-thumb">
+        <img src="/assets/img/experience/lucid_logo_1.png" alt="Lucid Motors logo">
+      </div>
+      <div class="exp-meta-line">
+        <span class="exp-company">Lucid Motors</span>
+        <span class="exp-city">Newark, CA</span>
+      </div>
+      <div class="exp-hover">
+        <strong>Software Engineer</strong>
+        <span>Simulation & Digital Twins</span>
+      </div>
+    </article>
+
+    <!-- Tile 2 -->
+    <article class="exp-tile" tabindex="0"
+             data-title="Controls Software Intern"
+             data-company="Lucid Motors"
+             data-location="Newark, CA"
+             data-duration="Jun 2024–Sep 2024"
+             data-html="
+               <p>I primarily worked on automating a major portion of software unit-testing for production software on all Lucid ECUs. I developed an extensive understanding of automotive production software standards and vehicle network protocols (CAN, LIN, Ethernet).</p>
+               <ul>
+                 <li>Covered &gt; 30% software components across all vehicles’ ECUs</li>
+                 <li>Saved &gt; 16 man hours of unit-testing per software component</li>
+               </ul>
+             ">
+      <div class="exp-thumb">
+        <img src="/assets/img/experience/lucid_logo_1.png" alt="Lucid Motors logo">
+      </div>
+      <div class="exp-meta-line">
+        <span class="exp-company">Lucid Motors</span>
+        <span class="exp-city">Newark, CA</span>
+      </div>
+      <div class="exp-hover">
+        <strong>Controls Software Intern</strong>
+        <span>Lucid Motors</span>
+      </div>
+    </article>
+
+    <!-- Tile 3 -->
+    <article class="exp-tile" tabindex="0"
+             data-title="ADAS Intern"
+             data-company="Renault-Nissan-Mitsubishi"
+             data-location="Chennai, India"
+             data-duration="May 2023–Aug 2023"
+             data-html="
+               <p>Designed a scalable and robust MPC-based controller for executing specific on-road behaviors in AV simulation. Achieved significant improvements over PID controllers and implemented optimization solvers &amp; vehicle dynamical models.</p>
+               <ul>
+                 <li>Model-Predictive Control-based Trajectory Tracking for on-road maneuvers</li>
+                 <li>Robust MPC with on-the-go trajectory generation, obstacle avoidance, and low latency</li>
+               </ul>
+             ">
+      <div class="exp-thumb">
+        <img src="/assets/img/experience/rnm_logo.png" alt="Renault-Nissan-Mitsubishi logo">
+      </div>
+      <div class="exp-meta-line">
+        <span class="exp-company">Renault-Nissan-Mitsubishi</span>
+        <span class="exp-city">Chennai, India</span>
+      </div>
+      <div class="exp-hover">
+        <strong>ADAS Intern</strong>
+        <span>R-N-M Alliance</span>
+      </div>
+    </article>
+
+    <!-- Tile 4 -->
+    <article class="exp-tile" tabindex="0"
+             data-title="Vehicle Controls Intern"
+             data-company="Dore Controls Pvt. Ltd"
+             data-location="Pune, India"
+             data-duration="May 2022–Aug 2022"
+             data-html="
+               <p>Worked on a motor-sizing model to choose the right motor based on lap-performance requirements (Podium Canada) e-racing team. Also curated comprehensive project-based learning material for Motion Planning, SLAM, Perception.</p>
+               <ul>
+                 <li>Implemented A* trajectory planner based on Google Maps data</li>
+                 <li>Docker &amp; CasADi environment setup; control &amp; planning libraries</li>
+               </ul>
+             ">
+      <div class="exp-thumb">
+        <img src="/assets/img/experience/dorle_logo.png" alt="Dore Controls logo">
+      </div>
+      <div class="exp-meta-line">
+        <span class="exp-company">Dore Controls Pvt. Ltd</span>
+        <span class="exp-city">Pune, India</span>
+      </div>
+      <div class="exp-hover">
+        <strong>Vehicle Controls Intern</strong>
+        <span>Dore Controls</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- Modal / dialog -->
+  <div class="exp-modal" id="expModal" role="dialog" aria-modal="true" aria-labelledby="expModalTitle" hidden>
+    <div class="exp-modal__backdrop" data-close></div>
+    <div class="exp-modal__dialog">
+      <button class="exp-modal__close" type="button" aria-label="Close" data-close>&times;</button>
+      <h3 id="expModalTitle" class="exp-modal__title"></h3>
+      <p class="exp-modal__sub"></p>
+      <div class="exp-modal__body"></div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const modal = document.getElementById('expModal');
+    const title = modal.querySelector('.exp-modal__title');
+    const sub   = modal.querySelector('.exp-modal__sub');
+    const body  = modal.querySelector('.exp-modal__body');
+
+    function open(tile){
+      title.textContent = tile.dataset.title;
+      sub.textContent   = tile.dataset.company + ' • ' + tile.dataset.location + ' • ' + tile.dataset.duration;
+      body.innerHTML    = tile.dataset.html;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.exp-modal__close').focus();
+    }
+    function close(){
+      modal.hidden = true;
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.exp-tile').forEach(t => {
+      t.addEventListener('click', () => open(t));
+      t.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(t); }});
+    });
+    modal.addEventListener('click', (e) => { if(e.target.hasAttribute('data-close')) close(); });
+    window.addEventListener('keydown', (e) => { if(!modal.hidden && e.key === 'Escape') close(); });
+  })();
+  </script>
+</section>

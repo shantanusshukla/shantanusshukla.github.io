@@ -56,8 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
     slide.addEventListener('click', (e) => {
       // Only trigger if not clicking on the title link
       if (!e.target.closest('.project-title-link')) {
-        const projectId = slide.dataset.projectId;
-        window.location.href = `/projects/robotics/${projectId}/`;
+        // Find the project title link and use its href
+        const projectTitleLink = slide.querySelector('.project-title-link');
+        if (projectTitleLink) {
+          window.location.href = projectTitleLink.href;
+        }
       }
     });
   });

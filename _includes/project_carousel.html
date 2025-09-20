@@ -1,10 +1,10 @@
 <!-- Project Carousel Section -->
 <section class="project-carousel-section">
-  <h2 class="project-carousel-heading">Featured Projects</h2>
+  <h2 class="project-carousel-heading">Project Gallery</h2>
   
   <div class="project-carousel-container">
     <div class="project-carousel" id="projectCarousel">
-      {% for project in site.data.robotics limit:6 %}
+      {% for project in site.data.robotics %}
       <div class="project-slide" data-project-id="{{ project.id }}">
         <div class="project-media">
           {% if project.media.type == 'gif' %}
@@ -37,7 +37,7 @@
     
     <!-- Navigation dots -->
     <div class="carousel-dots">
-      {% for project in site.data.robotics limit:6 %}
+      {% for project in site.data.robotics %}
       <button class="carousel-dot" data-slide="{{ forloop.index0 }}"></button>
       {% endfor %}
     </div>

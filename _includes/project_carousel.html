@@ -1,0 +1,45 @@
+<!-- Project Carousel Section -->
+<section class="project-carousel-section">
+  <h2 class="project-carousel-heading">Featured Projects</h2>
+  
+  <div class="project-carousel-container">
+    <div class="project-carousel" id="projectCarousel">
+      {% for project in site.data.robotics limit:6 %}
+      <div class="project-slide" data-project-id="{{ project.id }}">
+        <div class="project-media">
+          {% if project.media.type == 'gif' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-image">
+          {% elsif project.media.type == 'image' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-image">
+          {% elsif project.media.type == 'mp4' %}
+            <video autoplay muted loop class="project-video">
+              <source src="{{ project.media.src | relative_url }}" type="video/mp4">
+            </video>
+          {% endif %}
+          
+          <!-- Hover overlay -->
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <span class="read-more-text">Read More</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project info panel at bottom -->
+        <div class="project-info-panel">
+          <a href="{{ project.links.readmore | relative_url }}" class="project-title-link">
+            <h3 class="project-title">{{ project.title }}</h3>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Navigation dots -->
+    <div class="carousel-dots">
+      {% for project in site.data.robotics limit:6 %}
+      <button class="carousel-dot" data-slide="{{ forloop.index0 }}"></button>
+      {% endfor %}
+    </div>
+  </div>
+</section>

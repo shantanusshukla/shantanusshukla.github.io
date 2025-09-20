@@ -35,11 +35,12 @@
       {% endfor %}
     </div>
     
-    <!-- Navigation dots -->
-    <div class="carousel-dots">
-      {% for project in site.data.robotics %}
-      <button class="carousel-dot" data-slide="{{ forloop.index0 }}"></button>
-      {% endfor %}
-    </div>
+    <!-- Navigation arrows -->
+    <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous project">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-arrow carousel-arrow-next" aria-label="Next project">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
 </section>

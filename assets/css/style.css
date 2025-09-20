@@ -206,6 +206,30 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
 }
 
+/* Also apply same styling to exp-heading class */
+.exp-heading { 
+  font-family: 'Crimson Text', Georgia, serif;
+  text-align: center; 
+  font-weight: 600; 
+  font-size: 2.5rem;
+  color: var(--primary-accent);
+  margin-bottom: 2rem;
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+.exp-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border-radius: 2px;
+}
+
 /* Body text (bullets/paragraphs) */
 .experience-section .exp-desc,
 .experience-section .exp-desc li {
@@ -453,16 +477,19 @@ h1, h2, h3, h4, h5, h6 {
   min-height: clamp(200px, 24vw, 280px);
   background: #fdfdff;
   border-bottom: 1px solid #eee;
-  padding: 12px;                /* reduced from 8px for tighter margins */
+  padding: 20px;                /* increased padding to push logos away from edges */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .exp-thumb img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;           /* <-- was cover; now show the whole logo/photo */
-  object-position: center;       /* keep centered */
+  width: 85%;                    /* make logos larger to reduce grey margins */
+  height: 85%;
+  object-fit: contain;
+  object-position: center;
   display: block;
-  border-radius: 8px;            /* add rounded corners to logos */
+  border-radius: 12px;           /* increased border radius for more rounded corners */
 }
 
 /* Hover overlay should cover only the image area (not the lower panel) */
@@ -583,17 +610,21 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   flex: 1 1 auto;
-  min-height: clamp(200px, 24vw, 280px); /* big image area; same as experience */
+  min-height: clamp(200px, 24vw, 280px);
   background: #f7f7f9;
   border-bottom: 1px solid #eee;
-  padding: 12px;                       /* reduced padding for tighter margins */
+  padding: 20px;                       /* increased padding to push logos away from edges */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .edu-thumb img{
-  width: 100%; height: 100%;
-  object-fit: contain;                 /* NEVER crop logos */
+  width: 85%;                          /* make logos larger to reduce grey margins */
+  height: 85%;
+  object-fit: contain;
   object-position: center;
   display: block;
-  border-radius: 8px;                  /* add rounded corners to logos */
+  border-radius: 12px;                 /* increased border radius for more rounded corners */
 }
 
 /* Lower panel: 3 centered lines */

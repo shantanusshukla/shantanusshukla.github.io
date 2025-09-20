@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   
 /* Container */
 .about-intro {
-    max-width: 65rem;             /* reduced from 70rem for better balance */
+    max-width: 60rem;             /* reduced further for better balance */
     margin: 2rem auto;
     text-align: left;
     color: var(--text-primary);
@@ -263,15 +263,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Override Bootstrap column widths for wider content */
 .container-md .col-xl-8.offset-xl-2 {
-  flex: 0 0 70%;              /* reduced from 75% for better balance */
-  max-width: 70%;
-  margin-left: 15%;           /* center with adjusted offset */
+  flex: 0 0 68%;              /* reduced further for better balance */
+  max-width: 68%;
+  margin-left: 16%;           /* center with adjusted offset */
 }
 
 .container-md .col-lg-10.offset-lg-1 {
-  flex: 0 0 80%;              /* reduced from 85% for better balance */
-  max-width: 80%;
-  margin-left: 10%;           /* center with adjusted offset */
+  flex: 0 0 78%;              /* reduced further for better balance */
+  max-width: 78%;
+  margin-left: 11%;           /* center with adjusted offset */
 }
 
 .about-hero__photo{
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-body {
-  max-width: 950px;           /* reduced from 1000px for better balance */
+  max-width: 900px;           /* reduced further for better balance */
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.65;
@@ -453,7 +453,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: clamp(200px, 24vw, 280px);
   background: #fdfdff;
   border-bottom: 1px solid #eee;
-  padding: 8px;                 /* small inner gutter for logos */
+  padding: 12px;                /* reduced from 8px for tighter margins */
 }
 
 .exp-thumb img{
@@ -462,6 +462,7 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;           /* <-- was cover; now show the whole logo/photo */
   object-position: center;       /* keep centered */
   display: block;
+  border-radius: 8px;            /* add rounded corners to logos */
 }
 
 /* Hover overlay should cover only the image area (not the lower panel) */
@@ -585,13 +586,14 @@ h1, h2, h3, h4, h5, h6 {
   min-height: clamp(200px, 24vw, 280px); /* big image area; same as experience */
   background: #f7f7f9;
   border-bottom: 1px solid #eee;
-  padding: 10px;                       /* inner gutter so logos don't touch edges */
+  padding: 12px;                       /* reduced padding for tighter margins */
 }
 .edu-thumb img{
   width: 100%; height: 100%;
   object-fit: contain;                 /* NEVER crop logos */
   object-position: center;
   display: block;
+  border-radius: 8px;                  /* add rounded corners to logos */
 }
 
 /* Lower panel: 3 centered lines */

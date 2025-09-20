@@ -535,9 +535,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .exp-thumb img{
-  width: 85%;                    /* restored better sizing */
-  height: 85%;
-  object-fit: contain;
+  width: 200%;                    /* restored better sizing */
+  height: 100%;
+  object-fit: cover;
   object-position: center;
   display: block;
   border-radius: 12px;           /* restored rounded corners */

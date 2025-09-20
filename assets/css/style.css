@@ -332,3 +332,65 @@
 @media (max-width: 991px){
   .exp-grid{ grid-template-columns: 1fr; }
 }
+
+/* ——— Bigger images inside tiles, no overlap with the lower panel ——— */
+.exp-tile{
+  display: flex;
+  flex-direction: column;          /* separate image area from the lower panel */
+}
+
+.exp-thumb{
+  position: relative;
+  overflow: hidden;                 /* keep the image inside */
+  flex: 1 1 auto;                   /* let the image area grow to fill the tile */
+  min-height: clamp(200px, 24vw, 280px);   /* bigger! scales with viewport */
+  background: #f7f7f9;
+  border-bottom: 1px solid #eee;    /* visual split from the lower panel */
+}
+
+.exp-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* fill the available area */
+  display: block;
+}
+
+/* Hover overlay should cover only the image area (not the lower panel) */
+.exp-thumb .exp-hover{
+  position: absolute;
+  inset: 0;                         /* cover just the image region */
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background: rgba(0,0,0,.45);
+  color:#fff; text-align:center;
+  opacity: 0;
+  transition: opacity .18s ease;
+  padding: .5rem .75rem;
+  font-weight: 700;
+  pointer-events: none;             /* clicks go to the tile */
+}
+.exp-tile:hover .exp-hover,
+.exp-tile:focus .exp-hover { opacity: 1; }
+
+/* Lower panel: now has two lines (role + meta line) */
+.exp-meta{
+  padding: .6rem .8rem .85rem;
+  background: #fff;
+}
+
+.exp-role{
+  font-weight: 700;
+  color: #333;
+  margin-bottom: .25rem;
+  line-height: 1.25;
+}
+
+.exp-meta-line{
+  display:flex; justify-content:space-between; align-items:center;
+  font-weight: 600; font-size: .95rem; color:#333;
+}
+.exp-meta-line .exp-city{ color:#666; font-weight: 500; }
+
+/* Mobile: keep a nice image height */
+@media (max-width: 991px){
+  .exp-thumb{ min-height: clamp(180px, 48vw, 240px); }
+}

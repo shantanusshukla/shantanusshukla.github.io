@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .exp-thumb{ aspect-ratio: 4 / 3; background:#f7f7f9; display:flex; align-items:center; justify-content:center; }
-.exp-thumb img{ width: 65%; height: 65%; object-fit: contain; }
+.exp-thumb img{ width: 65%; height: 65%; object-fit: cover; }
 
 .exp-meta-line{
   display:flex; justify-content:space-between; align-items:center;
@@ -477,7 +477,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: clamp(200px, 24vw, 280px);
   background: #fdfdff;
   border-bottom: 1px solid #eee;
-  padding: 20px;                /* increased padding to push logos away from edges */
+  padding: 10px;                /* increased padding to push logos away from edges */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -486,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
 .exp-thumb img{
   width: 85%;                    /* make logos larger to reduce grey margins */
   height: 85%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   border-radius: 12px;           /* increased border radius for more rounded corners */

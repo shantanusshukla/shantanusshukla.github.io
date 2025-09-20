@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.getElementById('projectCarousel');
   const slides = document.querySelectorAll('.project-slide');
-  const dots = document.querySelectorAll('.carousel-dot');
   
   if (!carousel || slides.length === 0) return;
   
@@ -11,17 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize first slide as active
   slides[0].classList.add('active');
-  dots[0].classList.add('active');
   
   // Function to show specific slide
   function showSlide(index) {
-    // Remove active class from all slides and dots
+    // Remove active class from all slides
     slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
     
-    // Add active class to current slide and dot
+    // Add active class to current slide
     slides[index].classList.add('active');
-    dots[index].classList.add('active');
     
     currentSlide = index;
   }
@@ -43,25 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Add click handlers to navigation arrows
-  const prevArrow = document.querySelector('.carousel-arrow-prev');
-  const nextArrow = document.querySelector('.carousel-arrow-next');
-  
-  if (prevArrow) {
-    prevArrow.addEventListener('click', () => {
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.carousel-arrow-prev')) {
       const prev = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(prev);
       stopAutoRotate();
-      setTimeout(startAutoRotate, 1000); // Simple 1 second pause before resuming
-    });
-  }
-  
-  if (nextArrow) {
-    nextArrow.addEventListener('click', () => {
+      setTimeout(startAutoRotate, 1000);
+    }
+    
+    if (e.target.closest('.carousel-arrow-next')) {
       nextSlide();
       stopAutoRotate();
-      setTimeout(startAutoRotate, 1000); // Simple 1 second pause before resuming
-    });
-  }
+      setTimeout(startAutoRotate, 1000);
+    }
+  });
   
   // Add click handlers to slides for "read more" functionality
   slides.forEach(slide => {

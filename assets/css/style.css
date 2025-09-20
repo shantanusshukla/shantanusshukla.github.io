@@ -287,26 +287,10 @@ h1, h2, h3, h4, h5, h6 {
 /* === Home hero: text left + photo right === */
 .about-hero{
   display: grid;
-  grid-template-columns: minmax(0, 2fr) 360px; /* text takes more space, photo fixed */
-  gap: 2.5rem;                /* increased gap for better breathing room */
+  grid-template-columns: minmax(0,1fr) 360px; /* text | photo */
+  gap: 2rem;
   align-items: start;
   margin-top: .5rem;
-  max-width: 1200px;          /* constrain overall width */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Override Bootstrap column widths for wider content */
-.container-md .col-xl-8.offset-xl-2 {
-  flex: 0 0 68%;              /* reduced further for better balance */
-  max-width: 68%;
-  margin-left: 16%;           /* center with adjusted offset */
-}
-
-.container-md .col-lg-10.offset-lg-1 {
-  flex: 0 0 78%;              /* reduced further for better balance */
-  max-width: 78%;
-  margin-left: 11%;           /* center with adjusted offset */
 }
 
 .about-hero__photo{
@@ -314,34 +298,22 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
-/* Enhanced photo frame with subtle improvements */
 .photo-frame{
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 4 / 5.5;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;               /* more modern rounded corners */
+  aspect-ratio: 4 / 5.5;          /* nice portrait rectangle */
+  background: #f8f9fa;
+  border: 2px solid #f5f3f3;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-frame:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(5, 5, 5, 0.062);
 }
 
 .photo-frame img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;             /* fills the box without letterboxing */
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.photo-frame:hover img {
-  transform: scale(1.02);
 }
 
 /* Enhanced divider styling */
@@ -452,18 +424,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Stack on small screens */
 @media (max-width: 991px){
-  .about-hero{ 
-    grid-template-columns: 1fr; 
-    max-width: 100%;
-    gap: 1.5rem;
-  }
-  .about-hero__photo{ 
-    margin-top: .5rem; 
-    order: 2; /* ensure photo comes after text on mobile */
-  }
-  .about-hero__text {
-    order: 1; /* ensure text comes first on mobile */
-  }
+  .about-hero{ grid-template-columns: 1fr; }
+  .about-hero__photo{ margin-top: .5rem; }
 }
 
 
@@ -563,22 +525,19 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   flex: 1 1 auto;
-  min-height: clamp(180px, 20vw, 220px);    /* reduced from 280px to make them smaller */
+  min-height: clamp(200px, 24vw, 280px);
   background: #fdfdff;
   border-bottom: 1px solid #eee;
-  padding: 16px;                /* reduced padding */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px;                 /* small inner gutter for logos */
 }
 
 .exp-thumb img{
-  width: 80%;                    /* reduced from 85% to make logos smaller */
-  height: 80%;
-  object-fit: contain;
-  object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* <-- was cover; now show the whole logo/photo */
+  object-position: center;       /* keep centered */
   display: block;
-  border-radius: 12px;           /* increased border radius for more rounded corners */
+  border-radius: 8px;            /* add rounded corners to logos */
 }
 
 /* Hover overlay should cover only the image area (not the lower panel) */
@@ -699,21 +658,17 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   flex: 1 1 auto;
-  min-height: clamp(180px, 20vw, 220px);    /* reduced to match experience tiles */
+  min-height: clamp(200px, 24vw, 280px); /* big image area; same as experience */
   background: #f7f7f9;
   border-bottom: 1px solid #eee;
-  padding: 16px;                       /* reduced padding to match experience */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;                       /* inner gutter so logos don't touch edges */
 }
 .edu-thumb img{
-  width: 80%;                          /* reduced to match experience tiles */
-  height: 80%;
-  object-fit: contain;
+  width: 100%; height: 100%;
+  object-fit: contain;                 /* NEVER crop logos */
   object-position: center;
   display: block;
-  border-radius: 12px;                 /* increased border radius for more rounded corners */
+  border-radius: 8px;                  /* add rounded corners to logos */
 }
 
 /* Lower panel: 3 centered lines */

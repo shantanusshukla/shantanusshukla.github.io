@@ -287,10 +287,13 @@ h1, h2, h3, h4, h5, h6 {
 /* === Home hero: text left + photo right === */
 .about-hero{
   display: grid;
-  grid-template-columns: minmax(0,1fr) 360px; /* text | photo */
+  grid-template-columns: minmax(0, 2fr) 360px; /* text takes more space, photo fixed */
   gap: 2.5rem;                /* increased gap for better breathing room */
   align-items: start;
   margin-top: .5rem;
+  max-width: 1200px;          /* constrain overall width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Override Bootstrap column widths for wider content */
@@ -449,8 +452,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Stack on small screens */
 @media (max-width: 991px){
-  .about-hero{ grid-template-columns: 1fr; }
-  .about-hero__photo{ margin-top: .5rem; }
+  .about-hero{ 
+    grid-template-columns: 1fr; 
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+  .about-hero__photo{ 
+    margin-top: .5rem; 
+    order: 2; /* ensure photo comes after text on mobile */
+  }
+  .about-hero__text {
+    order: 1; /* ensure text comes first on mobile */
+  }
 }
 
 
@@ -550,19 +563,19 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   flex: 1 1 auto;
-  min-height: clamp(200px, 24vw, 280px);
+  min-height: clamp(180px, 20vw, 220px);    /* reduced from 280px to make them smaller */
   background: #fdfdff;
   border-bottom: 1px solid #eee;
-  padding: 10px;                /* increased padding to push logos away from edges */
+  padding: 16px;                /* reduced padding */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .exp-thumb img{
-  width: 200%;                    /* make logos larger to reduce grey margins */
-  height: 100%;
-  object-fit: cover;
+  width: 80%;                    /* reduced from 85% to make logos smaller */
+  height: 80%;
+  object-fit: contain;
   object-position: center;
   display: block;
   border-radius: 12px;           /* increased border radius for more rounded corners */
@@ -686,17 +699,17 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   flex: 1 1 auto;
-  min-height: clamp(200px, 24vw, 280px);
+  min-height: clamp(180px, 20vw, 220px);    /* reduced to match experience tiles */
   background: #f7f7f9;
   border-bottom: 1px solid #eee;
-  padding: 20px;                       /* increased padding to push logos away from edges */
+  padding: 16px;                       /* reduced padding to match experience */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .edu-thumb img{
-  width: 100%;                          /* make logos larger to reduce grey margins */
-  height: 100%;
+  width: 80%;                          /* reduced to match experience tiles */
+  height: 80%;
   object-fit: contain;
   object-position: center;
   display: block;

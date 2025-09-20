@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   
 /* Container */
 .about-intro {
-    max-width: 70rem;
+    max-width: 65rem;             /* reduced from 70rem for better balance */
     margin: 2rem auto;
     text-align: left;
     color: var(--text-primary);
@@ -263,15 +263,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Override Bootstrap column widths for wider content */
 .container-md .col-xl-8.offset-xl-2 {
-  flex: 0 0 75%;              /* wider than default 66.67% */
-  max-width: 75%;
-  margin-left: 12.5%;         /* center with smaller offset */
+  flex: 0 0 70%;              /* reduced from 75% for better balance */
+  max-width: 70%;
+  margin-left: 15%;           /* center with adjusted offset */
 }
 
 .container-md .col-lg-10.offset-lg-1 {
-  flex: 0 0 85%;              /* wider than default 83.33% */
-  max-width: 85%;
-  margin-left: 7.5%;          /* center with smaller offset */
+  flex: 0 0 80%;              /* reduced from 85% for better balance */
+  max-width: 80%;
+  margin-left: 10%;           /* center with adjusted offset */
 }
 
 .about-hero__photo{
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-body {
-  max-width: 1000px;
+  max-width: 950px;           /* reduced from 1000px for better balance */
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.65;

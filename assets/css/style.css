@@ -1,4 +1,66 @@
-/* Top-left logo (circle) */
+/* Enhanced typography and professional styling */
+:root {
+  --primary-accent: #2c5aa0;     /* Professional blue */
+  --secondary-accent: #34495e;   /* Dark blue-gray */
+  --text-primary: #2c3e50;       /* Rich dark text */
+  --text-secondary: #5a6c7d;     /* Muted secondary text */
+  --background-light: #f8f9fa;   /* Light background */
+  --shadow-subtle: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+  --border-light: #e9ecef;
+}
+
+/* Import better fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Enhanced body typography */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Elegant headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Main title styling */
+.intro-header .page-heading h1 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem !important;
+    color: var(--text-primary);
+}
+
+/* Subtitle styling */
+.intro-header .page-heading .page-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.8rem !important;
+}
+
+/* Enhanced code styling */
+.about-intro code {
+    padding: 0.2em 0.4em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9em;
+    box-shadow: var(--shadow-subtle);
+}
 .navbar-logo,
 .navbar-brand-logo img {
   width: 5.0rem !important;          /* adjust to taste */
@@ -94,72 +156,54 @@
   
 /* Container */
 .about-intro {
-    max-width: 60rem;           /* nice readable width */
-    margin: 2rem auto;       /* centered, with spacing below */
-    text-align: left;          /* or center if you prefer */
-    color: #041f3d;               /* body text tone */
-    font-size: 1.1rem;         /* bump size a bit */
-    line-height: 1.4;     /* comfortable spacing between 2 lines */ 
-    text-align: justify;  /* optional: justify text */
+    max-width: 70rem;
+    margin: 2rem auto;
+    text-align: left;
+    color: var(--text-primary);
+    font-size: 1.15rem;           /* slightly larger for better readability */
+    line-height: 1.65;            /* improved line spacing */
+    font-weight: 400;
 }
 
-/* Heading inside the section */
-    .about-intro h2 {
-    font-size: 1.75rem;        /* adjust to taste */
-    font-weight: 700;          /* 400=normal, 600=semi, 700=bold */
-    margin: .25rem 0 .5rem;
+/* Enhanced paragraph styling */
+.about-intro p {
+    margin: 1rem 0;
+    color: var(--text-primary);
 }
 
-/* Paragraph spacing */
-    .about-intro p {
-    margin: .75rem 0;
-}
-
-/* Optional: emphasize words */
-.about-intro strong { font-weight: 700; }
-.about-intro em { font-style: italic; }
-
-/* Optional: inline code look */
-.about-intro code {
-    padding: 0 .3em;
-    background: #f9f2f4;
-    color: #c7254e;
-    border-radius: .25rem;
+/* Better heading spacing */
+.about-intro h2 {
+    font-size: 2rem;
     font-weight: 600;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    margin: 2rem 0 1rem;
+    color: var(--primary-accent);
+    font-family: 'Crimson Text', Georgia, serif;
 }
 
-/* Optional: style homepage Experience portion */
+/* Remove old code styling since we updated it above */
 
-.experience-section { margin-top: 2rem; }
-.exp-item { align-items: flex-start; }
-.experience-section .exp-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* show entire logo without cropping */
-  border-radius: 0;      /* sharp corners */
-}
-.exp-meta { opacity: .8; }
-.skill-badge { margin: .125rem .375rem .125rem 0; border: 1px solid #ddd; }
-
-.experience-section .exp-item { align-items: flex-start; } /* belt + suspenders */
-.experience-section .exp-logo {
-  flex: 0 0 90px;   /* no shrink, fixed basis */
-  width: 90px;
-  height: 90px;
-  align-self: flex-start; /* keeps it aligned to top of text */
-}
-.experience-section .exp-logo { margin-top: 0.95rem !important; }      /* tweak up/down to taste */
-
+/* Enhanced experience section styling */
 .experience-section > h2 {
-  font-family: var(--header-font);
-  font-weight: 700;      /* 600–800 depending on taste */
-  font-size: 2.0rem;     /* adjust */
-  letter-spacing: .2px;
-  color: var(--text-col); /* or var(--hover-col) for accent */
-  margin-bottom: 1.25rem;
-  text-align: center;     /* keep centered like now */
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-accent);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.experience-section > h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border-radius: 2px;
 }
 
 /* Body text (bullets/paragraphs) */
@@ -212,9 +256,22 @@
 .about-hero{
   display: grid;
   grid-template-columns: minmax(0,1fr) 360px; /* text | photo */
-  gap: 2rem;
+  gap: 2.5rem;                /* increased gap for better breathing room */
   align-items: start;
   margin-top: .5rem;
+}
+
+/* Override Bootstrap column widths for wider content */
+.container-md .col-xl-8.offset-xl-2 {
+  flex: 0 0 75%;              /* wider than default 66.67% */
+  max-width: 75%;
+  margin-left: 12.5%;         /* center with smaller offset */
+}
+
+.container-md .col-lg-10.offset-lg-1 {
+  flex: 0 0 85%;              /* wider than default 83.33% */
+  max-width: 85%;
+  margin-left: 7.5%;          /* center with smaller offset */
 }
 
 .about-hero__photo{
@@ -222,36 +279,63 @@
   justify-content: center;
 }
 
+/* Enhanced photo frame with subtle improvements */
 .photo-frame{
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 4 / 5.5;          /* nice portrait rectangle */
-  background: #f8f9fa;
-  border: 2px solid #f5f3f3;
-  border-radius: 12px;
+  aspect-ratio: 4 / 5.5;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;               /* more modern rounded corners */
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(5, 5, 5, 0.062);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .photo-frame img{
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* fills the box without letterboxing */
+  object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
+.photo-frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Enhanced divider styling */
 .about-divider {
-  margin: 2rem auto;
-  width: 60px;
+  margin: 3rem auto;
+  width: 80px;
   border: 0;
-  border-top: 3px solid #ccc;
+  border-top: 3px solid var(--primary-accent);
+  border-radius: 2px;
+  opacity: 0.7;
 }
 
 .about-body {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+/* Enhanced text styling */
+.about-intro strong { 
+  font-weight: 600; 
+  color: var(--primary-accent);
+}
+
+.about-intro em { 
+  font-style: italic; 
+  color: var(--text-secondary);
 }
 
 /* Home hero alignment fixes */
@@ -280,17 +364,40 @@
   gap: 1.25rem;
 }
 
+/* Enhanced experience tiles */
 .exp-tile{
   position: relative;
-  background: #fff;
-  border: 1px solid #e9e9e9;
-  border-radius: 12px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  box-shadow: var(--shadow-subtle);
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
 }
-.exp-tile:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.10); }
+
+.exp-tile:hover{ 
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: var(--primary-accent);
+}
+
+.exp-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.exp-tile:hover::before {
+  transform: scaleX(1);
+}
 
 .exp-thumb{ aspect-ratio: 4 / 3; background:#f7f7f9; display:flex; align-items:center; justify-content:center; }
 .exp-thumb img{ width: 65%; height: 65%; object-fit: contain; }
@@ -412,17 +519,64 @@
   gap: 1.25rem;
 }
 
+/* Enhanced education tiles */
 .edu-tile{
-  display: flex; flex-direction: column;
-  background: #fff;
-  border: 1px solid #e9e9e9;
-  border-radius: 12px;
+  display: flex; 
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 14px rgba(0,0,0,.06);
-  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  backdrop-filter: blur(10px);
 }
-.edu-tile:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.10); }
+
+.edu-tile:hover{ 
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: var(--primary-accent);
+}
+
+.edu-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.edu-tile:hover::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced education section heading */
+.edu-heading { 
+  font-family: 'Crimson Text', Georgia, serif;
+  text-align: center; 
+  font-weight: 600; 
+  font-size: 2.5rem;
+  color: var(--primary-accent);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.edu-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border-radius: 2px;
+}
 
 .edu-thumb{
   position: relative;

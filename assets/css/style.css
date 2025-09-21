@@ -37,6 +37,73 @@ body {
   overflow: hidden;
 }
 
+/* Flowing animated lines */
+.animated-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 40%, rgba(102, 126, 234, 0.1) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 105, 180, 0.1) 50%, transparent 60%);
+  background-size: 400px 400px, 300px 300px;
+  animation: flowingLines 15s ease-in-out infinite;
+}
+
+/* Floating geometric shapes */
+.geometric-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shape-circle {
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 50%;
+  animation: floatShape 20s linear infinite;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid rgba(255, 105, 180, 0.2);
+  animation: rotateShape 25s linear infinite;
+}
+
+.shape-hexagon {
+  width: 60px;
+  height: 34.64px;
+  background: rgba(0, 212, 170, 0.2);
+  position: relative;
+  margin: 17.32px 0;
+  animation: pulseShape 18s ease-in-out infinite;
+}
+
+.shape-hexagon::before,
+.shape-hexagon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+.shape-hexagon::before {
+  bottom: 100%;
+  border-bottom: 17.32px solid rgba(0, 212, 170, 0.2);
+}
+
+.shape-hexagon::after {
+  top: 100%;
+  border-top: 17.32px solid rgba(0, 212, 170, 0.2);
+}
+
 .floating-robot {
   position: absolute;
   font-size: 3rem;
@@ -192,12 +259,92 @@ body {
 
 @keyframes pulse {
   0%, 100% {
-    opacity: 0.06;
+    opacity: 0.3;
     transform: scale(1);
   }
   50% {
-    opacity: 0.12;
-    transform: scale(1.1);
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+/* Flowing lines animation */
+@keyframes flowingLines {
+  0% {
+    background-position: 0% 0%, 100% 100%;
+    opacity: 0.3;
+  }
+  25% {
+    background-position: 100% 50%, 0% 50%;
+    opacity: 0.5;
+  }
+  50% {
+    background-position: 50% 100%, 50% 0%;
+    opacity: 0.4;
+  }
+  75% {
+    background-position: 0% 50%, 100% 50%;
+    opacity: 0.6;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%;
+    opacity: 0.3;
+  }
+}
+
+/* Geometric shape animations */
+@keyframes floatShape {
+  0% {
+    transform: translateY(-100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) translateX(200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateShape {
+  0% {
+    transform: translateY(-100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseShape {
+  0% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(50vh) scale(1.2);
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
   }
 }
 

@@ -2,6 +2,15 @@
 <section class="project-carousel-section">
   <h2 class="project-carousel-heading">Project Gallery</h2>
   
+  <!-- All at a Glance Button -->
+  <div class="all-projects-button-container">
+    <button class="all-projects-btn" id="openAllProjectsBtn">
+      <span class="btn-icon">✨</span>
+      <span class="btn-text">All at a Glance</span>
+      <span class="btn-arrow">→</span>
+    </button>
+  </div>
+  
   <div class="project-carousel-container">
     <div class="project-carousel" id="projectCarousel">
       {% for project in site.data.robotics %}
@@ -44,3 +53,66 @@
     </button>
   </div>
 </section>
+
+<!-- All Projects Popup Grid -->
+<div class="all-projects-overlay" id="allProjectsOverlay">
+  <div class="all-projects-container">
+    <div class="all-projects-header">
+      <h3 class="all-projects-title">All Projects</h3>
+      <button class="close-all-projects" id="closeAllProjectsBtn" aria-label="Close all projects">×</button>
+    </div>
+    
+    <div class="all-projects-grid" id="allProjectsGrid">
+      <!-- Robotics Projects -->
+      {% for project in site.data.robotics %}
+      <div class="project-grid-tile" data-project-url="/projects/robotics/{{ project.id }}" data-project-type="robotics">
+        <div class="project-grid-media">
+          {% if project.media.type == 'gif' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-grid-image">
+          {% elsif project.media.type == 'image' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-grid-image">
+          {% elsif project.media.type == 'mp4' %}
+            <video autoplay muted loop class="project-grid-video">
+              <source src="{{ project.media.src | relative_url }}" type="video/mp4">
+            </video>
+          {% endif %}
+          
+          <div class="project-grid-overlay">
+            <div class="project-grid-info">
+              <h4 class="project-grid-title">{{ project.title }}</h4>
+              <span class="project-grid-category">Robotics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+      <!-- Beyond Robotics Projects (Future) -->
+      <!-- Note: When you add site.data.beyond, uncomment this section -->
+      <!--
+      {% for project in site.data.beyond %}
+      <div class="project-grid-tile" data-project-url="/projects/beyond/{{ project.id }}" data-project-type="beyond">
+        <div class="project-grid-media">
+          {% if project.media.type == 'gif' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-grid-image">
+          {% elsif project.media.type == 'image' %}
+            <img src="{{ project.media.src | relative_url }}" alt="{{ project.title }}" class="project-grid-image">
+          {% elsif project.media.type == 'mp4' %}
+            <video autoplay muted loop class="project-grid-video">
+              <source src="{{ project.media.src | relative_url }}" type="video/mp4">
+            </video>
+          {% endif %}
+          
+          <div class="project-grid-overlay">
+            <div class="project-grid-info">
+              <h4 class="project-grid-title">{{ project.title }}</h4>
+              <span class="project-grid-category">Beyond Robotics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      -->
+    </div>
+  </div>
+</div>

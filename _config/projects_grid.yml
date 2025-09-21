@@ -1,0 +1,67 @@
+# ===== PROJECT GRID CONFIGURATION =====
+# This file controls which projects appear in the "All at a Glance" popup grid.
+# You can easily add or remove projects by modifying the lists below.
+
+# Configuration for Grid Display
+grid_config:
+  # Maximum number of columns in the grid (auto-adjusts based on screen size)
+  max_columns: 4
+  
+  # Tile size and spacing
+  tile_min_width: 280
+  tile_height: 200
+  grid_gap: 20
+  
+  # Animation settings
+  entrance_delay: 0.1  # seconds between each tile appearing
+  hover_lift: 8        # pixels to lift on hover
+
+# Projects to include in the grid
+# Set 'enabled: true' to show a project, 'enabled: false' to hide it
+
+robotics_projects:
+  # All robotics projects from site.data.robotics
+  # To exclude a specific project, add its ID here with enabled: false
+  # Example:
+  # - id: "project-name"
+  #   enabled: false
+  
+  # By default, all projects from site.data.robotics are included
+  include_all: true
+  
+  # Exclude specific projects by listing their IDs
+  exclude:
+    # - "project-id-to-hide"
+
+beyond_projects:
+  # Future: Beyond robotics projects from site.data.beyond
+  # Currently commented out in the template until you create the beyond section
+  include_all: true
+  enabled: false  # Set to true when you create the beyond section
+  
+  # Exclude specific projects by listing their IDs
+  exclude:
+    # - "project-id-to-hide"
+
+# Custom projects (if you want to add projects not in your data files)
+custom_projects:
+  # Example custom project (currently disabled)
+  # - id: "custom-project-1"
+  #   title: "Custom Project"
+  #   category: "Special"
+  #   media:
+  #     type: "image"
+  #     src: "/assets/img/custom-project.jpg"
+  #   url: "/projects/custom/custom-project-1"
+  #   enabled: false
+
+# Grid layout options
+layout:
+  # Category grouping (if you want projects grouped by category)
+  group_by_category: false
+  
+  # Sort order: 'chronological', 'alphabetical', 'category'
+  sort_order: 'chronological'
+  
+  # Show category labels on tiles
+  show_categories: true

@@ -48,7 +48,7 @@
             policy iteration"
   tags: [MPC, Generalized Policy Iteration]
   media:
-    type: image
+    type: gif
     src: /assets/img/project_media/mpc-tracker.gif
   links:
     report: https://drive.google.com/...
@@ -60,8 +60,8 @@
             of the traditional A-star and RRT* algorithms"
   tags: [Path-Planning -2D/3D, weighted A-star, RRT-star, RRT-Connect]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/path_planning.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/path-planning-2d3d/
@@ -72,8 +72,8 @@
             shortest-path policies with conditional key pickup and obstacle avoidance."
   tags: [Motion Planning, Dynamic Programming, Markov Decision Process]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/dynamic_programming.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/dynamic-programming/
@@ -85,8 +85,8 @@
             move the bot around the arena so that we achieve > 80% coverage."
   tags: [Extended Kalman Filter, AprilTag-based SLAM, ROS implementation]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/on-robot-slam.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/planning-slam-control-on-robot/
@@ -97,8 +97,8 @@
             ensuring minimal camera roll"
   tags: [7-DOF robot arm, PyBullet, Null-space control, Torque-control]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/visual-servoing.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/visual-servoing/
@@ -109,8 +109,8 @@
             architecture which has a ResNet 101 backbone."
   tags: [Computer Vision, DORN, surface normal, 2D canonical directions, Perception]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/cvsn.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/surface-normal-identification/
@@ -122,8 +122,8 @@
             arm"
   tags: [MPC, Image Processing, CasADi, 7-DOF robotic arm]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/nearest-obj-track.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/nearest-object-tracking/
@@ -135,7 +135,7 @@
   tags: [Computer Vision, Fully Convolutional Neural Networks]
   media:
     type: image
-    src: /assets/img/avatar-icon.png
+    src: /assets/img/project_media/sem-seg.png
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/semantic-segmentation/
@@ -148,8 +148,8 @@
             correcting frames"
   tags: [Sensor calibration, Sensor Fusion, Optimization, Image-processing]
   media:
-    type: image
-    src: /assets/img/avatar-icon.png
+    type: gif
+    src: /assets/img/project_media/panorama-stitch.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/state-estimation-panorama/

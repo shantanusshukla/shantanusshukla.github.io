@@ -45,6 +45,25 @@ body {
   color: #667eea;
 }
 
+/* Custom PNG icon styling */
+.floating-robot.custom-icon {
+  font-size: 1rem; /* Reset font size for images */
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-robot.custom-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
 .floating-robot:nth-child(1) {
   top: 10%;
   left: 10%;

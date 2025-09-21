@@ -149,7 +149,7 @@
   tags: [Sensor calibration, Sensor Fusion, Optimization, Image-processing]
   media:
     type: gif
-    src: /assets/img/project_media/panorama-stitch.gif
+    src: /assets/img/project_media/panorama_stitch.gif
   links:
     report: https://drive.google.com/...
     readmore: /projects/robotics/state-estimation-panorama/

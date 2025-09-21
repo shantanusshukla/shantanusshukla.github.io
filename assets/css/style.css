@@ -953,9 +953,9 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 .edu-thumb img{
-  width: 85%;                          /* restored better sizing */
-  height: 85%;
-  object-fit: contain;                 /* NEVER crop logos */
+  width: 100%;                          /* restored better sizing */
+  height: 100%;
+  object-fit: cover;                 /* NEVER crop logos */
   object-position: center;
   display: block;
   border-radius: 12px;                 /* restored rounded corners */

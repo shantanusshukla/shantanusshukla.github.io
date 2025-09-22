@@ -96,64 +96,53 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    /* Center-to-edge gradient overlay for content readability */
+    /* Strong center mask - completely clear center area */
     radial-gradient(ellipse at center, 
-      rgba(254, 252, 232, 0.95) 0%,     /* Almost opaque cream in center */
-      rgba(254, 252, 232, 0.7) 40%,     /* Semi-transparent cream */
-      rgba(254, 252, 232, 0.3) 70%,     /* More transparent */
-      rgba(254, 252, 232, 0.1) 85%,     /* Very transparent */
-      transparent 100%                   /* Fully transparent at edges */
+      transparent 0%,                    /* Completely transparent center */
+      transparent 30%,                   /* Keep center completely clear */
+      rgba(30, 64, 175, 0.1) 60%,       /* Very light start of texture */
+      rgba(30, 64, 175, 0.3) 80%,       /* Medium texture */
+      rgba(30, 64, 175, 0.8) 95%        /* Dark texture only at very edges */
     ),
     
-    /* Multiple layers of triangular patterns with shadows */
-    /* Large triangles - outer edge patterns */
-    linear-gradient(60deg, transparent 0%, transparent 45%, 
-      rgba(30, 64, 175, 0.8) 47%, rgba(30, 64, 175, 0.6) 50%, rgba(30, 64, 175, 0.8) 53%, 
-      transparent 55%, transparent 100%),
-    linear-gradient(120deg, transparent 0%, transparent 45%, 
-      rgba(29, 78, 216, 0.7) 47%, rgba(29, 78, 216, 0.5) 50%, rgba(29, 78, 216, 0.7) 53%, 
-      transparent 55%, transparent 100%),
-    linear-gradient(-60deg, transparent 0%, transparent 45%, 
-      rgba(37, 99, 235, 0.6) 47%, rgba(37, 99, 235, 0.4) 50%, rgba(37, 99, 235, 0.6) 53%, 
-      transparent 55%, transparent 100%),
+    /* Edge-only triangular patterns - positioned at borders */
+    /* Very edge triangles - dark blue */
+    linear-gradient(60deg, transparent 0%, transparent 85%, 
+      rgba(30, 64, 175, 0.9) 87%, rgba(30, 64, 175, 0.7) 90%, rgba(30, 64, 175, 0.9) 93%, 
+      transparent 95%, transparent 100%),
+    linear-gradient(120deg, transparent 0%, transparent 85%, 
+      rgba(29, 78, 216, 0.8) 87%, rgba(29, 78, 216, 0.6) 90%, rgba(29, 78, 216, 0.8) 93%, 
+      transparent 95%, transparent 100%),
+    linear-gradient(-60deg, transparent 0%, transparent 85%, 
+      rgba(37, 99, 235, 0.7) 87%, rgba(37, 99, 235, 0.5) 90%, rgba(37, 99, 235, 0.7) 93%, 
+      transparent 95%, transparent 100%),
     
-    /* Medium triangles - mid-layer patterns */
-    linear-gradient(30deg, transparent 0%, transparent 47%, 
-      rgba(59, 130, 246, 0.5) 48%, rgba(59, 130, 246, 0.3) 50%, rgba(59, 130, 246, 0.5) 52%, 
-      transparent 53%, transparent 100%),
-    linear-gradient(150deg, transparent 0%, transparent 47%, 
-      rgba(96, 165, 250, 0.4) 48%, rgba(96, 165, 250, 0.2) 50%, rgba(96, 165, 250, 0.4) 52%, 
-      transparent 53%, transparent 100%),
-    linear-gradient(-30deg, transparent 0%, transparent 47%, 
-      rgba(147, 197, 253, 0.3) 48%, rgba(147, 197, 253, 0.1) 50%, rgba(147, 197, 253, 0.3) 52%, 
-      transparent 53%, transparent 100%),
-    
-    /* Small triangles - inner patterns */
-    linear-gradient(45deg, transparent 0%, transparent 48%, 
-      rgba(191, 219, 254, 0.25) 49%, rgba(191, 219, 254, 0.1) 50%, rgba(191, 219, 254, 0.25) 51%, 
-      transparent 52%, transparent 100%),
-    linear-gradient(135deg, transparent 0%, transparent 48%, 
-      rgba(219, 234, 254, 0.2) 49%, rgba(219, 234, 254, 0.05) 50%, rgba(219, 234, 254, 0.2) 51%, 
-      transparent 52%, transparent 100%);
+    /* Mid-edge triangles - medium blue */
+    linear-gradient(30deg, transparent 0%, transparent 75%, 
+      rgba(59, 130, 246, 0.6) 78%, rgba(59, 130, 246, 0.4) 80%, rgba(59, 130, 246, 0.6) 82%, 
+      transparent 85%, transparent 100%),
+    linear-gradient(150deg, transparent 0%, transparent 75%, 
+      rgba(96, 165, 250, 0.5) 78%, rgba(96, 165, 250, 0.3) 80%, rgba(96, 165, 250, 0.5) 82%, 
+      transparent 85%, transparent 100%),
+    linear-gradient(-30deg, transparent 0%, transparent 75%, 
+      rgba(147, 197, 253, 0.4) 78%, rgba(147, 197, 253, 0.2) 80%, rgba(147, 197, 253, 0.4) 82%, 
+      transparent 85%, transparent 100%);
   
   background-size: 
-    100% 100%,        /* Full overlay */
-    180px 180px,      /* Large triangles */
+    100% 100%,        /* Full mask */
+    220px 220px,      /* Large edge triangles */
+    240px 240px,
     200px 200px,
-    160px 160px,
-    120px 120px,      /* Medium triangles */
-    140px 140px,
-    100px 100px,
-    80px 80px,        /* Small triangles */
-    90px 90px;
+    180px 180px,      /* Medium edge triangles */
+    200px 200px,
+    160px 160px;
   
   background-position: 
-    center,           /* Center the overlay */
-    0% 0%, 25% 25%, 50% 50%,        /* Large triangles spread */
-    10% 10%, 60% 60%, 85% 15%,      /* Medium triangles */
-    20% 80%, 75% 25%;               /* Small triangles */
+    center,           /* Center the mask */
+    0% 0%, 100% 0%, 100% 100%,        /* Corner positioning */
+    0% 100%, 50% 0%, 50% 100%;        /* Edge positioning */
   
-  /* Add subtle shadow effect to the entire pattern */
+  /* Add subtle shadow effect */
   filter: drop-shadow(1px 1px 2px rgba(30, 64, 175, 0.1));
 }
 

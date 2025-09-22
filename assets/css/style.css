@@ -1,6 +1,6 @@
-/* Deep Blue Geometric Theme - Enhanced Cream Colors */
+/* Deep Blue Geometric Theme - Enhanced Bright Colors */
 :root {
-  --primary-blue: #1e3a8a;           /* Deep blue from image */
+  --primary-blue: #2563eb;           /* Brighter, more vibrant blue */
   --secondary-blue: #3b82f6;         /* Medium blue variant */
   --accent-blue: #1d4ed8;            /* Rich blue accent */
   --light-blue: #60a5fa;             /* Light blue for highlights */
@@ -9,10 +9,10 @@
   --background-accent: #f0ebe0;      /* Deeper cream accent */
   --text-primary: #1e293b;           /* Dark slate */
   --text-secondary: #475569;         /* Medium slate */
-  --text-accent: #1e3a8a;            /* Deep blue for accents */
+  --text-accent: #2563eb;            /* Bright blue for accents */
   --border-light: #e8e5de;           /* Cream border */
-  --shadow-soft: rgba(30, 58, 138, 0.08);   /* Soft blue shadow */
-  --shadow-medium: 0 4px 12px rgba(30, 58, 138, 0.12);
+  --shadow-soft: rgba(37, 99, 235, 0.08);   /* Soft blue shadow */
+  --shadow-medium: 0 4px 12px rgba(37, 99, 235, 0.12);
 }
 
 /* Import better fonts */
@@ -42,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-/* Static Triangular Pattern Overlay */
+/* Static Triangular Pattern Overlay - Simplified */
 .animated-background::before {
   content: '';
   position: absolute;
@@ -51,17 +51,14 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    /* Large triangular pattern - STATIC */
-    linear-gradient(30deg, transparent 40%, rgba(30, 58, 138, 0.05) 40%, rgba(30, 58, 138, 0.05) 60%, transparent 60%),
-    linear-gradient(150deg, transparent 40%, rgba(59, 130, 246, 0.04) 40%, rgba(59, 130, 246, 0.04) 60%, transparent 60%),
-    linear-gradient(270deg, transparent 40%, rgba(29, 78, 216, 0.03) 40%, rgba(29, 78, 216, 0.03) 60%, transparent 60%),
-    /* Medium triangular pattern - STATIC */
-    linear-gradient(60deg, transparent 45%, rgba(96, 165, 250, 0.06) 45%, rgba(96, 165, 250, 0.06) 55%, transparent 55%),
-    linear-gradient(120deg, transparent 45%, rgba(30, 58, 138, 0.04) 45%, rgba(30, 58, 138, 0.04) 55%, transparent 55%),
-    /* Small detail pattern - STATIC */
-    linear-gradient(90deg, transparent 48%, rgba(59, 130, 246, 0.02) 48%, rgba(59, 130, 246, 0.02) 52%, transparent 52%);
+    /* Simple triangular pattern - STATIC */
+    linear-gradient(30deg, transparent 40%, rgba(37, 99, 235, 0.05) 40%, rgba(37, 99, 235, 0.05) 60%, transparent 60%),
+    linear-gradient(150deg, transparent 40%, rgba(37, 99, 235, 0.04) 40%, rgba(37, 99, 235, 0.04) 60%, transparent 60%),
+    linear-gradient(270deg, transparent 45%, rgba(59, 130, 246, 0.06) 45%, rgba(59, 130, 246, 0.06) 55%, transparent 55%),
+    /* Diamond pattern overlay */
+    linear-gradient(45deg, transparent 48%, rgba(37, 99, 235, 0.03) 48%, rgba(37, 99, 235, 0.03) 52%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(29, 78, 216, 0.04) 48%, rgba(29, 78, 216, 0.04) 52%, transparent 52%);
   background-size: 
-    200px 200px,
     180px 180px,
     160px 160px,
     120px 120px,
@@ -78,7 +75,7 @@ body {
   opacity: 0.08;
 }
 
-/* Bright Deep Blue Accent Panels - Full Opacity */
+/* Simplified Bright Accent Panels - Only Triangles and Diamonds */
 .bright-blue-panel {
   position: absolute;
   pointer-events: none;
@@ -87,28 +84,17 @@ body {
   opacity: 1.0; /* FULL OPACITY for bright effect */
 }
 
-.panel-large {
-  width: 80px;
-  height: 140px;
-  transform: rotate(15deg);
-  border-radius: 4px;
+/* Sharp-edged triangular panels */
+.panel-triangle-large {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 87px solid var(--primary-blue);
+  background: transparent;
 }
 
-.panel-medium {
-  width: 60px;
-  height: 100px;
-  transform: rotate(-20deg);
-  border-radius: 3px;
-}
-
-.panel-small {
-  width: 40px;
-  height: 70px;
-  transform: rotate(25deg);
-  border-radius: 2px;
-}
-
-.panel-triangle {
+.panel-triangle-medium {
   width: 0;
   height: 0;
   border-left: 35px solid transparent;
@@ -117,19 +103,38 @@ body {
   background: transparent;
 }
 
-.panel-square {
-  width: 50px;
-  height: 50px;
-  transform: rotate(45deg);
-  border-radius: 4px;
+.panel-triangle-small {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43px solid var(--primary-blue);
+  background: transparent;
 }
 
-.panel-diamond {
+/* Sharp-edged diamond panels */
+.panel-diamond-large {
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  background: var(--primary-blue);
+  /* Sharp edges - no border-radius */
+}
+
+.panel-diamond-medium {
   width: 45px;
   height: 45px;
   transform: rotate(45deg);
-  border-radius: 8px;
   background: var(--accent-blue);
+  /* Sharp edges - no border-radius */
+}
+
+.panel-diamond-small {
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  background: var(--primary-blue);
+  /* Sharp edges - no border-radius */
 }
 
 /* Subtle triangular accent elements */
@@ -140,7 +145,7 @@ body {
   opacity: 0.06;
 }
 
-/* Static triangular accent elements */
+/* Static triangular accent elements with brighter blue */
 .triangle-large {
   width: 0;
   height: 0;
@@ -759,7 +764,7 @@ a:hover {
 /* Navbar Deep Blue Text Styling */
 .navbar-custom .navbar-brand {
   color: var(--primary-blue) !important;
-  font-weight: 600;
+  font-weight: 700 !important; /* Restore bold weight */
   text-decoration: none;
 }
 

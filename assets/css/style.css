@@ -42,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-/* Static Triangular Pattern Overlay - Simplified */
+/* Enhanced Gradient Texture Pattern - Integrated Design */
 .animated-background::before {
   content: '';
   position: absolute;
@@ -51,20 +51,31 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    /* Simple triangular pattern - STATIC */
-    linear-gradient(30deg, transparent 40%, rgba(37, 99, 235, 0.05) 40%, rgba(37, 99, 235, 0.05) 60%, transparent 60%),
-    linear-gradient(150deg, transparent 40%, rgba(37, 99, 235, 0.04) 40%, rgba(37, 99, 235, 0.04) 60%, transparent 60%),
-    linear-gradient(270deg, transparent 45%, rgba(59, 130, 246, 0.06) 45%, rgba(59, 130, 246, 0.06) 55%, transparent 55%),
-    /* Diamond pattern overlay */
-    linear-gradient(45deg, transparent 48%, rgba(37, 99, 235, 0.03) 48%, rgba(37, 99, 235, 0.03) 52%, transparent 52%),
-    linear-gradient(135deg, transparent 48%, rgba(29, 78, 216, 0.04) 48%, rgba(29, 78, 216, 0.04) 52%, transparent 52%);
+    /* Radial edge-darkening overlay for beautiful gradient flow */
+    radial-gradient(ellipse at center, transparent 35%, rgba(37, 99, 235, 0.06) 70%, rgba(29, 78, 216, 0.15) 95%),
+    /* Darker diamond pattern for edges */
+    linear-gradient(45deg, transparent 48%, rgba(37, 99, 235, 0.15) 48%, rgba(37, 99, 235, 0.15) 52%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(29, 78, 216, 0.12) 48%, rgba(29, 78, 216, 0.12) 52%, transparent 52%),
+    /* Medium intensity triangular pattern */
+    linear-gradient(30deg, transparent 40%, rgba(37, 99, 235, 0.08) 40%, rgba(37, 99, 235, 0.08) 60%, transparent 60%),
+    linear-gradient(150deg, transparent 40%, rgba(37, 99, 235, 0.06) 40%, rgba(37, 99, 235, 0.06) 60%, transparent 60%),
+    /* Lighter criss-cross lines */
+    linear-gradient(270deg, transparent 45%, rgba(59, 130, 246, 0.04) 45%, rgba(59, 130, 246, 0.04) 55%, transparent 55%);
   background-size: 
-    180px 180px,
-    160px 160px,
-    120px 120px,
-    100px 100px,
-    80px 80px;
-  /* NO ANIMATION - COMPLETELY STATIC */
+    100% 100%,    /* Full screen radial overlay */
+    80px 80px,    /* Darker diamonds - smaller, more concentrated */
+    90px 90px,    /* Medium diamonds */
+    160px 160px,  /* Medium triangular */
+    140px 140px,  /* Medium triangular */
+    120px 120px;  /* Lighter lines */
+  /* Create gradient effect - darker towards edges */
+  background-position: 
+    center,     /* Center the radial gradient */
+    0% 0%,      /* Diamonds concentrated on left */
+    100% 0%,    /* Diamonds on right */
+    25% 25%,    /* Triangular spread */
+    75% 75%,    /* Triangular spread */
+    50% 50%;    /* Lines centered */
 }
 
 /* Subtle geometric accent elements */

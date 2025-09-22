@@ -88,7 +88,7 @@ body {
   z-index: -2;
 }
 
-/* Split canvas into 3 sections - texture only on sides */
+/* Natural, organic texture with varying density on sides */
 .animated-background::before,
 .animated-background::after {
   content: '';
@@ -97,34 +97,55 @@ body {
   width: 25%; /* Only 25% width for each side */
   height: 100%;
   background-image: 
-    /* Triangular patterns for side areas only */
-    linear-gradient(60deg, transparent 0%, transparent 20%, 
-      rgba(30, 64, 175, 0.8) 25%, rgba(30, 64, 175, 0.6) 30%, rgba(30, 64, 175, 0.8) 35%, 
-      transparent 40%, transparent 100%),
-    linear-gradient(120deg, transparent 0%, transparent 20%, 
-      rgba(29, 78, 216, 0.7) 25%, rgba(29, 78, 216, 0.5) 30%, rgba(29, 78, 216, 0.7) 35%, 
-      transparent 40%, transparent 100%),
-    linear-gradient(-60deg, transparent 0%, transparent 20%, 
-      rgba(37, 99, 235, 0.6) 25%, rgba(37, 99, 235, 0.4) 30%, rgba(37, 99, 235, 0.6) 35%, 
-      transparent 40%, transparent 100%),
-    linear-gradient(30deg, transparent 0%, transparent 30%, 
-      rgba(59, 130, 246, 0.5) 35%, rgba(59, 130, 246, 0.3) 40%, rgba(59, 130, 246, 0.5) 45%, 
-      transparent 50%, transparent 100%),
-    linear-gradient(150deg, transparent 0%, transparent 30%, 
-      rgba(96, 165, 250, 0.4) 35%, rgba(96, 165, 250, 0.2) 40%, rgba(96, 165, 250, 0.4) 45%, 
-      transparent 50%, transparent 100%);
+    /* Organic density mask - creates natural clear areas */
+    radial-gradient(circle at 20% 15%, transparent 40%, rgba(30, 64, 175, 0.1) 60%),
+    radial-gradient(circle at 80% 35%, transparent 35%, rgba(30, 64, 175, 0.15) 55%),
+    radial-gradient(circle at 40% 65%, transparent 45%, rgba(30, 64, 175, 0.08) 65%),
+    radial-gradient(circle at 70% 85%, transparent 30%, rgba(30, 64, 175, 0.12) 50%),
+    
+    /* Dense texture areas */
+    linear-gradient(60deg, transparent 0%, transparent 15%, 
+      rgba(30, 64, 175, 0.7) 20%, rgba(30, 64, 175, 0.5) 25%, rgba(30, 64, 175, 0.7) 30%, 
+      transparent 35%, transparent 60%, 
+      rgba(29, 78, 216, 0.4) 65%, rgba(29, 78, 216, 0.2) 70%, rgba(29, 78, 216, 0.4) 75%, 
+      transparent 80%, transparent 100%),
+    
+    /* Medium texture clusters */
+    linear-gradient(120deg, transparent 0%, transparent 25%, 
+      rgba(37, 99, 235, 0.5) 30%, rgba(37, 99, 235, 0.3) 35%, rgba(37, 99, 235, 0.5) 40%, 
+      transparent 45%, transparent 70%, 
+      rgba(59, 130, 246, 0.3) 75%, rgba(59, 130, 246, 0.1) 80%, rgba(59, 130, 246, 0.3) 85%, 
+      transparent 90%, transparent 100%),
+    
+    /* Sparse accent triangles */
+    linear-gradient(-45deg, transparent 0%, transparent 40%, 
+      rgba(96, 165, 250, 0.4) 42%, rgba(96, 165, 250, 0.2) 45%, rgba(96, 165, 250, 0.4) 48%, 
+      transparent 50%, transparent 85%, 
+      rgba(147, 197, 253, 0.25) 87%, rgba(147, 197, 253, 0.1) 90%, rgba(147, 197, 253, 0.25) 93%, 
+      transparent 95%, transparent 100%),
+    
+    /* Light scattered elements */
+    linear-gradient(30deg, transparent 0%, transparent 55%, 
+      rgba(191, 219, 254, 0.3) 58%, rgba(191, 219, 254, 0.15) 60%, rgba(191, 219, 254, 0.3) 62%, 
+      transparent 65%, transparent 100%);
   
   background-size: 
+    150px 150px,    /* Organic density masks */
     180px 180px,
+    120px 120px,
     200px 200px,
-    160px 160px,
-    140px 140px,
-    120px 120px;
+    220px 220px,    /* Dense texture areas */
+    190px 190px,    /* Medium clusters */
+    160px 160px,    /* Sparse accents */
+    140px 140px;    /* Light scattered */
   
   background-position: 
-    0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%;
+    0% 0%, 60% 20%, 20% 60%, 80% 80%,        /* Organic masks */
+    10% 10%, 70% 40%,                        /* Dense areas */
+    30% 70%,                                 /* Medium clusters */
+    50% 30%;                                 /* Light scattered */
   
-  filter: drop-shadow(1px 1px 2px rgba(30, 64, 175, 0.1));
+  filter: drop-shadow(1px 1px 2px rgba(30, 64, 175, 0.08));
 }
 
 /* Left side texture */
@@ -132,9 +153,14 @@ body {
   left: 0;
 }
 
-/* Right side texture */
+/* Right side texture - slightly different pattern for asymmetry */
 .animated-background::after {
   right: 0;
+  background-position: 
+    20% 10%, 40% 30%, 80% 50%, 60% 90%,      /* Shifted organic masks */
+    30% 20%, 90% 60%,                        /* Shifted dense areas */
+    50% 80%,                                 /* Shifted medium clusters */
+    70% 40%;                                 /* Shifted light scattered */
 }
 
 /* Subtle geometric accent elements */

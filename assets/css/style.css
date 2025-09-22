@@ -1,12 +1,12 @@
-/* Deep Blue Geometric Theme Color Variables */
+/* Deep Blue Geometric Theme - Enhanced Cream Colors */
 :root {
   --primary-blue: #1e3a8a;           /* Deep blue from image */
   --secondary-blue: #3b82f6;         /* Medium blue variant */
   --accent-blue: #1d4ed8;            /* Rich blue accent */
   --light-blue: #60a5fa;             /* Light blue for highlights */
-  --background-cream: #fefcf7;       /* Off-white cream */
-  --background-light: #fbf9f4;       /* Lighter cream */
-  --background-accent: #f5f2eb;      /* Subtle cream accent */
+  --background-cream: #f9f6f0;       /* Warmer, more creamy */
+  --background-light: #f5f1e8;       /* Richer cream */
+  --background-accent: #f0ebe0;      /* Deeper cream accent */
   --text-primary: #1e293b;           /* Dark slate */
   --text-secondary: #475569;         /* Medium slate */
   --text-accent: #1e3a8a;            /* Deep blue for accents */
@@ -18,7 +18,7 @@
 /* Import better fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-/* Enhanced body typography with triangular theme */
+/* Enhanced body typography with static design */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-primary);
@@ -27,11 +27,7 @@ body {
   position: relative;
   background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-light) 50%, var(--background-accent) 100%);
   min-height: 100vh;
-  /* Add subtle triangular texture */
-  background-image: 
-    linear-gradient(120deg, transparent 48%, rgba(30, 58, 138, 0.02) 49%, rgba(30, 58, 138, 0.02) 51%, transparent 52%),
-    linear-gradient(240deg, transparent 48%, rgba(59, 130, 246, 0.015) 49%, rgba(59, 130, 246, 0.015) 51%, transparent 52%);
-  background-size: 40px 70px, 35px 60px;
+  /* Clean static background - no additional patterns */
 }
 
 /* Professional Triangular Geometric Background */
@@ -46,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-/* Triangular mosaic pattern overlay */
+/* Static Triangular Pattern Overlay */
 .animated-background::before {
   content: '';
   position: absolute;
@@ -55,14 +51,14 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    /* Large triangular pattern */
+    /* Large triangular pattern - STATIC */
     linear-gradient(30deg, transparent 40%, rgba(30, 58, 138, 0.05) 40%, rgba(30, 58, 138, 0.05) 60%, transparent 60%),
     linear-gradient(150deg, transparent 40%, rgba(59, 130, 246, 0.04) 40%, rgba(59, 130, 246, 0.04) 60%, transparent 60%),
     linear-gradient(270deg, transparent 40%, rgba(29, 78, 216, 0.03) 40%, rgba(29, 78, 216, 0.03) 60%, transparent 60%),
-    /* Medium triangular pattern */
+    /* Medium triangular pattern - STATIC */
     linear-gradient(60deg, transparent 45%, rgba(96, 165, 250, 0.06) 45%, rgba(96, 165, 250, 0.06) 55%, transparent 55%),
     linear-gradient(120deg, transparent 45%, rgba(30, 58, 138, 0.04) 45%, rgba(30, 58, 138, 0.04) 55%, transparent 55%),
-    /* Small detail pattern */
+    /* Small detail pattern - STATIC */
     linear-gradient(90deg, transparent 48%, rgba(59, 130, 246, 0.02) 48%, rgba(59, 130, 246, 0.02) 52%, transparent 52%);
   background-size: 
     200px 200px,
@@ -71,7 +67,7 @@ body {
     120px 120px,
     100px 100px,
     80px 80px;
-  animation: triangularShift 40s ease-in-out infinite;
+  /* NO ANIMATION - COMPLETELY STATIC */
 }
 
 /* Subtle geometric accent elements */
@@ -82,7 +78,61 @@ body {
   opacity: 0.08;
 }
 
-/* Professional triangular accent elements */
+/* Bright Deep Blue Accent Panels - Full Opacity */
+.bright-blue-panel {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  background: var(--primary-blue);
+  opacity: 1.0; /* FULL OPACITY for bright effect */
+}
+
+.panel-large {
+  width: 80px;
+  height: 140px;
+  transform: rotate(15deg);
+  border-radius: 4px;
+}
+
+.panel-medium {
+  width: 60px;
+  height: 100px;
+  transform: rotate(-20deg);
+  border-radius: 3px;
+}
+
+.panel-small {
+  width: 40px;
+  height: 70px;
+  transform: rotate(25deg);
+  border-radius: 2px;
+}
+
+.panel-triangle {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid var(--primary-blue);
+  background: transparent;
+}
+
+.panel-square {
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  border-radius: 4px;
+}
+
+.panel-diamond {
+  width: 45px;
+  height: 45px;
+  transform: rotate(45deg);
+  border-radius: 8px;
+  background: var(--accent-blue);
+}
+
+/* Subtle triangular accent elements */
 .triangle-accent {
   position: absolute;
   pointer-events: none;
@@ -90,13 +140,14 @@ body {
   opacity: 0.06;
 }
 
+/* Static triangular accent elements */
 .triangle-large {
   width: 0;
   height: 0;
   border-left: 60px solid transparent;
   border-right: 60px solid transparent;
   border-bottom: 104px solid var(--primary-blue);
-  animation: subtleFloat 35s ease-in-out infinite;
+  /* NO ANIMATION - STATIC */
 }
 
 .triangle-medium {
@@ -105,7 +156,7 @@ body {
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   border-bottom: 69px solid var(--secondary-blue);
-  animation: gentleShift 25s ease-in-out infinite;
+  /* NO ANIMATION - STATIC */
 }
 
 .triangle-small {
@@ -114,7 +165,7 @@ body {
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-bottom: 43px solid var(--accent-blue);
-  animation: triangleFloat 30s ease-in-out infinite;
+  /* NO ANIMATION - STATIC */
 }
 
 /* Inverted triangles for variety */
@@ -124,7 +175,7 @@ body {
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-top: 60px solid var(--light-blue);
-  animation: invertedFloat 40s ease-in-out infinite;
+  /* NO ANIMATION - STATIC */
 }
 
 .floating-robot {
@@ -703,6 +754,36 @@ a:hover {
 /* Keep your name aligned nicely next to it */
 .navbar-brand + .navbar-brand {
   margin-left: .5rem;
+}
+
+/* Navbar Deep Blue Text Styling */
+.navbar-custom .navbar-brand {
+  color: var(--primary-blue) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: var(--accent-blue) !important;
+}
+
+.navbar-custom .nav-link {
+  color: var(--primary-blue) !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--accent-blue) !important;
+}
+
+.navbar-custom .dropdown-item {
+  color: var(--primary-blue) !important;
+}
+
+.navbar-custom .dropdown-item:hover {
+  color: var(--accent-blue) !important;
+  background-color: var(--background-light);
 }
 
 /* a) Reduce vertical padding on the bar and links */

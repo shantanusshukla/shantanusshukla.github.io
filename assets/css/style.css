@@ -88,79 +88,75 @@ body {
   z-index: -2;
 }
 
-/* Natural, organic texture with varying density on sides */
-.animated-background::before,
-.animated-background::after {
+/* Beautiful low-poly geometric background inspired by reference image */
+.animated-background::before {
   content: '';
   position: absolute;
   top: 0;
-  width: 25%; /* Only 25% width for each side */
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-image: 
-    /* Organic density mask - creates natural clear areas */
-    radial-gradient(circle at 20% 15%, transparent 40%, rgba(30, 64, 175, 0.1) 60%),
-    radial-gradient(circle at 80% 35%, transparent 35%, rgba(30, 64, 175, 0.15) 55%),
-    radial-gradient(circle at 40% 65%, transparent 45%, rgba(30, 64, 175, 0.08) 65%),
-    radial-gradient(circle at 70% 85%, transparent 30%, rgba(30, 64, 175, 0.12) 50%),
+  background: 
+    /* Smooth transition gradient from center to edges */
+    radial-gradient(ellipse at center, 
+      rgba(254, 252, 232, 1) 0%,           /* Pure cream center */
+      rgba(254, 252, 232, 0.95) 25%,       /* Almost pure cream */
+      rgba(254, 252, 232, 0.8) 40%,        /* Slight transparency */
+      rgba(254, 252, 232, 0.5) 60%,        /* More transparency */
+      rgba(254, 252, 232, 0.2) 75%,        /* Very transparent */
+      transparent 85%                       /* Full transparency for texture */
+    ),
     
-    /* Dense texture areas */
-    linear-gradient(60deg, transparent 0%, transparent 15%, 
-      rgba(30, 64, 175, 0.7) 20%, rgba(30, 64, 175, 0.5) 25%, rgba(30, 64, 175, 0.7) 30%, 
-      transparent 35%, transparent 60%, 
-      rgba(29, 78, 216, 0.4) 65%, rgba(29, 78, 216, 0.2) 70%, rgba(29, 78, 216, 0.4) 75%, 
-      transparent 80%, transparent 100%),
-    
-    /* Medium texture clusters */
-    linear-gradient(120deg, transparent 0%, transparent 25%, 
-      rgba(37, 99, 235, 0.5) 30%, rgba(37, 99, 235, 0.3) 35%, rgba(37, 99, 235, 0.5) 40%, 
-      transparent 45%, transparent 70%, 
-      rgba(59, 130, 246, 0.3) 75%, rgba(59, 130, 246, 0.1) 80%, rgba(59, 130, 246, 0.3) 85%, 
-      transparent 90%, transparent 100%),
-    
-    /* Sparse accent triangles */
-    linear-gradient(-45deg, transparent 0%, transparent 40%, 
-      rgba(96, 165, 250, 0.4) 42%, rgba(96, 165, 250, 0.2) 45%, rgba(96, 165, 250, 0.4) 48%, 
-      transparent 50%, transparent 85%, 
-      rgba(147, 197, 253, 0.25) 87%, rgba(147, 197, 253, 0.1) 90%, rgba(147, 197, 253, 0.25) 93%, 
-      transparent 95%, transparent 100%),
-    
-    /* Light scattered elements */
-    linear-gradient(30deg, transparent 0%, transparent 55%, 
-      rgba(191, 219, 254, 0.3) 58%, rgba(191, 219, 254, 0.15) 60%, rgba(191, 219, 254, 0.3) 62%, 
-      transparent 65%, transparent 100%);
+    /* Low-poly triangular patterns - soft blue gradients */
+    /* Large geometric shapes */
+    linear-gradient(30deg, 
+      transparent 0%, transparent 25%, 
+      rgba(219, 234, 254, 0.4) 30%, rgba(147, 197, 253, 0.6) 40%, rgba(59, 130, 246, 0.3) 50%, 
+      transparent 55%, transparent 100%),
+    linear-gradient(150deg, 
+      transparent 0%, transparent 20%, 
+      rgba(191, 219, 254, 0.5) 25%, rgba(96, 165, 250, 0.7) 35%, rgba(37, 99, 235, 0.4) 45%, 
+      transparent 50%, transparent 100%),
+    linear-gradient(-45deg, 
+      transparent 0%, transparent 30%, 
+      rgba(239, 246, 255, 0.6) 35%, rgba(147, 197, 253, 0.8) 45%, rgba(29, 78, 216, 0.5) 55%, 
+      transparent 60%, transparent 100%),
+      
+    /* Medium geometric elements */
+    linear-gradient(75deg, 
+      transparent 0%, transparent 35%, 
+      rgba(224, 231, 255, 0.3) 40%, rgba(96, 165, 250, 0.5) 45%, rgba(59, 130, 246, 0.2) 50%, 
+      transparent 55%, transparent 100%),
+    linear-gradient(-120deg, 
+      transparent 0%, transparent 40%, 
+      rgba(191, 219, 254, 0.4) 45%, rgba(37, 99, 235, 0.6) 50%, rgba(29, 78, 216, 0.3) 55%, 
+      transparent 60%, transparent 100%),
+      
+    /* Small accent triangles */
+    linear-gradient(60deg, 
+      transparent 0%, transparent 45%, 
+      rgba(239, 246, 255, 0.2) 48%, rgba(147, 197, 253, 0.3) 50%, rgba(96, 165, 250, 0.1) 52%, 
+      transparent 55%, transparent 100%);
   
   background-size: 
-    150px 150px,    /* Organic density masks */
-    180px 180px,
-    120px 120px,
-    200px 200px,
-    220px 220px,    /* Dense texture areas */
-    190px 190px,    /* Medium clusters */
-    160px 160px,    /* Sparse accents */
-    140px 140px;    /* Light scattered */
+    100% 100%,        /* Full transition gradient */
+    280px 280px,      /* Large shapes */
+    320px 320px,
+    250px 250px,
+    200px 200px,      /* Medium shapes */
+    240px 240px,
+    160px 160px;      /* Small accents */
   
   background-position: 
-    0% 0%, 60% 20%, 20% 60%, 80% 80%,        /* Organic masks */
-    10% 10%, 70% 40%,                        /* Dense areas */
-    30% 70%,                                 /* Medium clusters */
-    50% 30%;                                 /* Light scattered */
-  
-  filter: drop-shadow(1px 1px 2px rgba(30, 64, 175, 0.08));
+    center,           /* Center the transition */
+    0% 0%, 70% 30%, 30% 70%,        /* Large shapes at edges */
+    15% 85%, 85% 15%,               /* Medium shapes */
+    50% 0%;                         /* Small accents */
 }
 
-/* Left side texture */
-.animated-background::before {
-  left: 0;
-}
-
-/* Right side texture - slightly different pattern for asymmetry */
+/* Remove the separate ::after element for cleaner design */
 .animated-background::after {
-  right: 0;
-  background-position: 
-    20% 10%, 40% 30%, 80% 50%, 60% 90%,      /* Shifted organic masks */
-    30% 20%, 90% 60%,                        /* Shifted dense areas */
-    50% 80%,                                 /* Shifted medium clusters */
-    70% 40%;                                 /* Shifted light scattered */
+  display: none;
 }
 
 /* Subtle geometric accent elements */

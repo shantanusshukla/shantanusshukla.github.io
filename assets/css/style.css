@@ -88,75 +88,113 @@ body {
   z-index: -2;
 }
 
-/* Beautiful low-poly geometric background inspired by reference image */
-.animated-background::before {
-  content: '';
-  position: absolute;
+/* Clean cream background - no full texture */
+.animated-background {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    /* Smooth transition gradient from center to edges */
-    radial-gradient(ellipse at center, 
-      rgba(254, 252, 232, 1) 0%,           /* Pure cream center */
-      rgba(254, 252, 232, 0.95) 25%,       /* Almost pure cream */
-      rgba(254, 252, 232, 0.8) 40%,        /* Slight transparency */
-      rgba(254, 252, 232, 0.5) 60%,        /* More transparency */
-      rgba(254, 252, 232, 0.2) 75%,        /* Very transparent */
-      transparent 85%                       /* Full transparency for texture */
-    ),
-    
-    /* Low-poly triangular patterns - soft blue gradients */
-    /* Large geometric shapes */
-    linear-gradient(30deg, 
-      transparent 0%, transparent 25%, 
-      rgba(219, 234, 254, 0.4) 30%, rgba(147, 197, 253, 0.6) 40%, rgba(59, 130, 246, 0.3) 50%, 
-      transparent 55%, transparent 100%),
-    linear-gradient(150deg, 
-      transparent 0%, transparent 20%, 
-      rgba(191, 219, 254, 0.5) 25%, rgba(96, 165, 250, 0.7) 35%, rgba(37, 99, 235, 0.4) 45%, 
-      transparent 50%, transparent 100%),
-    linear-gradient(-45deg, 
-      transparent 0%, transparent 30%, 
-      rgba(239, 246, 255, 0.6) 35%, rgba(147, 197, 253, 0.8) 45%, rgba(29, 78, 216, 0.5) 55%, 
-      transparent 60%, transparent 100%),
-      
-    /* Medium geometric elements */
-    linear-gradient(75deg, 
-      transparent 0%, transparent 35%, 
-      rgba(224, 231, 255, 0.3) 40%, rgba(96, 165, 250, 0.5) 45%, rgba(59, 130, 246, 0.2) 50%, 
-      transparent 55%, transparent 100%),
-    linear-gradient(-120deg, 
-      transparent 0%, transparent 40%, 
-      rgba(191, 219, 254, 0.4) 45%, rgba(37, 99, 235, 0.6) 50%, rgba(29, 78, 216, 0.3) 55%, 
-      transparent 60%, transparent 100%),
-      
-    /* Small accent triangles */
-    linear-gradient(60deg, 
-      transparent 0%, transparent 45%, 
-      rgba(239, 246, 255, 0.2) 48%, rgba(147, 197, 253, 0.3) 50%, rgba(96, 165, 250, 0.1) 52%, 
-      transparent 55%, transparent 100%);
-  
-  background-size: 
-    100% 100%,        /* Full transition gradient */
-    280px 280px,      /* Large shapes */
-    320px 320px,
-    250px 250px,
-    200px 200px,      /* Medium shapes */
-    240px 240px,
-    160px 160px;      /* Small accents */
-  
-  background-position: 
-    center,           /* Center the transition */
-    0% 0%, 70% 30%, 30% 70%,        /* Large shapes at edges */
-    15% 85%, 85% 15%,               /* Medium shapes */
-    50% 0%;                         /* Small accents */
+  background: #fefce8; /* Clean cream background */
+  z-index: -2;
 }
 
-/* Remove the separate ::after element for cleaner design */
-.animated-background::after {
-  display: none;
+.animated-background::before {
+  display: none; /* Remove full-page texture */
+}
+
+/* Strategic texture zones for specific page areas */
+
+/* Texture behind main title area */
+.intro-header {
+  position: relative;
+}
+
+.intro-header::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 10%;
+  right: 10%;
+  height: 200px;
+  background: 
+    /* Low-poly texture for title area */
+    linear-gradient(45deg, 
+      transparent 0%, transparent 20%, 
+      rgba(219, 234, 254, 0.3) 25%, rgba(147, 197, 253, 0.4) 35%, rgba(59, 130, 246, 0.2) 45%, 
+      transparent 50%, transparent 100%),
+    linear-gradient(-30deg, 
+      transparent 0%, transparent 30%, 
+      rgba(191, 219, 254, 0.4) 35%, rgba(96, 165, 250, 0.5) 45%, rgba(37, 99, 235, 0.3) 55%, 
+      transparent 60%, transparent 100%),
+    linear-gradient(120deg, 
+      transparent 0%, transparent 25%, 
+      rgba(239, 246, 255, 0.5) 30%, rgba(147, 197, 253, 0.6) 40%, rgba(29, 78, 216, 0.4) 50%, 
+      transparent 55%, transparent 100%);
+  background-size: 180px 180px, 220px 220px, 160px 160px;
+  background-position: 0% 50%, 70% 20%, 30% 80%;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Texture accent around profile/content area */
+.home-section {
+  position: relative;
+}
+
+.home-section::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  right: 5%;
+  width: 300px;
+  height: 400px;
+  background: 
+    linear-gradient(60deg, 
+      transparent 0%, transparent 35%, 
+      rgba(224, 231, 255, 0.25) 40%, rgba(96, 165, 250, 0.35) 45%, rgba(59, 130, 246, 0.15) 50%, 
+      transparent 55%, transparent 100%),
+    linear-gradient(-45deg, 
+      transparent 0%, transparent 40%, 
+      rgba(191, 219, 254, 0.3) 45%, rgba(37, 99, 235, 0.4) 50%, rgba(29, 78, 216, 0.2) 55%, 
+      transparent 60%, transparent 100%);
+  background-size: 140px 140px, 180px 180px;
+  background-position: 20% 30%, 80% 70%;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* Corner accent textures */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: 
+    linear-gradient(45deg, 
+      rgba(239, 246, 255, 0.4) 0%, rgba(147, 197, 253, 0.3) 30%, rgba(96, 165, 250, 0.2) 60%, 
+      transparent 80%, transparent 100%);
+  background-size: 120px 120px;
+  border-radius: 0 0 20px 0;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: 
+    linear-gradient(-135deg, 
+      rgba(219, 234, 254, 0.3) 0%, rgba(59, 130, 246, 0.25) 40%, rgba(37, 99, 235, 0.15) 70%, 
+      transparent 85%, transparent 100%);
+  background-size: 150px 150px;
+  border-radius: 20px 0 0 0;
+  z-index: -1;
 }
 
 /* Subtle geometric accent elements */

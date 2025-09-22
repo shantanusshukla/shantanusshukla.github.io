@@ -1,31 +1,66 @@
-/* Deep Blue Geometric Theme - Enhanced Bright Colors */
+/* Deep Blue Geometric Theme - Clean Design */
 :root {
-  --primary-blue: #2563eb;           /* Brighter, more vibrant blue */
-  --secondary-blue: #3b82f6;         /* Medium blue variant */
-  --accent-blue: #1d4ed8;            /* Rich blue accent */
+  --primary-blue: #1e40af;           /* Deep blue for headings */
+  --secondary-blue: #1d4ed8;         /* Medium blue variant */
+  --accent-blue: #2563eb;            /* Rich blue accent */
   --light-blue: #60a5fa;             /* Light blue for highlights */
-  --background-cream: #f9f6f0;       /* Warmer, more creamy */
-  --background-light: #f5f1e8;       /* Richer cream */
-  --background-accent: #f0ebe0;      /* Deeper cream accent */
-  --text-primary: #1e293b;           /* Dark slate */
+  --background-cream: #fefce8;       /* Bright cream with yellow tint */
+  --background-light: #fefce8;       /* Same cream throughout */
+  --background-accent: #fefce8;      /* Consistent cream */
+  --text-primary: #1e293b;           /* Dark slate for body text */
   --text-secondary: #475569;         /* Medium slate */
-  --text-accent: #2563eb;            /* Bright blue for accents */
+  --text-accent: #1e40af;            /* Deep blue for accents */
   --border-light: #e8e5de;           /* Cream border */
-  --shadow-soft: rgba(37, 99, 235, 0.08);   /* Soft blue shadow */
-  --shadow-medium: 0 4px 12px rgba(37, 99, 235, 0.12);
+  --shadow-soft: rgba(30, 64, 175, 0.08);   /* Deep blue shadow */
+  --shadow-medium: 0 4px 12px rgba(30, 64, 175, 0.12);
+}
+
+/* Deep blue headings and bold text */
+h1, h2, h3, h4, h5, h6 {
+  color: #1e40af !important; /* Deep blue */
+  font-weight: bold;
+}
+
+.intro-header .page-heading h1,
+.intro-header .post-heading h1 {
+  color: #1e40af !important; /* Deep blue for main title */
+}
+
+/* Navigation text bold and deep blue */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  color: #1e40af !important;
+  font-weight: bold;
+}
+
+/* Button text deep blue */
+.btn {
+  color: #1e40af !important;
+  font-weight: bold;
+}
+
+/* Any bold text should be deep blue */
+strong, b {
+  color: #1e40af !important;
+}
+
+/* Section titles deep blue */
+.section-title {
+  color: #1e40af !important;
+  font-weight: bold;
 }
 
 /* Import better fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-/* Enhanced body typography with static design */
+/* Enhanced body typography with clean cream background */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-primary);
   font-weight: 400;
   line-height: 1.6;
   position: relative;
-  background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-light) 50%, var(--background-accent) 100%);
+  background: #fefce8; /* Clean bright cream background */
   min-height: 100vh;
   /* Clean static background - no additional patterns */
 }
@@ -42,45 +77,19 @@ body {
   overflow: hidden;
 }
 
-/* Enhanced Gradient Texture Pattern - Integrated Design */
-.animated-background::before {
-  content: '';
-  position: absolute;
+/* Clean cream background - no texture */
+.animated-background {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    /* Beautiful gradient parallelograms - varying opacity levels */
-    /* Deep opaque parallelograms */
-    linear-gradient(30deg, transparent 40%, rgba(29, 78, 216, 0.9) 42%, rgba(29, 78, 216, 0.9) 58%, transparent 60%),
-    linear-gradient(150deg, transparent 35%, rgba(37, 99, 235, 0.85) 37%, rgba(37, 99, 235, 0.85) 63%, transparent 65%),
-    /* Medium intensity parallelograms */
-    linear-gradient(45deg, transparent 45%, rgba(59, 130, 246, 0.6) 47%, rgba(59, 130, 246, 0.6) 53%, transparent 55%),
-    linear-gradient(135deg, transparent 42%, rgba(37, 99, 235, 0.5) 44%, rgba(37, 99, 235, 0.5) 56%, transparent 58%),
-    linear-gradient(-30deg, transparent 38%, rgba(29, 78, 216, 0.4) 40%, rgba(29, 78, 216, 0.4) 60%, transparent 62%),
-    /* Light parallelograms */
-    linear-gradient(60deg, transparent 44%, rgba(59, 130, 246, 0.25) 46%, rgba(59, 130, 246, 0.25) 54%, transparent 56%),
-    linear-gradient(-45deg, transparent 46%, rgba(37, 99, 235, 0.2) 48%, rgba(37, 99, 235, 0.2) 52%, transparent 54%),
-    /* Very light criss-cross base lines */
-    linear-gradient(0deg, transparent 48%, rgba(59, 130, 246, 0.03) 49%, rgba(59, 130, 246, 0.03) 51%, transparent 52%),
-    linear-gradient(90deg, transparent 48%, rgba(59, 130, 246, 0.02) 49%, rgba(59, 130, 246, 0.02) 51%, transparent 52%);
-  background-size: 
-    140px 140px,  /* Deep parallelograms */
-    160px 160px,
-    100px 100px,  /* Medium parallelograms */
-    120px 120px,
-    80px 80px,
-    70px 70px,    /* Light parallelograms */
-    90px 90px,
-    300px 300px,  /* Very light criss-cross */
-    320px 320px;
-  background-position: 
-    0% 0%, 30% 30%,      /* Deep parallelograms spread */
-    15% 15%, 60% 60%,    /* Medium parallelograms */
-    80% 20%,
-    20% 70%, 70% 10%,    /* Light parallelograms scattered */
-    0% 0%, 0% 0%;        /* Criss-cross base */
+  background: #fefce8; /* Bright cream with yellow tint */
+  z-index: -2;
+}
+
+.animated-background::before {
+  display: none; /* Remove all texture patterns */
 }
 
 /* Subtle geometric accent elements */

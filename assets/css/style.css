@@ -51,31 +51,36 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    /* Radial edge-darkening overlay for beautiful gradient flow */
-    radial-gradient(ellipse at center, transparent 35%, rgba(37, 99, 235, 0.06) 70%, rgba(29, 78, 216, 0.15) 95%),
-    /* Darker diamond pattern for edges */
-    linear-gradient(45deg, transparent 48%, rgba(37, 99, 235, 0.15) 48%, rgba(37, 99, 235, 0.15) 52%, transparent 52%),
-    linear-gradient(135deg, transparent 48%, rgba(29, 78, 216, 0.12) 48%, rgba(29, 78, 216, 0.12) 52%, transparent 52%),
-    /* Medium intensity triangular pattern */
-    linear-gradient(30deg, transparent 40%, rgba(37, 99, 235, 0.08) 40%, rgba(37, 99, 235, 0.08) 60%, transparent 60%),
-    linear-gradient(150deg, transparent 40%, rgba(37, 99, 235, 0.06) 40%, rgba(37, 99, 235, 0.06) 60%, transparent 60%),
-    /* Lighter criss-cross lines */
-    linear-gradient(270deg, transparent 45%, rgba(59, 130, 246, 0.04) 45%, rgba(59, 130, 246, 0.04) 55%, transparent 55%);
+    /* Beautiful gradient parallelograms - varying opacity levels */
+    /* Deep opaque parallelograms */
+    linear-gradient(30deg, transparent 40%, rgba(29, 78, 216, 0.9) 42%, rgba(29, 78, 216, 0.9) 58%, transparent 60%),
+    linear-gradient(150deg, transparent 35%, rgba(37, 99, 235, 0.85) 37%, rgba(37, 99, 235, 0.85) 63%, transparent 65%),
+    /* Medium intensity parallelograms */
+    linear-gradient(45deg, transparent 45%, rgba(59, 130, 246, 0.6) 47%, rgba(59, 130, 246, 0.6) 53%, transparent 55%),
+    linear-gradient(135deg, transparent 42%, rgba(37, 99, 235, 0.5) 44%, rgba(37, 99, 235, 0.5) 56%, transparent 58%),
+    linear-gradient(-30deg, transparent 38%, rgba(29, 78, 216, 0.4) 40%, rgba(29, 78, 216, 0.4) 60%, transparent 62%),
+    /* Light parallelograms */
+    linear-gradient(60deg, transparent 44%, rgba(59, 130, 246, 0.25) 46%, rgba(59, 130, 246, 0.25) 54%, transparent 56%),
+    linear-gradient(-45deg, transparent 46%, rgba(37, 99, 235, 0.2) 48%, rgba(37, 99, 235, 0.2) 52%, transparent 54%),
+    /* Very light criss-cross base lines */
+    linear-gradient(0deg, transparent 48%, rgba(59, 130, 246, 0.03) 49%, rgba(59, 130, 246, 0.03) 51%, transparent 52%),
+    linear-gradient(90deg, transparent 48%, rgba(59, 130, 246, 0.02) 49%, rgba(59, 130, 246, 0.02) 51%, transparent 52%);
   background-size: 
-    100% 100%,    /* Full screen radial overlay */
-    80px 80px,    /* Darker diamonds - smaller, more concentrated */
-    90px 90px,    /* Medium diamonds */
-    160px 160px,  /* Medium triangular */
-    140px 140px,  /* Medium triangular */
-    120px 120px;  /* Lighter lines */
-  /* Create gradient effect - darker towards edges */
+    140px 140px,  /* Deep parallelograms */
+    160px 160px,
+    100px 100px,  /* Medium parallelograms */
+    120px 120px,
+    80px 80px,
+    70px 70px,    /* Light parallelograms */
+    90px 90px,
+    300px 300px,  /* Very light criss-cross */
+    320px 320px;
   background-position: 
-    center,     /* Center the radial gradient */
-    0% 0%,      /* Diamonds concentrated on left */
-    100% 0%,    /* Diamonds on right */
-    25% 25%,    /* Triangular spread */
-    75% 75%,    /* Triangular spread */
-    50% 50%;    /* Lines centered */
+    0% 0%, 30% 30%,      /* Deep parallelograms spread */
+    15% 15%, 60% 60%,    /* Medium parallelograms */
+    80% 20%,
+    20% 70%, 70% 10%,    /* Light parallelograms scattered */
+    0% 0%, 0% 0%;        /* Criss-cross base */
 }
 
 /* Subtle geometric accent elements */

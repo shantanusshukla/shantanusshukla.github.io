@@ -1,45 +1,50 @@
-/* Enhanced typography and professional styling */
+/* Fresh Artistic Color Variables */
 :root {
-  --primary-accent: #1a365d;         /* Deep professional blue */
-  --secondary-accent: #2d3748;       /* Elegant dark gray-blue */
-  --text-primary: #1a202c;           /* Rich dark text */
-  --text-secondary: #4a5568;         /* Muted secondary text */
-  --background-light: #f7fafc;       /* Clean light background */
-  --accent-blue: #2b6cb0;            /* Bright professional blue */
-  --accent-light: #bee3f8;           /* Light blue accent */
-  --shadow-subtle: 0 2px 4px rgba(0,0,0,0.08);
-  --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
-  --border-light: #e2e8f0;
+  --primary-blue: #3366ff;           /* Vibrant blue from image */
+  --secondary-blue: #4d7fff;         /* Lighter variant */
+  --accent-blue: #1a4ccc;            /* Darker variant */
+  --background-cream: #fefcf7;       /* Off-white cream */
+  --background-light: #fbf9f4;       /* Lighter cream */
+  --background-accent: #f5f2eb;      /* Subtle cream accent */
+  --text-primary: #2c2c2c;           /* Dark charcoal */
+  --text-secondary: #5a5a5a;         /* Medium gray */
+  --text-accent: #3366ff;            /* Blue for accents */
+  --border-light: #e8e5de;           /* Cream border */
+  --shadow-soft: rgba(51, 102, 255, 0.08);   /* Soft blue shadow */
+  --shadow-medium: 0 4px 12px rgba(51, 102, 255, 0.12);
 }
 
 /* Import better fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-/* Enhanced body typography */
+/* Enhanced body typography with artistic flair */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-primary);
   font-weight: 400;
   line-height: 1.6;
   position: relative;
-  background: linear-gradient(135deg, #f7fafc 0%, #e6fffa 100%);
+  background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-light) 50%, var(--background-accent) 100%);
   min-height: 100vh;
+  /* Add a subtle texture */
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(51, 102, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(51, 102, 255, 0.03) 0%, transparent 50%);
 }
 
-/* Professional Animated Background Elements */
-/* Animated background */
+/* Beautiful Artistic Background Elements */
 .animated-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f7fafc 0%, #e6fffa 100%);
+  background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-light) 50%, var(--background-accent) 100%);
   z-index: -2;
   overflow: hidden;
 }
 
-/* Professional flowing animated lines */
+/* Artistic diamond pixel pattern overlay */
 .animated-background::before {
   content: '';
   position: absolute;
@@ -47,37 +52,55 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    linear-gradient(45deg, transparent 45%, rgba(43, 108, 176, 0.03) 50%, transparent 55%),
-    linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%),
-    linear-gradient(135deg, transparent 40%, rgba(26, 54, 93, 0.02) 50%, transparent 60%);
-  background-size: 800px 800px, 600px 600px, 1000px 1000px;
-  animation: professionalFlow 25s ease-in-out infinite;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(51, 102, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(51, 102, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(51, 102, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(51, 102, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px, 120px 120px, 60px 60px, 100px 100px;
+  animation: pixelShimmer 20s ease-in-out infinite;
 }
 
-/* Subtle geometric patterns */
+/* Artistic floating shapes */
 .geometric-shape {
   position: absolute;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.03;
+  opacity: 0.12;
 }
 
 .shape-circle {
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(43, 108, 176, 0.1);
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--primary-blue);
   border-radius: 50%;
-  animation: gentleFloat 40s linear infinite;
+  animation: artisticFloat 25s ease-in-out infinite;
+}
+
+.shape-square {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+  transform: rotate(45deg);
+  animation: gentleRotate 30s linear infinite;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid var(--primary-blue);
+  animation: subtleBob 20s ease-in-out infinite;
 }
 
 .shape-hexagon {
-  width: 80px;
-  height: 46px;
-  background: rgba(43, 108, 176, 0.05);
+  width: 50px;
+  height: 29px;
+  background: var(--secondary-blue);
   position: relative;
-  margin: 23px 0;
-  animation: subtleRotate 60s linear infinite;
+  margin: 14px 0;
+  animation: hexagonSpin 40s linear infinite;
 }
 
 .shape-hexagon::before,
@@ -85,26 +108,36 @@ body {
   content: "";
   position: absolute;
   width: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
 }
 
 .shape-hexagon::before {
   bottom: 100%;
-  border-bottom: 23px solid rgba(43, 108, 176, 0.05);
+  border-bottom: 14px solid var(--secondary-blue);
 }
 
 .shape-hexagon::after {
   top: 100%;
-  border-top: 23px solid rgba(43, 108, 176, 0.05);
+  border-top: 14px solid var(--secondary-blue);
 }
 
 .shape-diamond {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.08);
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
   transform: rotate(45deg);
-  animation: gentlePulse 30s ease-in-out infinite;
+  animation: diamondTwinkle 15s ease-in-out infinite;
+}
+
+/* Subtle tech icon styling for artistic feel */
+.tech-icon-subtle {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.08;
+  color: var(--primary-blue);
+  animation: iconFloat 35s ease-in-out infinite;
 }
 
 .floating-robot {
@@ -262,69 +295,125 @@ body {
   animation-delay: 1.5s;
 }
 
-@keyframes gentlePulse {
+/* Beautiful Artistic Animations */
+@keyframes pixelShimmer {
   0%, 100% {
-    opacity: 0.03;
-    transform: scale(1);
+    opacity: 0.6;
+    background-position: 0% 0%, 50% 50%, 100% 0%, 25% 75%;
+  }
+  25% {
+    opacity: 0.8;
+    background-position: 25% 25%, 75% 25%, 50% 50%, 0% 100%;
   }
   50% {
-    opacity: 0.08;
-    transform: scale(1.05);
+    opacity: 1;
+    background-position: 50% 50%, 100% 0%, 0% 100%, 75% 25%;
+  }
+  75% {
+    opacity: 0.8;
+    background-position: 75% 75%, 25% 75%, 25% 25%, 50% 0%;
   }
 }
 
-/* Professional background animations */
-@keyframes professionalFlow {
+@keyframes artisticFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.12;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.05);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) scale(0.95);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes gentleRotate {
   0% {
-    background-position: 0% 0%, 100% 100%, 0% 50%;
-    opacity: 0.8;
+    transform: rotate(0deg) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.18;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.12;
+  }
+}
+
+@keyframes subtleBob {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(-15px);
+    opacity: 0.18;
+  }
+}
+
+@keyframes hexagonSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.12;
   }
   33% {
-    background-position: 100% 50%, 0% 50%, 50% 0%;
-    opacity: 1;
+    transform: rotate(120deg) scale(1.05);
+    opacity: 0.16;
   }
   66% {
-    background-position: 50% 100%, 50% 0%, 100% 50%;
-    opacity: 0.9;
+    transform: rotate(240deg) scale(0.95);
+    opacity: 0.14;
   }
   100% {
-    background-position: 0% 0%, 100% 100%, 0% 50%;
-    opacity: 0.8;
+    transform: rotate(360deg) scale(1);
+    opacity: 0.12;
   }
 }
 
-/* Geometric shape animations */
-@keyframes gentleFloat {
-  0% {
-    transform: translateY(-50vh) translateX(0px) rotate(0deg);
-    opacity: 0;
+@keyframes diamondTwinkle {
+  0%, 100% {
+    transform: rotate(45deg) scale(1);
+    opacity: 0.12;
+    box-shadow: 0 0 0 rgba(51, 102, 255, 0);
   }
-  20% {
-    opacity: 1;
+  25% {
+    transform: rotate(45deg) scale(1.1);
+    opacity: 0.2;
+    box-shadow: 0 0 10px rgba(51, 102, 255, 0.3);
   }
-  80% {
-    opacity: 1;
+  50% {
+    transform: rotate(45deg) scale(0.9);
+    opacity: 0.08;
+    box-shadow: 0 0 5px rgba(51, 102, 255, 0.2);
   }
-  100% {
-    transform: translateY(150vh) translateX(100px) rotate(180deg);
-    opacity: 0;
+  75% {
+    transform: rotate(45deg) scale(1.05);
+    opacity: 0.16;
+    box-shadow: 0 0 8px rgba(51, 102, 255, 0.25);
   }
 }
 
-@keyframes subtleRotate {
-  0% {
-    transform: translateY(-50vh) rotate(0deg);
-    opacity: 0;
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.08;
   }
-  20% {
-    opacity: 1;
+  33% {
+    transform: translateY(-10px) rotate(5deg);
+    opacity: 0.12;
   }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(150vh) rotate(360deg);
-    opacity: 0;
+  66% {
+    transform: translateY(-5px) rotate(-5deg);
+    opacity: 0.1;
   }
 }
 
@@ -334,9 +423,9 @@ body {
 .home .container-md {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--background-cream);
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
   margin-top: 20px;
   margin-bottom: 20px;
@@ -345,10 +434,10 @@ body {
 
 /* Special handling for hero section - only for home page */
 .home .intro-header {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--background-light);
   backdrop-filter: blur(5px);
   border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-medium);
   margin: 20px;
 }
 
@@ -497,33 +586,38 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Programming & Development */
+/* Programming & Development - Updated for new color scheme */
 .skill-tag.programming {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: white;
+  box-shadow: 0 4px 8px rgba(51, 102, 255, 0.2);
 }
 
 .skill-tag.tools {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
   color: white;
+  box-shadow: 0 4px 8px rgba(51, 102, 255, 0.2);
 }
 
 /* Machine Learning */
 .skill-tag.ml {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background: linear-gradient(135deg, var(--secondary-blue), #00d4ff);
   color: white;
+  box-shadow: 0 4px 8px rgba(51, 102, 255, 0.15);
 }
 
 /* Robotics */
 .skill-tag.robotics {
   background: linear-gradient(135deg, #43e97b, #38f9d7);
-  color: #2c3e50;
+  color: var(--text-primary);
+  box-shadow: 0 4px 8px rgba(67, 233, 123, 0.2);
 }
 
 /* Simulation */
 .skill-tag.simulation {
   background: linear-gradient(135deg, #fa709a, #fee140);
-  color: #2c3e50;
+  color: var(--text-primary);
+  box-shadow: 0 4px 8px rgba(250, 112, 154, 0.2);
 }
 
 /* Hardware */
@@ -598,7 +692,29 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Crimson Text', Georgia, serif;
   font-weight: 600;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px rgba(51, 102, 255, 0.05);
+}
+
+h1 {
+  color: var(--primary-blue);
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: var(--secondary-blue);
+  font-size: 2rem;
+}
+
+/* Links and accents */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-blue);
+  text-shadow: 0 2px 4px rgba(51, 102, 255, 0.2);
 }
 
 /* Main title styling */
@@ -1070,8 +1186,8 @@ h1, h2, h3, h4, h5, h6 {
 .exp-modal{ position:fixed; inset:0; z-index:1200; }
 .exp-modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.45); }
 .exp-modal__dialog{
-  position:relative; max-width: 760px; margin: 8vh auto; background:#fff; border-radius:12px;
-  padding: 1.25rem 1.25rem 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  position:relative; max-width: 760px; margin: 8vh auto; background: var(--background-cream); border-radius:12px;
+  padding: 1.25rem 1.25rem 1.5rem; box-shadow: var(--shadow-medium);
 }
 .exp-modal__close{
   position:absolute; right:.5rem; top:.25rem; border:none; background:transparent; font-size:1.8rem; line-height:1; cursor:pointer;
@@ -1895,9 +2011,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-arrow:hover {
-  background: white;
+  background: var(--background-cream);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-medium);
 }
 
 .carousel-arrow-prev {

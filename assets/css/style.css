@@ -116,7 +116,7 @@ footer {
   display: none; /* Remove full-page texture */
 }
 
-/* Multiple strategic texture zones - smaller and well-distributed */
+/* Multiple strategic texture zones - only in corners */
 
 /* Top-left corner accent */
 body::before {
@@ -152,84 +152,12 @@ body::after {
   z-index: -1;
 }
 
-/* Mid-right accent near profile area */
-.home-section {
-  position: relative;
-}
-
-.home-section::before {
-  content: '';
-  position: absolute;
-  top: 200px;
-  right: 2%;
-  width: 120px;
-  height: 160px;
-  background: 
-    linear-gradient(60deg, 
-      transparent 0%, transparent 35%, 
-      rgba(224, 231, 255, 0.25) 40%, rgba(96, 165, 250, 0.3) 50%, rgba(59, 130, 246, 0.15) 60%, 
-      transparent 70%, transparent 100%);
-  background-size: 70px 70px;
-  border-radius: 10px;
-  z-index: -1;
-}
-
-/* Left-center accent */
-.home-section::after {
-  content: '';
-  position: absolute;
-  top: 350px;
-  left: 5%;
-  width: 100px;
-  height: 140px;
-  background: 
-    linear-gradient(-45deg, 
-      transparent 0%, transparent 40%, 
-      rgba(191, 219, 254, 0.25) 45%, rgba(37, 99, 235, 0.3) 55%, rgba(29, 78, 216, 0.15) 65%, 
-      transparent 75%, transparent 100%);
-  background-size: 60px 60px;
-  border-radius: 8px;
-  z-index: -1;
-}
-
-/* Top-right small accent */
-.intro-header {
-  position: relative;
-}
-
-.intro-header::before {
-  content: '';
-  position: absolute;
-  top: 50px;
-  right: 8%;
-  width: 90px;
-  height: 110px;
-  background: 
-    linear-gradient(30deg, 
-      transparent 0%, transparent 30%, 
-      rgba(239, 246, 255, 0.3) 35%, rgba(147, 197, 253, 0.25) 45%, rgba(96, 165, 250, 0.15) 55%, 
-      transparent 65%, transparent 100%);
-  background-size: 50px 50px;
-  border-radius: 8px;
-  z-index: -1;
-}
-
-/* Bottom-left accent */
+/* Remove middle accent elements */
+.home-section::before,
+.home-section::after,
+.intro-header::before,
 .intro-header::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: 12%;
-  width: 110px;
-  height: 130px;
-  background: 
-    linear-gradient(120deg, 
-      transparent 0%, transparent 25%, 
-      rgba(219, 234, 254, 0.25) 30%, rgba(59, 130, 246, 0.3) 40%, rgba(37, 99, 235, 0.15) 50%, 
-      transparent 60%, transparent 100%);
-  background-size: 65px 65px;
-  border-radius: 10px;
-  z-index: -1;
+  display: none;
 }
 
 /* Subtle geometric accent elements */

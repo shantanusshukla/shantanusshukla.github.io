@@ -103,9 +103,83 @@ body {
   display: none; /* Remove full-page texture */
 }
 
-/* Strategic texture zones for specific page areas */
+/* Multiple strategic texture zones - smaller and well-distributed */
 
-/* Texture behind main title area */
+/* Top-left corner accent */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: 
+    linear-gradient(45deg, 
+      rgba(239, 246, 255, 0.4) 0%, rgba(147, 197, 253, 0.3) 30%, rgba(96, 165, 250, 0.2) 60%, 
+      transparent 80%, transparent 100%);
+  background-size: 80px 80px;
+  border-radius: 0 0 15px 0;
+  z-index: -1;
+}
+
+/* Bottom-right corner accent */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  background: 
+    linear-gradient(-135deg, 
+      rgba(219, 234, 254, 0.3) 0%, rgba(59, 130, 246, 0.25) 40%, rgba(37, 99, 235, 0.15) 70%, 
+      transparent 85%, transparent 100%);
+  background-size: 100px 100px;
+  border-radius: 15px 0 0 0;
+  z-index: -1;
+}
+
+/* Mid-right accent near profile area */
+.home-section {
+  position: relative;
+}
+
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 200px;
+  right: 2%;
+  width: 120px;
+  height: 160px;
+  background: 
+    linear-gradient(60deg, 
+      transparent 0%, transparent 35%, 
+      rgba(224, 231, 255, 0.25) 40%, rgba(96, 165, 250, 0.3) 50%, rgba(59, 130, 246, 0.15) 60%, 
+      transparent 70%, transparent 100%);
+  background-size: 70px 70px;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Left-center accent */
+.home-section::after {
+  content: '';
+  position: absolute;
+  top: 350px;
+  left: 5%;
+  width: 100px;
+  height: 140px;
+  background: 
+    linear-gradient(-45deg, 
+      transparent 0%, transparent 40%, 
+      rgba(191, 219, 254, 0.25) 45%, rgba(37, 99, 235, 0.3) 55%, rgba(29, 78, 216, 0.15) 65%, 
+      transparent 75%, transparent 100%);
+  background-size: 60px 60px;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+/* Top-right small accent */
 .intro-header {
   position: relative;
 }
@@ -113,87 +187,35 @@ body {
 .intro-header::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: 10%;
-  right: 10%;
-  height: 200px;
+  top: 50px;
+  right: 8%;
+  width: 90px;
+  height: 110px;
   background: 
-    /* Low-poly texture for title area */
-    linear-gradient(45deg, 
-      transparent 0%, transparent 20%, 
-      rgba(219, 234, 254, 0.3) 25%, rgba(147, 197, 253, 0.4) 35%, rgba(59, 130, 246, 0.2) 45%, 
-      transparent 50%, transparent 100%),
-    linear-gradient(-30deg, 
+    linear-gradient(30deg, 
       transparent 0%, transparent 30%, 
-      rgba(191, 219, 254, 0.4) 35%, rgba(96, 165, 250, 0.5) 45%, rgba(37, 99, 235, 0.3) 55%, 
-      transparent 60%, transparent 100%),
-    linear-gradient(120deg, 
-      transparent 0%, transparent 25%, 
-      rgba(239, 246, 255, 0.5) 30%, rgba(147, 197, 253, 0.6) 40%, rgba(29, 78, 216, 0.4) 50%, 
-      transparent 55%, transparent 100%);
-  background-size: 180px 180px, 220px 220px, 160px 160px;
-  background-position: 0% 50%, 70% 20%, 30% 80%;
-  border-radius: 20px;
+      rgba(239, 246, 255, 0.3) 35%, rgba(147, 197, 253, 0.25) 45%, rgba(96, 165, 250, 0.15) 55%, 
+      transparent 65%, transparent 100%);
+  background-size: 50px 50px;
+  border-radius: 8px;
   z-index: -1;
 }
 
-/* Texture accent around profile/content area */
-.home-section {
-  position: relative;
-}
-
-.home-section::after {
+/* Bottom-left accent */
+.intro-header::after {
   content: '';
   position: absolute;
-  top: 50px;
-  right: 5%;
-  width: 300px;
-  height: 400px;
+  bottom: -100px;
+  left: 12%;
+  width: 110px;
+  height: 130px;
   background: 
-    linear-gradient(60deg, 
-      transparent 0%, transparent 35%, 
-      rgba(224, 231, 255, 0.25) 40%, rgba(96, 165, 250, 0.35) 45%, rgba(59, 130, 246, 0.15) 50%, 
-      transparent 55%, transparent 100%),
-    linear-gradient(-45deg, 
-      transparent 0%, transparent 40%, 
-      rgba(191, 219, 254, 0.3) 45%, rgba(37, 99, 235, 0.4) 50%, rgba(29, 78, 216, 0.2) 55%, 
+    linear-gradient(120deg, 
+      transparent 0%, transparent 25%, 
+      rgba(219, 234, 254, 0.25) 30%, rgba(59, 130, 246, 0.3) 40%, rgba(37, 99, 235, 0.15) 50%, 
       transparent 60%, transparent 100%);
-  background-size: 140px 140px, 180px 180px;
-  background-position: 20% 30%, 80% 70%;
-  border-radius: 15px;
-  z-index: -1;
-}
-
-/* Corner accent textures */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  background: 
-    linear-gradient(45deg, 
-      rgba(239, 246, 255, 0.4) 0%, rgba(147, 197, 253, 0.3) 30%, rgba(96, 165, 250, 0.2) 60%, 
-      transparent 80%, transparent 100%);
-  background-size: 120px 120px;
-  border-radius: 0 0 20px 0;
-  z-index: -1;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 250px;
-  height: 250px;
-  background: 
-    linear-gradient(-135deg, 
-      rgba(219, 234, 254, 0.3) 0%, rgba(59, 130, 246, 0.25) 40%, rgba(37, 99, 235, 0.15) 70%, 
-      transparent 85%, transparent 100%);
-  background-size: 150px 150px;
-  border-radius: 20px 0 0 0;
+  background-size: 65px 65px;
+  border-radius: 10px;
   z-index: -1;
 }
 

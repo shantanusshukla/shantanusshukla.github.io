@@ -62,7 +62,20 @@ body {
   position: relative;
   background: #fefce8; /* Clean bright cream background */
   min-height: 100vh;
-  /* Clean static background - no additional patterns */
+}
+
+/* Ensure all content is above waves */
+.navbar,
+.intro-header,
+.home-section,
+.container,
+.page-content,
+main,
+nav,
+header,
+footer {
+  position: relative;
+  z-index: 10; /* Above waves */
 }
 
 /* Professional Triangular Geometric Background */
@@ -72,8 +85,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--background-cream) 0%, var(--background-light) 50%, var(--background-accent) 100%);
-  z-index: -2;
+  background: #fefce8; /* Clean cream background - behind waves */
+  z-index: -2; /* Behind waves */
   overflow: hidden;
 }
 

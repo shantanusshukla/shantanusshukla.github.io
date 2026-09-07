@@ -13,8 +13,4 @@ permalink: /projects/robotics/visual-servoing/
  - The velocity is pixel-space is translated to the world-frame through the Image Jacobian, which is further transformed into the joint-space using the joints Jacobian for the robot arm. 
  - We apply a proportional controller for the joints to move the robot arm to the desired configuration.
  - For Null-space control, we find the camera roll (r) as a function of the joint angles (q) based on the D-H parameters obtained from the Franka-Emika-Panda docs here - https://frankaemika.github.io/docs/control_parameters.html#denavithartenberg-parameters. We encode this in *sympy* to calculate the gradient of the roll with respect to the joint angles.
- - The null-space control term is finally calculated using q_null = (I - J'J)Dq where q_null is the null-space control command and Dq is the gradient.  
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )
+ - The null-space control term is finally calculated using q_null = (I - J'J)Dq where q_null is the null-space control command and Dq is the gradient.

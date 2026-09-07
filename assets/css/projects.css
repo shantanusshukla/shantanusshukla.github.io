@@ -39,6 +39,20 @@
   pointer-events: auto;
 }
 
+/* A focused project is an app-like view: extend it to the viewport bottom,
+   above the page footer. */
+.projects-focused .projects-mask,
+.projects-focused .projects-rail,
+.projects-focused .project-detail{
+  bottom: 0;
+  height: auto;
+}
+
+/* The focused view owns the viewport; don't leave the page footer beneath it. */
+body.project-detail-open footer{
+  display: none !important;
+}
+
 /* ---------- left thumbnail rail ---------- */
 .projects-rail{
   display: none;
@@ -55,9 +69,20 @@
 }
 
 /* rail items */
-.rail-item{ padding: .25rem; cursor: pointer; border-radius: .5rem; }
+.rail-item{
+  padding: .25rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
 .rail-item:hover{ background:#eef2ff; }
-.rail-item.active{ background:#e3e9ff; }
+.rail-item.active{
+  background: #dbe4f0;
+  border-color: #365d8d;
+  box-shadow: 0 0 0 2px rgba(54, 93, 141, .18);
+}
+.rail-item.active .rail-caption{ opacity: 1; transform: translateY(0); }
 
 /* thumbnail + caption */
 .rail-thumb{ position: relative; border-radius: .35rem; overflow: hidden; }
@@ -112,8 +137,14 @@
   line-height: 1.1; font-size: .875rem; border-radius: .375rem;
 }
 
-/* content area scrolls independently */
-.detail-scroll{ overflow:auto; padding: 0 1rem 2rem; }
+/* Content area fills the remaining panel height and scrolls independently. */
+.detail-scroll{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 1rem 3rem;
+}
 
 /* while focused: show rail and shift list */
 .projects-focused .projects-rail{ display:block; }
@@ -186,7 +217,19 @@
   .proj-media{ 
     /* 160–240px depending on screen; override any inline height */
     height: clamp(160px, 45vw, 240px) !important;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  .proj-media img,
+  .proj-media video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: .25rem;
+  }
+  #projects-shell{ padding-bottom: 4rem; }
   .projects-focused .projects-rail,
   .projects-focused-full .projects-rail{ display:none; }
   .project-detail{ width:100vw; right:-100vw; }

@@ -13,8 +13,4 @@ permalink: /projects/robotics/vislam/
  - Landmark Prior and raw vehicle trajectory : We first obtain the raw trajectory (position, orientation) by integrating IMU data over time. From the image data, knowing the camera calibration matrix, we obtain a "**prior**" estimate of landmark locations in the camera frame, and then in the world frame by transformation (since the vehicle pose is known).
  - Assuming a noisy observation model, we calculate the "**expected measurement**" of pixel-co-ordinates for each landmark at each time instant. Using the error between the actual measurement and the expected measurement and an **Extended Kalman Filter** (Kalman gain calculated using the derivative of the non-linear camera projection function) we update our estimate of the landmark positions in the world. We also calculate the uncertainty in the landmark positions.
  - Using these updated landmark positions we calculate the "**updated**" pose of the vehicle for that instant (by essentially using the **exponential of the hat map** of the innovation term, since vehicle pose is in **SE(3)** - check project report for more info).
- - Finally, using the Kalman Gain, we update the uncertainty in the vehicle pose and the landmark locations. Using this new uncertainty we move to the next time step and repeat the above two steps. The Kalman gain for the next step basically uses this updated uncertainty. 
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )
+ - Finally, using the Kalman Gain, we update the uncertainty in the vehicle pose and the landmark locations. Using this new uncertainty we move to the next time step and repeat the above two steps. The Kalman gain for the next step basically uses this updated uncertainty.

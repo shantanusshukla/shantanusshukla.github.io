@@ -1,16 +1,24 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I am **Shantanu Shrikant Shukla**, a **Robotics Engineer** graduating from **UC San Diego**, with a strong academic foundation in Mechanical Engineering from **IIT Bombay**. My journey in robotics is deeply intertwined with my passion for **Controls** and **Mathematics**, which has propelled me to excel in this exciting and dynamic field.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+My fascination with controls and dynamics began early in my undergraduate studies, where I explored **Nonlinear Dynamics and Chaos**—a field that captivated me with its intricate mathematical beauty. My initial projects delved into modeling cardiac pacemakers, simulating pandemic spread using agent-based interactions during COVID-19, and studying droplet motions on fluid surfaces, an essential aspect of soft-matter and cell dynamics. Under the mentorship of exceptional professors, this work culminated in the publication of journal articles. These experiences solidified my understanding of system dynamics and led to the exploration of controls. Getting to know advanced control strategies reinforced my drive to explore the control of complex, analytically challenging systems in theory and in practice. This passion led me to pursue a minor degree in **Systems and Control Engineering** alongside my undergraduate studies.
 
-What else do you need?
+At IIT Bombay, I seized the opportunity to deepen my understanding of control theory and robotics through advanced coursework, including Embedded Controls and Robotics, Distributed Optimization, Nonlinear Control, and Motion Planning for Mobile Robots. Equipped with this strong theoretical foundation, I implemented motion planning and control algorithms on Turtlebots using ROS and worked on a Bachelor’s Thesis Project focused on sliding-mode control for an Autonomous Underwater Vehicle. These hands-on projects not only enhanced my technical expertise but also cemented my passion for robotics, steering me toward pursuing a Master’s degree with a concentration in **Controls** and **Robotics** at **UCSD**.
 
-### My story
+Before embarking on my graduate studies, I gained invaluable industry experience during a summer stint at **Renault-Nissan**, where I worked on **Model Predictive Control** involving industrial control systems and advanced vehicle dynamics. This exposure laid a robust foundation for my advanced coursework and projects at UCSD. Over the past year, I have expanded my expertise in areas such as **State Estimation**, **SLAM**, **Computer Vision**, **Motion Planning**, **Reinforcement Learning**, **Discrete Optimization**, hardware-level programming, and a diverse set of software skills.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+My academic and professional journey has provided me with extensive hands-on experience with ground robots, autonomous vehicles, mobile manipulators and autonomous underwater vehicles. I have honed my software development skills in **C**, **C++**, **Python**, **ROS/ROS2**, and **MATLAB**, while my internships at **Lucid Motors** and **Renault-Nissan** have further sharpened my abilities and provided me with invaluable real-world insights. At Lucid Motors I was successfully able to automate software unit-testing of most of the vehicle ECUs and the experience provided first-hand exposure to **production-level software**. My expertise spans the design and implementation of robotic control systems, navigation algorithms—including perception, localization, mapping and motion planning. I have successfully deployed a wide range of control, planning, and SLAM algorithms, both on hardware and in simulation.
+
+I worked in the **Existential Robotics Laboratory (ERL)** at UCSD under the guidance of **Prof. Nikolay Atanasov**, where I am contributed to the development of an open-source library for **Gaussian-Process-based Mapping** using LiDAR data. This project represents the intersection of cutting-edge research and practical applications, aligning closely with my passion for advancing robotics.
+
+Through my full-time experience at **Lucid Motors** I got first hand exposure to working on production code, how complex Controls Systems built in MATLAB can be translated to efficient low-level C / C++ code and how multiple control systems interact with each other. Now at **Nuro** I have the privilege of contributing to a world-class Controls software stack driving L4 autonomous vehicles.
+
+You can explore my [**<u>Projects</u>**]({{ '/robotics-projects' | relative_url }}) to dive deeper into my work in robotics and my ongoing endeavors. I am always excited to connect and discuss innovative ideas in robotics, controls, and system dynamics—feel free to reach out!
+
+<hr class="about-contact-divider">
+
+<p class="about-contact-email"><strong>Email</strong>: shantanushukla289[at]gmail[dot]com</p>

@@ -14,6 +14,38 @@
   const FULL_MODE = true;
 
   let LIST_SCROLL_Y = 0;   // put this near the top file (global)
+  let detailRequest = 0;
+
+  function centerRailItem(item, attempt = 0){
+    if(!railEl || !item) return;
+
+    // The rail changes from display:none to display:block when the panel opens.
+    // Wait until it has a measurable height, then use its fixed item offsets.
+    if(!railEl.clientHeight){
+      if(attempt < 12) requestAnimationFrame(() => centerRailItem(item, attempt + 1));
+      return;
+    }
+
+    const targetTop = item.offsetTop - (railEl.clientHeight - item.offsetHeight) / 2;
+    const maxTop = railEl.scrollHeight - railEl.clientHeight;
+    railEl.scrollTop = Math.max(0, Math.min(maxTop, targetTop));
+
+    // Images can finish loading after the rail appears; repeat once with final dimensions.
+    if(attempt < 2) requestAnimationFrame(() => centerRailItem(item, attempt + 1));
+  }
+
+  function activateRailItem(id){
+    if(!railEl) return;
+
+    railEl.querySelectorAll('.rail-item').forEach(item => {
+      item.classList.toggle('active', item.dataset.id === id);
+    });
+
+    const active = railEl.querySelector(`.rail-item[data-id="${id}"]`);
+    if(!active) return;
+
+    requestAnimationFrame(() => centerRailItem(active));
+  }
 
   /* --- measure the navbar and set CSS var so nothing overlaps it --- */
   function setNavOffset(){
@@ -44,25 +76,24 @@
 
   /* --- open detail panel and load detail page content --- */
   async function openDetail(url, id){
+    const requestId = ++detailRequest;
     LIST_SCROLL_Y = window.scrollY || window.pageYOffset || 0;   // <- remember where we were
     document.documentElement.classList.add('projects-focused');
     if(FULL_MODE) document.documentElement.classList.add('projects-focused-full');
+    document.body.classList.add('project-detail-open');
+    document.body.style.overflow = 'hidden';
+    activateRailItem(id);
 
     try{
       const res = await fetch(url, { credentials:'same-origin' });
       const html = await res.text();
+      if(requestId !== detailRequest) return;
+
       const tmp = document.createElement('div'); tmp.innerHTML = html;
       const content = tmp.querySelector('#project-content') || tmp.querySelector('main') || tmp;
       detailScroll.innerHTML = '';
       detailScroll.appendChild(content.cloneNode(true));
       detailScroll.scrollTop = 0;
-
-      // highlight active thumb
-      if(railEl){
-        railEl.querySelectorAll('.rail-item').forEach(n => n.classList.remove('active'));
-        const active = railEl.querySelector(`.rail-item[data-id="${id}"]`);
-        if(active) active.classList.add('active');
-      }
 
       history.pushState({ projId:id, projUrl:url }, '', url);
     }catch(e){
@@ -73,7 +104,10 @@
 
   /* --- close detail panel --- */
   function closeDetail(){
+    detailRequest += 1;
     document.documentElement.classList.remove('projects-focused', 'projects-focused-full');
+    document.body.classList.remove('project-detail-open');
+    document.body.style.overflow = '';
     detailScroll.innerHTML = '';
     const base = shell.getAttribute('data-base') || '/robotics-projects/';
     history.pushState({}, '', base);

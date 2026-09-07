@@ -18,7 +18,3 @@ permalink: /projects/robotics/icp-slam/
     - Implemented **Factor-Graph SLAM** using the sequence of relative poses and fixed-interval loop-closure using the **GTSAM** library to optimize the trajectory estimate - compared this with the raw estimate and Odometry based-estimate.
 - **Occupancy and Texture Mapping** - 
     - We generate a 2D occupancy map from the LiDAR scan data by first transforming points from the LiDAR frame to the world frame(since the orientation of the bot is now known) and then using the **Bresenham2D** algorithm. We assign a probability to every point on the map of being occupied, free or unexplored and map it on a color-bar as shown below. By overlaying images obtained from a ground-facing camera on this occupancy map, we create a texture map.
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )

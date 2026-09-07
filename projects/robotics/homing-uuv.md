@@ -19,7 +19,3 @@ permalink: /projects/robotics/homing-uuv/
  - While the control-law gives us the angular velocity to be applied, we convert it to the desired thruster torque based on the dynamics of the vehicle. For the purpose of the project we operate in the conditions where the torque required is proportional to angular and linear velocities.
  - We use the above algorithm to perform waypoint-following underwater, where we also need additional downward thrust to counter the upward force of water.
  - We then perform SONAR-based mapping of the seabed topography while navigating underwater simply using point-cloud data and transforming it into the world-frame considering we know the state (position, orientation) of the AUV.
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )

@@ -17,17 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const allProjectsOverlay = document.getElementById('allProjectsOverlay');
   const projectGridTiles = document.querySelectorAll('.project-grid-tile');
   
+  function openAllProjectsPopup() {
+    if (!allProjectsOverlay) return;
+
+    allProjectsOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    clearInterval(autoRotateInterval);
+  }
+
   // Open all projects popup
   if (openAllProjectsBtn && allProjectsOverlay) {
     openAllProjectsBtn.addEventListener('click', function() {
-      allProjectsOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      
-      // Pause carousel auto-rotation when popup is open
-      clearInterval(autoRotateInterval);
+      openAllProjectsPopup();
     });
   }
-  
+
   // Close all projects popup
   function closeAllProjectsPopup() {
     if (allProjectsOverlay) {

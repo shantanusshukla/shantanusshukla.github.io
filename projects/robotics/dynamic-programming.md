@@ -23,7 +23,3 @@ permalink: /projects/robotics/dynamic-programming/
         - terminal-cost = 0 if we are at the goal else ∞
         - Cost function for Dynamic Programming : **V = stage cost + terminal cost**
 - Solved using the  Dynamic Programming Algorithm. For the detailed algorithm check the report.
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )

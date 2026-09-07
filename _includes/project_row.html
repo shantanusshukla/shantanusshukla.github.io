@@ -30,7 +30,7 @@
       {% if item.links.code %}<a class="btn btn-sm btn-outline-secondary" href="{{ item.links.code }}" target="_blank">Code</a>{% endif %}
       {% if item.links.demo %}<a class="btn btn-sm btn-outline-success" href="{{ item.links.demo }}" target="_blank">Demo</a>{% endif %}
       {% if item.links.readmore %}
-        <a class="btn btn-sm btn-dark proj-readmore"
+        <a class="btn btn-sm btn-outline-primary proj-readmore"
            href="{{ item.links.readmore | relative_url }}"
            data-ajax="true"
            data-id="{{ item.id }}">Read more</a>

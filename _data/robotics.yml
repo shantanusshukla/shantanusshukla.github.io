@@ -8,9 +8,7 @@
     src: /assets/img/project_media/icp_slam.gif
     poster: /assets/img/project_media/icp_slam_poster.png
   links:
-    report: https://drive.google.com/...
-    code: https://github.com/...
-    demo: https://youtu.be/...
+    report: https://drive.google.com/file/d/1iVNXR-zFLSLdh-0PiMWC19jm5cOyZUB6/view?usp=sharing
     readmore: /projects/robotics/icp-slam/   # points to the detail .md (see step 7)
 
 
@@ -25,7 +23,7 @@
     src: /assets/img/project_media/vislam1.gif
     poster: /assets/img/project_media/vislam_poster.png
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1MeHLVEYxjx3QD75i9H72E8flZUWrlkDK/view?usp=sharing
     readmore: /projects/robotics/vislam/
 
 - id: homing-uuv
@@ -38,7 +36,7 @@
     type: image
     src: /assets/img/project_media/btp-homing.png
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1DyYXrRkNmQKyefW-wHs_NULITh8KW9HB/view?usp=sharing
     readmore: /projects/robotics/homing-uuv/
 
 - id: trajectory-tracking
@@ -51,7 +49,7 @@
     type: gif
     src: /assets/img/project_media/mpc-tracker.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1qHSzP2sShVyMEeYKYt8nkaKJ5XGiETul/view?usp=sharing
     readmore: /projects/robotics/trajectory-tracking/
 
 - id: path-planning-2d3d
@@ -63,7 +61,7 @@
     type: gif
     src: /assets/img/project_media/path_planning.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/133n3IvUOKR0VJp-ClJGP-0hqmumzVUeI/view?usp=sharing
     readmore: /projects/robotics/path-planning-2d3d/
 
 - id: dynamic-programming
@@ -75,7 +73,7 @@
     type: gif
     src: /assets/img/project_media/dynamic_programming.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1SpJHY3_tYDnLxufVCdohHz86zmQtubwj/view?usp=sharing
     readmore: /projects/robotics/dynamic-programming/
 
 - id: planning-slam-control-on-robot
@@ -88,7 +86,7 @@
     type: gif
     src: /assets/img/project_media/on-robot-slam.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1vVXZNEkma3C1icKeceX1Xw8-78cxhh92/view?usp=sharing
     readmore: /projects/robotics/planning-slam-control-on-robot/
 
 - id: visual-servoing
@@ -100,7 +98,6 @@
     type: gif
     src: /assets/img/project_media/visual-servoing.gif
   links:
-    report: https://drive.google.com/...
     readmore: /projects/robotics/visual-servoing/
 
 - id: surface-normal-identification
@@ -112,7 +109,7 @@
     type: gif
     src: /assets/img/project_media/cvsn.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1ylaGqXFZPOVc90lrlwSiONTr4pnDcpzN/view?usp=sharing
     readmore: /projects/robotics/surface-normal-identification/
 
 - id: nearest-object-tracking
@@ -125,7 +122,7 @@
     type: gif
     src: /assets/img/project_media/nearest-obj-track.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1O_uSJGDf_nvX6JoaoKqC_dkIk4QHNIDM/view?usp=sharing
     readmore: /projects/robotics/nearest-object-tracking/
 
 - id: semantic-segmentation
@@ -137,7 +134,7 @@
     type: image
     src: /assets/img/project_media/sem-seg.png
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1qdUmbYBeJ0UhWlKyXWBh6AZa-ekxSaKX/view?usp=sharing
     readmore: /projects/robotics/semantic-segmentation/
 
 - id: state-estimation-panorama
@@ -151,5 +148,5 @@
     type: gif
     src: /assets/img/project_media/panorama_stitch.gif
   links:
-    report: https://drive.google.com/...
+    report: https://drive.google.com/file/d/1QHvgaSQf6QHMT5juP4nK6lwXCLk3NhK1/view?usp=sharing
     readmore: /projects/robotics/state-estimation-panorama/

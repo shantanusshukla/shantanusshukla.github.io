@@ -15,9 +15,3 @@ permalink: /projects/robotics/planning-slam-control-on-robot/
  - **Arena Coverag**e - Using the above pipeline, we provide the robot with a path that starts from the boundary of the arena and spirals inwards to the center of the square arena, with a pitch small enough to ensure that most of the area is covered.
 
 *Refer to the reports for more details on the setup and implementation which is done using Python and ROS. Algorithm codes are stored and implemented on the robot microcontroller and can be edited using a remote connection (ssh).*
-
-
-### Results
-
-
-![Map]( /assets/img/projects/icp-map.jpg )

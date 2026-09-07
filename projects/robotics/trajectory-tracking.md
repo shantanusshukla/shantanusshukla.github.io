@@ -18,8 +18,4 @@ permalink: /projects/robotics/trajectory-tracking/
     - Finite-Horizon NLP - solved using **CasADi**. **CasADi**  has several NLP solvers. We use **IPOPT**. Since we are performing numerical optimizations, our state and control spaces can be continuous with relevant constraints.
 - **Infinite Horizon Optimal Control**
     - We perform Generalized Policy Iteration to solve this infinite-horizon problem. To implement this, we need a discrete state-space, motion model with Gaussian Noise and hence we discretize the (x,y,θ) variables with fixed interval steps. 
-    - We discretize the motion model by using the "nearest neighbors" to the state obtained out of the discrete states. 
-
-### Results
-
-![Map]( /assets/img/projects/icp-map.jpg )
+    - We discretize the motion model by using the "nearest neighbors" to the state obtained out of the discrete states.
